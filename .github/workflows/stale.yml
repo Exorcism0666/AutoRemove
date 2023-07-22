@@ -1,0 +1,17 @@
+name: Close Stale Issue and PR
+on:
+  schedule: [{ cron: 0 * * * * }]
+jobs:
+  stale:
+    permissions:
+      contents: write # only for delete-branch option
+      issues: write
+      pull-requests: write
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close Stale Issues
+        uses: actions/stale@v4.1.1
+        with:
+          repo-token: ${{ secrets.COOLPLAYLIN_BOT_TOKEN }}
+          exempt-issue-labels: "WIP,NeverExpires,Blocking-issue"
+          exempt-pr-labels: "NeverExpires,Blocking-issue"
