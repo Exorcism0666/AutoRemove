@@ -1,11 +1,20 @@
 name: Auto Publish
-on: workflow_dispatch
+on:
+ workflow_dispatch:
+ schedule: [{cron: 0 * * * *}]
+
+env:
+  NAME: "CoolPlayLinBot"
+  EMAIL: "130831920+coolplaylinbot@users.noreply.github.com"
+
 jobs:
   publish:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3.5.3
+        with:
+          token: ${{ secrets.COOLPLAYLIN_BOT_TOKEN }}
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
@@ -15,5 +24,30 @@ jobs:
         with:
           distribution: 'temurin' # See 'Supported distributions' for available options
           java-version: '17'
+      - name: Setup Env
+        run: |
+          python3 -m pip install -r requirements.txt
+          git config --global user.name "${{ env.NAME }}"
+          git config --global user.email "${{ env.EMAIL }}"
       - name: Publish
         run: python3 src/main.py ${{ secrets.TOKEN }}
+      - name: Post on Succeed
+        if: success()
+        run: |
+            python3 src/status.py Success
+            if [[ -n $(git status -s) ]]; then
+            git add ./src/config
+            git add Changelog.md
+            git commit -m "Update metadata"
+            git push origin --force
+            fi
+      - name: Post on Fail
+        if: failure()
+        run: |
+            python3 src/status.py Fail
+            if [[ -n $(git status -s) ]]; then
+            git add ./src/config
+            git add Changelog.md
+            git commit -m "Update metadata"
+            git push origin --force
+            fi
