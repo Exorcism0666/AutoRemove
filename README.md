@@ -15,6 +15,7 @@ create an issue to add your software publish to winget easily
 - [GoLang](https://github.com/golang/go)
 - [scrcpy](https://github.com/Genymobile/scrcpy)
 - [NodeJS](https://github.com/nodejs/node)
+- [Notion](https://www.notion.so/)
 
 # License
 
