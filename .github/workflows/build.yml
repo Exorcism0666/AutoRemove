@@ -43,7 +43,7 @@ jobs:
         if: always()
         run: |
             if [[ -n $(git status -s) ]]; then
-            git add ./src/config
+            git add .
             git commit -m "Update metadata"
             git push origin --force
             fi
