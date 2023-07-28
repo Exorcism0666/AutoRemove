@@ -1,3 +1,4 @@
 *.jar
 manifests
 .vscode
+node_modules

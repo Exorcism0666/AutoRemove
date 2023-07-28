@@ -1,0 +1,23 @@
+{
+  "name": "autopublish",
+  "version": "1.0.0",
+  "description": "Auto Publish Software to WinGet",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "format": "prettier --write src/config/*.json"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/coolplaylin/AutoPublish.git"
+  },
+  "author": "CoolPlayLin",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/coolplaylin/AutoPublish/issues"
+  },
+  "homepage": "https://github.com/coolplaylin/AutoPublish#readme",
+  "devDependencies": {
+    "prettier": "^3.0.0"
+  }
+}
