@@ -251,7 +251,7 @@ def main():
                 do_list(*each[1])
     
     # 清理分支
-    os.system(f"java -jar {Komac} branch cleanup --token {GH_TOKEN}")
+    os.system(f"java -jar {Komac} branch cleanup --only-merged --token {GH_TOKEN}")
 
     return Commands
 
