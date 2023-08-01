@@ -12,7 +12,7 @@ GH_TOKEN = sys.argv[1]
 def report_existed(id: str, Version: str) -> None:
     print(f"{id}: {Version} has already existed, skip publishing")
 
-def komac(path: str, debug: bool = False):
+def komac(path: str, debug: bool = False) -> pathlib.Path:
     Komac = pathlib.Path(path)/"komac.jar"
     if not debug:
         with open(Komac, "wb+") as f:
@@ -29,14 +29,14 @@ def clean_string(string: str, keywords: dict[str, str]) -> str:
         string = string.replace(k, keywords[k])
     return string
 
-def str_pop(string: str, index: int)-> str:
+def str_pop(string: str, index: int) -> str:
         i = list(string)
         i.pop(index)
         i = "".join(i)
 
         return i
 
-def list_to_str(List: list):
+def list_to_str(List: list) -> str:
     new = str(List)
     new = clean_string(new, {
          "[": "",
@@ -52,7 +52,7 @@ def version_verify(version: str, id: str) -> bool:
     else:
         return True
 
-def do_list(id: str, version: str, mode: str):
+def do_list(id: str, version: str, mode: str) -> bool | None:
     """
     Mode: write or verify
     """
@@ -77,8 +77,8 @@ def do_list(id: str, version: str, mode: str):
                 return False
         else:
             raise Exception
-
-def main():
+ 
+def main() -> None:
     Commands:list[tuple[str, tuple[str]]] = []
     debug = bool([each for each in sys.argv if each == "debug"])
     Komac = komac(pathlib.Path(__file__).parents[0], debug)
