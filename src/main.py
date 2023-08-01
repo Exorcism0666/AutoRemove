@@ -20,8 +20,8 @@ def komac(path: str, debug: bool = False) -> pathlib.Path:
             f.write(file.content)
     return Komac
 
-def command(komac: str, id: str, urls: str, version: str, token: str) -> str:
-    Commands = "java -jar {} update --id {} --urls {} --version {} --submit --token {}".format(komac, id, urls, version, token)
+def command(komac: pathlib.Path, id: str, urls: str, version: str, token: str) -> str:
+    Commands = "java -jar {} update --id {} --urls {} --version {} --submit --token {}".format(komac.__str__(), id, urls, version, token)
     return Commands
 
 def clean_string(string: str, keywords: dict[str, str]) -> str:
@@ -78,8 +78,8 @@ def do_list(id: str, version: str, mode: str) -> bool | None:
         else:
             raise Exception
  
-def main() -> None:
-    Commands:list[tuple[str, tuple[str]]] = []
+def main() -> list[tuple[str, tuple[str, str, str]]]:
+    Commands:list[tuple[str, tuple[str, str, str]]] = []
     debug = bool([each for each in sys.argv if each == "debug"])
     Komac = komac(pathlib.Path(__file__).parents[0], debug)
     Headers = [{
@@ -221,7 +221,7 @@ def main() -> None:
 
     # 更新 Notion.Notion
     id = "Notion.Notion"
-    Urls = requests.get("https://www.notion.so/desktop/windows/download", verify=False).url
+    Urls:str = requests.get("https://www.notion.so/desktop/windows/download", verify=False).url
     Version = clean_string(Urls, {"https://desktop-release.notion-static.com/Notion%20Setup%20": "", ".exe": ""})
     if not version_verify(Version, id):
         report_existed(id, Version)
