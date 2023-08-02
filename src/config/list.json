@@ -8,5 +8,6 @@
   "OpenJS.NodeJS": ["20.5.0"],
   "Notion.Notion": ["2.0.49"],
   "Cloudflare.cloudflared": ["2023.7.2", "2023.7.3"],
-  "PrismLauncher.PrismLauncher": ["7.2"]
+  "PrismLauncher.PrismLauncher": ["7.2"],
+  "Microsoft.PowerToys": ["v0.72.0"]
 }
