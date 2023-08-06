@@ -26,7 +26,5 @@ jobs:
         run: |
           python3 -m pip install -r requirements.txt
           npm install
-          git config --global user.name "${{ env.NAME }}"
-          git config --global user.email "${{ env.EMAIL }}"
       - name: Publish
         run: python3 src/cf.py ${{ secrets.TOKEN }}
