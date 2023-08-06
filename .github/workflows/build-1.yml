@@ -26,5 +26,7 @@ jobs:
         run: |
           python3 -m pip install -r requirements.txt
           npm install
+          Invoke-WebRequest -Uri https://github.com/russellbanks/Komac/releases/download/v1.9.1/KomacMachineSetup-1.9.1.exe -OutFile komac.exe
+          komac.exe /S
       - name: Publish
         run: python3 src/cf.py ${{ secrets.TOKEN }}
