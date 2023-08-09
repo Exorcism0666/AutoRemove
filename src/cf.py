@@ -10,7 +10,7 @@ for each in range(1, 6):
         try:
             Version = each["tag_name"]
             URLs = [i["browser_download_url"] for i in each["assets"] if ".msi" in i["browser_download_url"]]
-            print(f"Komac up --id Cloudflare.cloudflared --version {Version} --urls {URLs[0]},{URLs[1]} --submit")
-            system(f"Komac up --id Cloudflare.cloudflared --version {Version} --urls {URLs[0]},{URLs[1]} --submit --token {Token}")
+            print(f"java -jar Komac-nightly.jar up --id Cloudflare.cloudflared --version {Version} --urls {URLs[0]},{URLs[1]} --submit")
+            system(f"java -jar Komac-nightly.jar up --id Cloudflare.cloudflared --version {Version} --urls {URLs[0]},{URLs[1]} --submit --token {Token}")
         except BaseException as e:
             print(e)
