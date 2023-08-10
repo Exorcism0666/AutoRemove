@@ -4,7 +4,7 @@ from sys import argv
 
 Token = argv[1]
 
-for each in range(1, 8):
+for each in range(7, 0, -1):
     JSON = requests.get(f"https://api.github.com/repos/JetBrains/kotlin/releases?page={each}", verify=False).json()
     for each in JSON:
         try:
