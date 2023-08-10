@@ -27,6 +27,6 @@ jobs:
           python3 -m pip install -r requirements.txt
           npm install
           sudo apt install wget msitools
-          wget https://github.com/russellbanks/Komac/releases/download/nightly/Komac-nightly.jar
+          wget https://github.com/russellbanks/Komac/releases/download/v1.9.1/Komac-1.9.1-all.jar
       - name: Publish
         run: python3 src/cf.py ${{ secrets.TOKEN }}

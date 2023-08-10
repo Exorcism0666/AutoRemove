@@ -13,7 +13,7 @@ for each in range(1, 8):
                 continue
             URLs = [i["browser_download_url"] for i in each["assets"] if "compiler" in i["browser_download_url"] and i["browser_download_url"][-4::] == ".zip"]
             URLs = str(URLs).replace("[", "").replace("]", "").replace("'", "").replace(" ", "")
-            print(f"java -jar Komac-nightly.jar up --id JetBrains.Kotlin.Compiler --version {Version} --urls {URLs} --submit")
-            system(f"java -jar Komac-nightly.jar --id JetBrains.Kotlin.Compiler --version {Version} --urls {URLs} --submit --token {Token}")
+            print(f"java -jar Komac-1.9.1-all.jar up --id JetBrains.Kotlin.Compiler --version {Version} --urls {URLs} --submit")
+            system(f"java -jar Komac-1.9.1-all.jar --id JetBrains.Kotlin.Compiler --version {Version} --urls {URLs} --submit --token {Token}")
         except BaseException as e:
             print(e)
