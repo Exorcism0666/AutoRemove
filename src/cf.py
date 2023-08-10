@@ -1,6 +1,7 @@
 import requests
 from os import system
 from sys import argv
+import time
 
 Token = argv[1]
 
@@ -8,6 +9,7 @@ for each in range(7, 0, -1):
     JSON = requests.get(f"https://api.github.com/repos/JetBrains/kotlin/releases?page={each}", verify=False).json()
     for each in JSON:
         try:
+            time.sleep(10)
             Version = each["tag_name"].replace('v', '')
             if "build" in Version:
                 continue
