@@ -4,13 +4,16 @@ from sys import argv
 
 Token = argv[1]
 
-for each in range(1, 6):
-    JSON = requests.get("https://api.github.com/repos/cloudflare/cloudflared/releases", verify=False).json()
-    for each in JSON[::-1]:
+for each in range(1, 8):
+    JSON = requests.get(f"https://api.github.com/repos/JetBrains/kotlin/releases?page={each}", verify=False).json()
+    for each in JSON:
         try:
-            Version = each["tag_name"]
-            URLs = [i["browser_download_url"] for i in each["assets"] if ".msi" in i["browser_download_url"]]
-            print(f"java -jar Komac-nightly.jar up --id Cloudflare.cloudflared --version {Version} --urls {URLs[0]},{URLs[1]} --submit")
-            system(f"java -jar Komac-nightly.jar up --id Cloudflare.cloudflared --version {Version} --urls {URLs[0]},{URLs[1]} --submit --token {Token}")
+            Version = each["tag_name"].replace('v', '')
+            if "build" in Version:
+                continue
+            URLs = [i["browser_download_url"] for i in each["assets"] if "compiler" in i["browser_download_url"] and i["browser_download_url"][-4::] == ".zip"]
+            URLs = str(URLs).replace("[", "").replace("]", "").replace("'", "").replace(" ", "")
+            print(f"java -jar Komac-nightly.jar up --id JetBrains.Kotlin.Compiler --version {Version} --urls {URLs} --submit")
+            system(f"java -jar Komac-nightly.jar --id JetBrains.Kotlin.Compiler --version {Version} --urls {URLs} --submit --token {Token}")
         except BaseException as e:
             print(e)
