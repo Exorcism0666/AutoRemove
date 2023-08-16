@@ -1,7 +1,7 @@
 name: Auto Publish
 on:
- workflow_dispatch:
- schedule: [{cron: 0 * * * *}]
+  workflow_dispatch:
+  schedule: [{ cron: 0 * * * * }]
 
 env:
   NAME: "CoolPlayLinBot"
@@ -18,17 +18,35 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11.0'
+          python-version: "3.11.0"
+          cache: "pip"
+          cache-dependency-path: "**/requirements.txt"
       - name: Setup Java
         uses: actions/setup-java@v3
         with:
-          distribution: 'temurin' # See 'Supported distributions' for available options
-          java-version: '17'
+          distribution: "temurin" # See 'Supported distributions' for available options
+          java-version: "17"
       - name: Setup Node.JS
         uses: actions/setup-node@v3
         with:
+          cache: "npm"
           node-version: 20
-          cache: 'npm'
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
       - name: Setup Git Info
         run: |
           git config --global user.name "${{ env.NAME }}"
@@ -36,7 +54,7 @@ jobs:
       - name: Install Dependencies
         run: |
           python3 -m pip install -r requirements.txt
-          npm install
+          pnpm install
           sudo apt install msitools
       - name: Publish
         run: python3 src/main.py ${{ secrets.TOKEN }}
@@ -45,8 +63,8 @@ jobs:
       - name: Post on Always
         if: always()
         run: |
-            if [[ -n $(git status -s) ]]; then
-            git add .
-            git commit -m "Update metadata"
-            git push origin --force
-            fi
+          if [[ -n $(git status -s) ]]; then
+          git add .
+          git commit -m "Update metadata"
+          git push origin --force
+          fi
