@@ -29,12 +29,15 @@ jobs:
         with:
           node-version: 20
           cache: 'npm'
-      - name: Setup Env
+      - name: Setup Git Info
+        run: |
+          git config --global user.name "${{ env.NAME }}"
+          git config --global user.email "${{ env.EMAIL }}"
+      - name: Install Dependencies
         run: |
           python3 -m pip install -r requirements.txt
           npm install
-          git config --global user.name "${{ env.NAME }}"
-          git config --global user.email "${{ env.EMAIL }}"
+          sudo apt install msitools
       - name: Publish
         run: python3 src/main.py ${{ secrets.TOKEN }}
       - name: Format
