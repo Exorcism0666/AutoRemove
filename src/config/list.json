@@ -18,7 +18,7 @@
   "Fndroid.ClashForWindows": ["0.20.29"],
   "DenoLand.Deno": ["v1.35.2", "v1.35.3", "v1.36.0", "v1.36.1", "v1.36.2"],
   "OpenJS.NodeJS": ["20.5.0", "20.5.1"],
-  "Notion.Notion": ["2.0.49"],
+  "Notion.Notion": ["2.0.49", "2.0.53"],
   "Cloudflare.cloudflared": ["2023.7.2", "2023.7.3", "2023.8.0"],
   "PrismLauncher.PrismLauncher": ["7.2"],
   "Microsoft.PowerToys": ["v0.72.0"]
