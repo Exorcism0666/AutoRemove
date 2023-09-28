@@ -114,7 +114,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     #     Commands.append(command(Komac, id, list_to_str(Urls), Version, GH_TOKEN))
     # del JSON, Urls, Version, id
 
-    # 更新 DooTask
+    # Add KuaiFan.DooTask to Update List
     id = "KuaiFan.DooTask"
     JSON = requests.get("https://api.github.com/repos/kuaifan/dootask/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/kuaifan/dootask/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
@@ -127,7 +127,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-    # 更新 Listen 1
+    # Add listen1.listen1 to Update List
     id = "listen1.listen1"
     JSON = requests.get("https://api.github.com/repos/listen1/listen1_desktop/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/listen1/listen1_desktop/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
@@ -140,7 +140,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-    # 更新 PicGo
+    # Add PicGo.PicGo to Update List
     id = "PicGo.PicGo"
     JSON = requests.get("https://api.github.com/repos/Molunerfinn/PicGo/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/Molunerfinn/PicGo/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
@@ -153,7 +153,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-    # 更新 PicGo Beta
+    # Add PicGo.PicGo.Beta to Update List
     id = "PicGo.PicGo.Beta"
     JSON = requests.get("https://api.github.com/repos/Molunerfinn/PicGo/releases", verify=False, headers=Headers[1]).json()[0]["assets"]
     Version = requests.get("https://api.github.com/repos/Molunerfinn/PicGo/releases", verify=False, headers=Headers[1]).json()[0]["tag_name"]
@@ -167,7 +167,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-    # 更新 Deno
+    # Add DenoLand.Deno to Update List
     id = "DenoLand.Deno"
     JSON = requests.get("https://api.github.com/repos/denoland/deno/releases", verify=False, headers=Headers[1]).json()[0]["assets"]
     Version = requests.get("https://api.github.com/repos/denoland/deno/releases", verify=False, headers=Headers[1]).json()[0]["tag_name"]
@@ -180,7 +180,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-    # 更新 Golang.Go
+    # Add Golang.Go to Update List
     id = "GoLang.Go"
     JSON = requests.get("https://go.dev/dl/?mode=json", verify=False, headers=Headers[0]).json()[0]
     Version = JSON["version"].replace("go", "")
@@ -193,7 +193,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-    # 更新 Genymobile.scrcpy
+    # Add Genymobile.scrcpy to Update List
     id = "Genymobile.scrcpy"
     JSON = requests.get("https://api.github.com/repos/Genymobile/scrcpy/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/Genymobile/scrcpy/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
@@ -206,7 +206,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-    # 更新 OpenJS.NodeJS
+    # Add OpenJS.NodeJS to Update List
     id = "OpenJS.NodeJS"
     Urls:list[str] = [each["href"] for each in bs4.BeautifulSoup(requests.get("https://nodejs.org/dist/latest/", verify=False).text, "html.parser").pre.find_all("a") if "msi" in each["href"]]
     Version = clean_string(Urls[0], {"node-v":"", "-":"", ".msi":"", "arm64":"", "x64":"", "x86":""})
@@ -219,7 +219,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del Urls, Version, id
 
-    # 更新 Notion.Notion
+    # Add Notion.Notion to Update List
     id = "Notion.Notion"
     Urls:str = requests.get("https://www.notion.so/desktop/windows/download", verify=False).url
     Version = clean_string(Urls, {"https://desktop-release.notion-static.com/Notion%20Setup%20": "", ".exe": ""})
@@ -231,7 +231,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, Urls, Version, GH_TOKEN), (id, Version, "write")))
     del Urls, Version, id
 
-    # 更新 Cloudflare.cloudflared
+    # Add Cloudflare.cloudflared to Update List
     id = "Cloudflare.cloudflared"
     JSON = requests.get("https://api.github.com/repos/cloudflare/cloudflared/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/cloudflare/cloudflared/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
@@ -244,7 +244,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-    # 更新 Microsoft.PowerToys
+    # Add Microsoft.PowerToys to Update List
     id = "Microsoft.PowerToys"
     JSON = requests.get("https://api.github.com/repos/microsoft/powertoys/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/microsoft/powertoys/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
@@ -257,14 +257,27 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
+    # Add xjasonlyu.tun2socks to Update List
+    id = "xjasonlyu.tun2socks"
+    JSON = requests.get("https://api.github.com/repos/xjasonlyu/tun2socks/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/xjasonlyu/tun2socks/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if "windows" in each["browser_download_url"] and not "-v3" in each["browser_download_url"]]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
 
-    # 更新
+
+    # Updating
     if not debug:
         for each in Commands:
             if os.system(each[0]) == 0:
                 do_list(*each[1])
     
-    # 清理分支
+    # Cleanup the merged branch
     os.system(f"java -jar {Komac} branch cleanup --only-merged --token {GH_TOKEN}")
 
     return Commands
