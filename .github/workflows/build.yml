@@ -67,3 +67,7 @@ jobs:
           git commit -m "Update metadata"
           git push origin --force
           fi
+      - name: Post Comment
+        run: pnpm run comment
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
