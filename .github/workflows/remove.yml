@@ -1,0 +1,28 @@
+name: Auto Remove
+on:
+    workflow_dispatch:
+    schedule: [{ cron: 0 * * * * }]
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.0
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11.0'
+      - name: Setup Java
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'temurin' # See 'Supported distributions' for available options
+          java-version: '17'
+      - name: Install Dependencies
+        run: |
+          python3 -m pip install -r requirements.txt
+          pnpm install
+          sudo apt install msitools
+          git clone https://github.com/microsoft/winget-pkgs
+      - name: Run script
+        run: python3 src/scanner.py ${{ secrets.TOKEN }}
