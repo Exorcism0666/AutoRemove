@@ -23,16 +23,19 @@ def scan(_yaml: dict, token: str):
     id = _yaml["PackageIdentifier"]
     version = _yaml["PackageVersion"]
     url_list: list = _yaml["Installers"]
-    for each in url_list:
-        print(f"Starting check {id}")
-        code = requests.get(each["InstallerUrl"]).status_code
-        if code >= 400:
-            command = command_generator(token, id, version, f"[Automated] It returns {code} code in architecture {each['Architecture']}", komac)
-            os.sysytem(command)
-            print(f"{id} checks fail, running", command)
-            break
-    else:
-        print(f"{id} checks successful")
+    try:
+        for each in url_list:
+            print(f"Starting check {id}")
+            code = requests.get(each["InstallerUrl"]).status_code
+            if code >= 400:
+                command = command_generator(token, id, version, f"[Automated] It returns {code} code in architecture {each['Architecture']}", komac)
+                os.sysytem(command)
+                print(f"{id} checks fail, running", command)
+                break
+        else:
+            print(f"{id} checks successful")
+    except BaseException:
+        print(f"{id} checks bad")
 
 
 def scanner(path: pathlib.Path, token: str):
