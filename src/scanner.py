@@ -17,7 +17,7 @@ def Komac(path: str, debug: bool = False) -> pathlib.Path:
     return Komac
 komac = Komac(pathlib.Path(__file__).parents[0])
 def command_generator(token: str, id: str, version: str, reason: str, komac_path: pathlib.Path, java_path: pathlib.Path = pathlib.Path("java.exe")) -> bool:
-    return f"{java_path} -jar {komac_path} remove --id {id} --version {version} --reason {reason} --submit --token {token}"
+    return f"{java_path} -jar {komac_path} remove --id {id} --version {version} --reason '{reason}' --submit --token {token}"
 
 def scan(_yaml: dict, token: str):
     id = _yaml["PackageIdentifier"]
@@ -28,7 +28,8 @@ def scan(_yaml: dict, token: str):
         code = requests.get(each["InstallerUrl"]).status_code
         if code >= 400:
             command = command_generator(token, id, version, f"[Automated] It returns {code} code in architecture {each['Architecture']}", komac)
-            print(command)
+            os.sysytem(command)
+            print(f"{id} checks fail, running", command)
             break
     else:
         print(f"{id} checks successful")
