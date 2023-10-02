@@ -5,6 +5,7 @@ import colors from "@colors/colors";
 
 const owner = "microsoft";
 const repo = "winget-pkgs";
+const login = "coolplaylinbot";
 
 (async () => {
   const api = new Octokit({
@@ -35,14 +36,14 @@ const repo = "winget-pkgs";
         "issue",
       )} ${colors.yellow(`#${obj.number}`)}`,
     );
-    const commets = await api.rest.issues.listComments({
+    const comments = await api.rest.issues.listComments({
       repo: repo,
       owner: owner,
       issue_number: obj.number,
     });
-    const ready = commets.data.filter((obj) => {
+    const ready = comments.data.filter((obj) => {
       if (
-        obj.user?.login == "coolplaylinbot" &&
+        obj.user?.login == login &&
         obj.body?.includes("## For moderators")
       ) {
         return obj;
@@ -58,13 +59,13 @@ const repo = "winget-pkgs";
       console.log(
         `${colors.green(`Comment in issue`)} ${colors.yellow(
           `#${obj.number}`,
-        )} ${colors.green(`posts successfully`)}`,
+        )} ${colors.green(`posts succeed`)}`,
       );
     } else {
       console.log(
         `${colors.blue(`Comment in issue`)} ${colors.yellow(
           `#${obj.number}`,
-        )} ${colors.blue("has already posted comment.")}`,
+        )} ${colors.blue("has been already posted.")}`,
       );
     }
   });
