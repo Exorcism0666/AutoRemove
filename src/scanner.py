@@ -16,7 +16,7 @@ def Komac(path: str, debug: bool = False) -> pathlib.Path:
             f.write(file.content)
     return Komac
 komac = Komac(pathlib.Path(__file__).parents[0])
-def command_generator(token: str, id: str, version: str, reason: str, komac_path: pathlib.Path, java_path: pathlib.Path = pathlib.Path("java.exe")) -> bool:
+def command_generator(token: str, id: str, version: str, reason: str, komac_path: pathlib.Path, java_path: pathlib.Path = pathlib.Path("java")) -> bool:
     return f"{java_path} -jar {komac_path} remove --id {id} --version {version} --reason '{reason}' --submit --token {token}"
 
 def scan(_yaml: dict, token: str):
