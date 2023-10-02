@@ -21,7 +21,6 @@ jobs:
       - name: Install Dependencies
         run: |
           python3 -m pip install -r requirements.txt
-          pnpm install
           sudo apt install msitools
           git clone https://github.com/microsoft/winget-pkgs
       - name: Run script
