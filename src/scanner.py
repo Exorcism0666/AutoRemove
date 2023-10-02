@@ -80,7 +80,7 @@ if __name__ == "__main__":
     runner = threading.Thread(target=main)
     runner.start()
     for each in range(1, 2*60*60):
-        if not runner.is_alive:
+        if not runner.is_alive():
             break
         time.sleep(1)
     print("scanning timeout, safely exiting......")
