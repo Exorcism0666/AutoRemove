@@ -29,7 +29,7 @@ def scan(_yaml: dict, token: str):
             code = requests.get(each["InstallerUrl"]).status_code
             if code >= 400:
                 command = command_generator(token, id, version, f"[Automated] It returns {code} code in architecture {each['Architecture']}", komac)
-                os.sysytem(command)
+                os.system(command)
                 print(f"{id} checks fail, running", command)
                 break
         else:
