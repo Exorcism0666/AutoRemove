@@ -7,6 +7,9 @@ import time
 import random
 
 token = sys.argv[1]
+headers = {
+    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 Edg/117.0.2045.47"
+}
 
 def Komac(path: str, debug: bool = False) -> pathlib.Path:
     Komac = pathlib.Path(path)/"komac.jar"
@@ -26,7 +29,7 @@ def scan(_yaml: dict, token: str):
     try:
         for each in url_list:
             print(f"Starting check {id}")
-            code = requests.get(each["InstallerUrl"]).status_code
+            code = requests.get(each["InstallerUrl"], headers=headers).status_code
             if code >= 400:
                 command = command_generator(token, id, version, f"[Automated] It returns {code} code in architecture {each['Architecture']}", komac)
                 os.system(command)
