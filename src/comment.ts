@@ -8,9 +8,17 @@ const repo = "winget-pkgs";
 const login = "coolplaylinbot";
 
 (async () => {
+  console.log(colors.underline(colors.green("Hello everyone, I am going to post comment automatically. But I will check something before doing it.")))
+  console.log(colors.underline(colors.yellow("Try to login.....")))
   const api = new Octokit({
     auth: env.GITHUB_TOKEN,
   });
+  const user = await api.request('GET /user', {
+    headers: {
+      'X-GitHub-Api-Version': '2022-11-28'
+    }
+  })
+  console.log(`${colors.green("Login succeed: Hello")} ${colors.underline(colors.green(user.data.name as string))}`)
   let content = readFileSync("./docs/template.md", "utf-8");
   const data = (
     await api.rest.search.issuesAndPullRequests({
@@ -31,11 +39,6 @@ const login = "coolplaylinbot";
     );
   }
   data.forEach(async (obj) => {
-    console.log(
-      `[${data.indexOf(obj) + 1}/${data.length}] ${colors.blue(
-        "issue",
-      )} ${colors.yellow(`#${obj.number}`)}`,
-    );
     const comments = await api.rest.issues.listComments({
       repo: repo,
       owner: owner,
@@ -49,6 +52,11 @@ const login = "coolplaylinbot";
         return obj;
       }
     });
+    console.log(
+      `${colors.underline(colors.green(`[${data.indexOf(obj) + 1}/${data.length}]`))} ${colors.blue(
+        "issue",
+      )} ${colors.yellow(`#${obj.number}`)}`,
+    );
     if (ready.length === 0) {
       const res = await api.issues.createComment({
         repo: repo,
