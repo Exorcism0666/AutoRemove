@@ -33,6 +33,7 @@ const login = "coolplaylinbot";
   const data = (
     await api.rest.search.issuesAndPullRequests({
       q: "user:microsoft repo:winget-pkgs author:coolplaylinbot state:open is:pr",
+      per_page: 100,
     })
   ).data.items;
   if (data.length >= 1) {
