@@ -5,6 +5,7 @@ import yaml
 import threading
 import time
 import random
+import asyncio
 
 token = sys.argv[1]
 headers = {
@@ -22,7 +23,7 @@ komac = Komac(pathlib.Path(__file__).parents[0])
 def command_generator(token: str, id: str, version: str, reason: str, komac_path: pathlib.Path, java_path: pathlib.Path = pathlib.Path("java")) -> bool:
     return f"{java_path} -jar {komac_path} remove --id {id} --version {version} --reason '{reason}' --submit --token {token}"
 
-def scan(_yaml: dict, token: str):
+async def scan(_yaml: dict, token: str):
     id = _yaml["PackageIdentifier"]
     version = _yaml["PackageVersion"]
     url_list: list = _yaml["Installers"]
@@ -41,7 +42,7 @@ def scan(_yaml: dict, token: str):
         print(f"{id} checks bad")
 
 
-def scanner(path: pathlib.Path, token: str):
+async def scanner(path: pathlib.Path, token: str):
     for each in os.listdir(path):
         _path = path / each
         if _path.is_dir():
@@ -51,16 +52,16 @@ def scanner(path: pathlib.Path, token: str):
                 _yaml = each / _path
                 with open(_yaml, "r", encoding="utf-8") as f:
                     yaml_ = yaml.load(f.read(), yaml.FullLoader)
-                    scan(yaml_, token)
+                    await scan(yaml_, token)
 
-def main():
+async def main():
     # global search winget-pkgs folder
     origin: list[pathlib.Path] = []
     for each in pathlib.Path(__file__).parents:
         if len(origin) > 0:
             break
         origin = [each / i / "manifests" for i in os.listdir(each) if "winget-pkgs" in i]
-    if len(origin) == 0:
+    if len(origin) == 0 or not origin[0].exists():
         raise Exception("Cannot find winget-pkgs folder")
     folder = origin[0]
     del origin
@@ -78,11 +79,10 @@ def main():
     for t in target:
         scanner(t, token)
 
-
 if __name__ == "__main__":
-    runner = threading.Thread(target=main)
+    runner = threading.Thread(target=asyncio.run, kwargs=dict(main=main), daemon=True)
     runner.start()
-    for each in range(1, 2*60*60):
+    for each in range(1, 4*60*60):
         if not runner.is_alive():
             break
         time.sleep(1)
