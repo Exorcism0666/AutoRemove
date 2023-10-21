@@ -59,6 +59,12 @@ def scanner(path: pathlib.Path, token: str):
                     list_thread.append(threading.Thread(target=scan, args=(yaml_, token), daemon=True))
     for each in list_thread:
         each.start()
+        for i in range(1, 500):
+            if each.is_alive():
+                time.sleep(1)
+            else:
+                break
+
 
 def main():
     # global search winget-pkgs folder
