@@ -5,6 +5,7 @@ import yaml
 import threading
 import time
 import random
+import gc
 
 token = sys.argv[1]
 headers = {
@@ -29,19 +30,21 @@ def scan(_yaml: dict, token: str):
     try:
         for each in url_list:
             print(f"Starting check {id}")
-            code = requests.get(each["InstallerUrl"], headers=headers).status_code
+            code = requests.get(each["InstallerUrl"], headers=headers, verify=False).status_code
             if code >= 400:
                 command = command_generator(token, id, version, f"[Automated] It returns {code} code in architecture {each['Architecture']}", komac)
-                os.system(command)
-                print(f"{id} checks fail, running", command)
+                threading.Thread(target=os.system, kwargs=dict(command=command), daemon=False).start()
+                print(f"{id} checks fail, running", command, "to remove it")
                 break
         else:
             print(f"{id} checks successful")
     except BaseException:
         print(f"{id} checks bad")
+    gc.collect()
 
 
 def scanner(path: pathlib.Path, token: str):
+    list_thread: list[threading.Thread] = []
     for each in os.listdir(path):
         _path = path / each
         if _path.is_dir():
@@ -51,7 +54,9 @@ def scanner(path: pathlib.Path, token: str):
                 _yaml = each / _path
                 with open(_yaml, "r", encoding="utf-8") as f:
                     yaml_ = yaml.load(f.read(), yaml.FullLoader)
-                    scan(yaml_, token)
+                    list_thread.append(threading.Thread(target=scan, args=(yaml_, token), daemon=True))
+    for each in list_thread:
+        each.start()
 
 def main():
     # global search winget-pkgs folder
@@ -64,6 +69,7 @@ def main():
         raise Exception("Cannot find winget-pkgs folder")
     folder = origin[0]
     del origin
+    gc.collect()
     print(f"We've found the folder in {folder}")
 
     # scan
@@ -72,17 +78,17 @@ def main():
         _target = []
         for each in range(1, random.randint(3, 5)):
             _target.append(os.listdir(folder)[random.randint(1, len(os.listdir(folder)) - 1)])
-
         target = [folder / pathlib.Path(t) for t in list(set(_target))]
     
     for t in target:
+        print(f"starting check in {target} folders")
         scanner(t, token)
 
 
 if __name__ == "__main__":
-    runner = threading.Thread(target=main)
+    runner = threading.Thread(target=main, daemon=True)
     runner.start()
-    for each in range(1, 2*60*60):
+    for each in range(1, 5*60*60):
         if not runner.is_alive():
             break
         time.sleep(1)
