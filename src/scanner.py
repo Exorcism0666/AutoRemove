@@ -18,7 +18,7 @@ def Komac(path: str, debug: bool = False) -> pathlib.Path:
     Komac = pathlib.Path(path)/"komac.jar"
     if not debug:
         with open(Komac, "wb+") as f:
-            file = requests.get("https://github.com/russellbanks/Komac/releases/download/v1.10.1/Komac-1.10.1-all.jar", verify=False)
+            file = requests.get("https://gh.xfisxf.top/https://github.com/russellbanks/Komac/releases/download/v1.10.1/Komac-1.10.1-all.jar", verify=False)
             f.write(file.content)
     return Komac
 komac = Komac(pathlib.Path(__file__).parents[0])
@@ -28,7 +28,7 @@ def command_generator(token: str, id: str, version: str, reason: str, komac_path
 def scan(_yaml: dict, token: str):
     id = _yaml["PackageIdentifier"]
     version = _yaml["PackageVersion"]
-    url_list: list = _yaml["Installers"]
+    url_list: list[dict] = _yaml["Installers"]
     try:
         for each in url_list:
             print(f"Starting check {id}")
