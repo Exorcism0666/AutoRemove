@@ -96,7 +96,7 @@ def main():
 if __name__ == "__main__":
     runner = threading.Thread(target=main, daemon=True)
     runner.start()
-    for each in range(1, 5*60*60):
+    for each in range(1, 5*60*60+30*60):
         if not runner.is_alive():
             break
         time.sleep(1)
