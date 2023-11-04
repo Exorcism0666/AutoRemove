@@ -47,6 +47,7 @@ def scan(_yaml: dict, token: str):
                 threading.Thread(target=os.system, kwargs=dict(command=command), daemon=False).start()
                 print(f"{id} checks fail(return 404 code), running", command, "to remove it")
             elif len(_issue) > 0:
+                print(f"{id} checks fail, writing to report......")
                 issue.writelines(_issue)
             else:
              print(f"{id} checks successful")
@@ -104,6 +105,7 @@ def main():
 
 
 if __name__ == "__main__":
+    issue.writelines([f"# Automate Scanning Report in {time.strftime(r'%Y-%m-%d %H:%M:%S')}\n", "\n", "This report will show the error urls in manifests\n", "## Errors\n"])
     runner = threading.Thread(target=main, daemon=True)
     runner.start()
     for each in range(1, 5*60*60+30*60):
@@ -111,6 +113,5 @@ if __name__ == "__main__":
             break
         time.sleep(1)
     print("scanning timeout, safely exiting......")
-    issue.writelines([f"# Automate Scanning Report in {time.strftime(r'%Y-%m-%d %H:%M:%S')}\n", "\n", "This report will show the error urls in manifests\n", "## Errors\n"])
     issue.close()
     exit(0)
