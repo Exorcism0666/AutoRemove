@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "comment": "tsx src/comment.ts",
-    "format": "prettier --write src"
+    "format": "prettier --write src",
+    "issue": "tsx src/issue.ts"
   },
   "repository": {
     "type": "git",
