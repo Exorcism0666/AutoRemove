@@ -7,5 +7,4 @@ const api = new Octokit({
   auth: env.GITHUB_TOKEN,
 });
 
-(async () => {
-})();
+(async () => {})();
