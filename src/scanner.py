@@ -1,4 +1,5 @@
 import requests
+import tqdm
 import os, sys
 import pathlib
 import yaml
@@ -13,8 +14,6 @@ token = sys.argv[1]
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 Edg/117.0.2045.47"
 }
-issue = open(pathlib.Path(__file__).parents[0] / "issue.md", "w+", encoding="utf-8")
-
 
 def Komac(path: str, debug: bool = False) -> pathlib.Path:
     Komac = pathlib.Path(path)/"komac.jar"
@@ -31,26 +30,20 @@ def scan(_yaml: dict, token: str):
     id = _yaml["PackageIdentifier"]
     version = _yaml["PackageVersion"]
     url_list: list[dict] = _yaml["Installers"]
-    error_404: int = 0
+    error: int = 0
     try:
-        _issue = []
         for each in url_list:
-            print(f"Starting check {id}")
+            print(f"Starting check {id}(version {version})")
             code = requests.get(each["InstallerUrl"], headers=headers, verify=False).status_code
             if code >= 400:
-             if code == 404:
-                 error_404 += 1
-             _issue.append(f"- {id} in {each['Architecture']} returns {code} code\n")
+                 error += 1
         else:
-            if error_404 == len(url_list):
-                command = command_generator(token, id, version, f"[Automated] It returns {code} code in all urls", komac)
+            if error == len(url_list):
+                command = command_generator(token, id, version, f"[Automated] It returns code over 400 in all urls", komac)
                 threading.Thread(target=os.system, kwargs=dict(command=command), daemon=False).start()
-                print(f"{id} checks fail(return 404 code), running", command, "to remove it")
-            elif len(_issue) > 0:
-                print(f"{id} checks fail, writing to report......")
-                issue.writelines(_issue)
+                print(f"{id}(version {version}) checks fail(return bad code), running", command, "to remove it")
             else:
-             print(f"{id} checks successful")
+             print(f"{id}(version {version}) checks successful")
     except BaseException:
         print(f"{id} checks bad")
     gc.collect()
@@ -70,10 +63,11 @@ def scanner(path: pathlib.Path, token: str):
                     list_thread.append(threading.Thread(target=scan, args=(yaml_, token), daemon=True))
     for each in list_thread:
         each.start()
-        for i in range(1, 500):
+        for i in tqdm.tqdm(range(1, 500), desc="Waiting for finish"):
             if each.is_alive():
                 time.sleep(1)
             else:
+                print("This scanning time has timeout, stop waiting......")
                 break
 
 
@@ -105,13 +99,11 @@ def main():
 
 
 if __name__ == "__main__":
-    issue.writelines([f"# Automate Scanning Report in {time.strftime(r'%Y-%m-%d %H:%M:%S')}\n", "\n", "This report will show the error urls in manifests\n", "## Errors\n"])
     runner = threading.Thread(target=main, daemon=True)
     runner.start()
-    for each in range(1, 5*60*60+30*60):
+    for each in range(1, 5*60*60+50*60):
         if not runner.is_alive():
             break
         time.sleep(1)
     print("scanning timeout, safely exiting......")
-    issue.close()
     exit(0)
