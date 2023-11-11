@@ -67,8 +67,9 @@ def scanner(path: pathlib.Path, token: str):
             if each.is_alive():
                 time.sleep(1)
             else:
-                print("This scanning time has timeout, stop waiting......")
                 break
+        else:
+            print("This scanning time has timeout, stop waiting......")
 
 
 def main():
