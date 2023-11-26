@@ -14,6 +14,7 @@ token = sys.argv[1]
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 Edg/117.0.2045.47"
 }
+ignore = ["Unity.Unity"]
 
 def Komac(path: str, debug: bool = False) -> pathlib.Path:
     Komac = pathlib.Path(path)/"komac.jar"
@@ -31,6 +32,10 @@ def scan(_yaml: dict, token: str):
     version = _yaml["PackageVersion"]
     url_list: list[dict] = _yaml["Installers"]
     error: int = 0
+    if [each for each in ignore if each in id]:
+        print(f"Skipping {id}(version {version}), it's too big!")
+        gc.collect()
+        return None
     try:
         for each in url_list:
             print(f"Starting check {id}(version {version})")
