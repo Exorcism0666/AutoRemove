@@ -63,7 +63,7 @@ def scanner(path: pathlib.Path, token: str):
                     list_thread.append(threading.Thread(target=scan, args=(yaml_, token), daemon=True))
     for each in list_thread:
         each.start()
-        for i in tqdm.tqdm(range(1, 500), desc="Waiting for finish"):
+        for i in tqdm.tqdm(range(1, 60), desc="Waiting for finish"):
             if each.is_alive():
                 time.sleep(1)
             else:
