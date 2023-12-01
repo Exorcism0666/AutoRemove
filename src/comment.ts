@@ -81,16 +81,16 @@ const login = "coolplaylinbot";
           });
         }
       });
-      obj.assignees.forEach(async(assignee) => {
-        if (assignee.login === "coolplaylinbot"){
-          await api.rest.issues.createComment({
-            owner: owner,
-            repo: repo,
-            issue_number: obj.number,
-            body: `Thanks for point this! But I cannot resolve it now, I'll call my owner @CoolPlayLin`,
-          })
-        }
-      })
+      // obj.assignees.forEach(async(assignee) => {
+      //   if (assignee.login === "coolplaylinbot"){
+      //     await api.rest.issues.createComment({
+      //       owner: owner,
+      //       repo: repo,
+      //       issue_number: obj.number,
+      //       body: `Thanks for point this! But I cannot resolve it now, I'll call my owner @CoolPlayLin`,
+      //     })
+      //   }
+      // })
       const ready = comments.data.filter((obj) => {
         if (
           obj.user?.login == login &&
