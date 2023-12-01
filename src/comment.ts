@@ -66,7 +66,7 @@ const login = "coolplaylinbot";
         }
         const { body } = comment;
         if (body.match(/@[Cc]ool[Pp]lay[Ll]in[Bb]ot [Cc]lose/)) {
-          console.log("fuck")
+          console.log("fuck");
           await api.rest.issues.createComment({
             owner: owner,
             repo: repo,
