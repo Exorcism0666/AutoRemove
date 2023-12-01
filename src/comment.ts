@@ -66,7 +66,7 @@ const login = "coolplaylinbot";
         }
         const { body } = comment;
         if (body.match(/@[Cc]ool[Pp]lay[Ll]in[Bb]ot [Cc]lose/)) {
-          console.log("fuck")
+          console.log("fuck");
           await api.rest.issues.createComment({
             owner: owner,
             repo: repo,
@@ -81,16 +81,16 @@ const login = "coolplaylinbot";
           });
         }
       });
-      obj.assignees.forEach(async(assignee) => {
-        if (assignee.login === "coolplaylinbot"){
+      obj.assignees.forEach(async (assignee) => {
+        if (assignee.login === "coolplaylinbot") {
           await api.rest.issues.createComment({
             owner: owner,
             repo: repo,
             issue_number: obj.number,
             body: `Thanks for point this! But I cannot resolve it now, I'll call my owner @CoolPlayLin`,
-          })
+          });
         }
-      })
+      });
       const ready = comments.data.filter((obj) => {
         if (
           obj.user?.login == login &&
