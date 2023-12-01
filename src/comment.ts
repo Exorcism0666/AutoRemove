@@ -60,6 +60,37 @@ const login = "coolplaylinbot";
         owner: owner,
         issue_number: obj.number,
       });
+      comments.data.forEach(async (comment) => {
+        if (comment.user.login !== "CoolPlayLin") {
+          return;
+        }
+        const { body } = comment;
+        if (body.match(/@[Cc]ool[Pp]lay[Ll]in[Bb]ot [Cc]lose/)) {
+          console.log("fuck")
+          await api.rest.issues.createComment({
+            owner: owner,
+            repo: repo,
+            issue_number: obj.number,
+            body: `I've received my owner's request to close this pr, I'll close it right now. \nCC: @CoolPlayLin`,
+          });
+          await api.rest.pulls.update({
+            owner: owner,
+            repo: repo,
+            pull_number: obj.number,
+            state: "closed",
+          });
+        }
+      });
+      obj.assignees.forEach(async(assignee) => {
+        if (assignee.login === "coolplaylin"){
+          await api.rest.issues.createComment({
+            owner: owner,
+            repo: repo,
+            issue_number: obj.number,
+            body: `Thanks for point this! But I cannot resolve it now, I'll call my owner @CoolPlayLin`,
+          })
+        }
+      })
       const ready = comments.data.filter((obj) => {
         if (
           obj.user?.login == login &&
