@@ -82,7 +82,7 @@ const login = "coolplaylinbot";
         }
       });
       obj.assignees.forEach(async(assignee) => {
-        if (assignee.login === "coolplaylin"){
+        if (assignee.login === "coolplaylinbot"){
           await api.rest.issues.createComment({
             owner: owner,
             repo: repo,
