@@ -12,7 +12,7 @@ const login = "coolplaylinbot";
   });
   let content = readFileSync("./docs/template.md", "utf-8");
   let i = 0;
-  const datas: any[] = []
+  const datas: any[] = [];
   while (true) {
     i += 1;
     let _ = (
@@ -21,11 +21,11 @@ const login = "coolplaylinbot";
         per_page: 100,
         page: i,
       })
-    ).data.items
+    ).data.items;
     if (_.length == 0) break;
-    datas.push(_)
+    datas.push(_);
   }
-  datas.forEach(data => {
+  datas.forEach((data) => {
     data.forEach(async (obj) => {
       const comments = await api.rest.issues.listComments({
         repo: repo,
@@ -71,7 +71,5 @@ const login = "coolplaylinbot";
         console.log(`Create #${obj.number}`);
       }
     });
-
-  })
-
+  });
 })();
