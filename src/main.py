@@ -210,7 +210,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     id = "OpenJS.NodeJS"
     Urls:list[str] = [each["href"] for each in bs4.BeautifulSoup(requests.get("https://nodejs.org/dist/latest/", verify=False).text, "html.parser").pre.find_all("a") if "msi" in each["href"]]
     Version = clean_string(Urls[0], {"node-v":"", "-":"", ".msi":"", "arm64":"", "x64":"", "x86":""})
-    Urls = ["https://nodejs.org/dist/latest/"+each for each in Urls]
+    Urls = ["https://nodejs.org/dist/{}/{}".format("v"+Version ,each) for each in Urls]
     if not version_verify(Version, id):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
