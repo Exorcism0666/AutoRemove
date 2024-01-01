@@ -205,6 +205,45 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
+
+# Add Gyan.FFmpeg to Update List
+    id = "Gyan.FFmpeg"
+    JSON = requests.get("https://api.github.com/repos/GyanD/codexffmpeg/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/GyanD/codexffmpeg/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith("full_build.zip")]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+# Add Gyan.FFmpeg.Shared to Update List
+    id = "Gyan.FFmpeg.Shared"
+    JSON = requests.get("https://api.github.com/repos/GyanD/codexffmpeg/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/GyanD/codexffmpeg/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith("full_build-shared.zip")]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+# Add Gyan.FFmpeg.Essentials to Update List
+    id = "Gyan.FFmpeg.Essentials"
+    JSON = requests.get("https://api.github.com/repos/GyanD/codexffmpeg/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/GyanD/codexffmpeg/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith("essentials_build.zip ")]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
     
     # Updating
     if not debug:
