@@ -13,5 +13,15 @@
   "Gyan.FFmpeg.Shared": ["6.1.1"],
   "Gyan.FFmpeg.Essentials": ["6.1.1"],
   "Obsidian.Obsidian": ["v1.5.3"],
-  "defi.defi": ["v4.0.8"]
+  "defi.defi": ["v4.0.8"],
+  "manosim.gitify": ["v4.5.1"],
+  "dscalzi.HeliosLauncher": ["v2.1.0"],
+  "ChrisKlimas.Twine": ["2.8.0"],
+  "B3log.SiYuan": ["v2.11.4"],
+  "DaCosySheeep.FactDownloader": ["v1.5.1"],
+  "jcv8000.Codex": ["v2.0.3"],
+  "AivarAnnamaa.Thonny": ["v4.1.4"],
+  "Lauriethefish.QuestPatcher": ["2.7.2"],
+  "AppbyTroye.KoodoReader": ["v1.6.1"],
+  "clouDr-f2e.rubick": ["v4.2.1"]
 }
