@@ -1,6 +1,6 @@
 name: Close Stale Issue and PR
 on:
-  schedule: [{ cron: 0 * * * * }]
+  schedule: [{ cron: 30 * * * * }]
   workflow_dispatch:
 jobs:
   stale:
