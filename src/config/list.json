@@ -122,5 +122,7 @@
   "Tyrrrz.DiscordChatExporter.GUI": ["2.42.6"],
   "Tyrrrz.LightBulb": ["2.4.7"],
   "yt-dlp.yt-dlp": ["2023.12.30"],
-  "yt-dlp.yt-dlp.nightly": ["2023.12.31.232713"]
+  "yt-dlp.yt-dlp.nightly": ["2023.12.31.232713"],
+  "Gyan.FFmpeg": ["6.1.1"],
+  "Gyan.FFmpeg.Shared": ["6.1.1"]
 }
