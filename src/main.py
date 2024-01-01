@@ -283,7 +283,98 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
+
+# Add manosim.gitify to Update List
+    id = "manosim.gitify"
+    JSON = requests.get("https://api.github.com/repos/gitify-app/gitify/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/gitify-app/gitify/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
     
+    # Add dscalzi.HeliosLauncher to Update List
+    id = "dscalzi.HeliosLauncher"
+    JSON = requests.get("https://api.github.com/repos/dscalzi/HeliosLauncher/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/dscalzi/HeliosLauncher/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+    # Add ChrisKlimas.Twine to Update List
+    id = "ChrisKlimas.Twine"
+    JSON = requests.get("https://api.github.com/repos/klembot/twinejs/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/klembot/twinejs/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+    # Add B3log.SiYuan to Update List
+    id = "B3log.SiYuan"
+    JSON = requests.get("https://api.github.com/repos/siyuan-note/siyuan/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/siyuan-note/siyuan/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+    # Add DaCosySheeep.FactDownloader to Update List
+    id = "DaCosySheeep.FactDownloader"
+    JSON = requests.get("https://api.github.com/repos/DaCosySheeep/FactDownloader/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/DaCosySheeep/FactDownloader/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+    # Add jcv8000.Codex to Update List
+    id = "jcv8000.Codex"
+    JSON = requests.get("https://api.github.com/repos/jcv8000/Codex/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/jcv8000/Codex/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+    # Add AivarAnnamaa.Thonny to Update List
+    id = "AivarAnnamaa.Thonny"
+    JSON = requests.get("https://api.github.com/repos/thonny/thonny/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/thonny/thonny/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
     # Updating
     if not debug:
         for each in Commands:
