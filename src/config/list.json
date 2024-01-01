@@ -117,5 +117,8 @@
   "HandBrake.HandBrake": ["1.7.2"],
   "SchildiChat.SchildiChat": ["v1.11.30-sc.2"],
   "cinnyapp.cinny-desktop": ["v3.2.1"],
-  "Audacity.Audacity": ["Audacity-3.4.2"]
+  "Audacity.Audacity": ["Audacity-3.4.2"],
+  "Tyrrrz.DiscordChatExporter.CLI": ["2.42.6"],
+  "Tyrrrz.DiscordChatExporter.GUI": ["2.42.6"],
+  "Tyrrrz.LightBulb": ["2.4.7"]
 }
