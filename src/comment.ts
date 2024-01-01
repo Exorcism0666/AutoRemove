@@ -4,7 +4,7 @@ import { readFileSync } from "node:fs";
 
 const owner = "microsoft";
 const repo = "winget-pkgs";
-const login = "coolplaylinbot";
+const login = "Exorcism0666";
 
 (async () => {
   const api = new Octokit({
@@ -17,7 +17,7 @@ const login = "coolplaylinbot";
     i += 1;
     let _ = (
       await api.rest.search.issuesAndPullRequests({
-        q: "user:microsoft repo:winget-pkgs author:coolplaylinbot state:open is:pr",
+        q: "user:microsoft repo:winget-pkgs author:Exorcism0666 state:open is:pr",
         per_page: 100,
         page: i,
       })
@@ -33,7 +33,7 @@ const login = "coolplaylinbot";
         issue_number: obj.number,
       });
       comments.data.forEach(async (comment) => {
-        if (comment.user.login !== "CoolPlayLin") {
+        if (comment.user.login !== "Exorcism0666") {
           return;
         }
         const { body } = comment;
