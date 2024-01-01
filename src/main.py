@@ -236,7 +236,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     id = "Gyan.FFmpeg.Essentials"
     JSON = requests.get("https://api.github.com/repos/GyanD/codexffmpeg/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/GyanD/codexffmpeg/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith("essentials_build.zip ")]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith("essentials_build.zip")]
     if not version_verify(Version, id):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
