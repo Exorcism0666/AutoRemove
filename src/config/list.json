@@ -120,5 +120,7 @@
   "Audacity.Audacity": ["Audacity-3.4.2"],
   "Tyrrrz.DiscordChatExporter.CLI": ["2.42.6"],
   "Tyrrrz.DiscordChatExporter.GUI": ["2.42.6"],
-  "Tyrrrz.LightBulb": ["2.4.7"]
+  "Tyrrrz.LightBulb": ["2.4.7"],
+  "yt-dlp.yt-dlp": ["2023.12.30"],
+  "yt-dlp.yt-dlp.nightly": ["2023.12.31.232713"]
 }
