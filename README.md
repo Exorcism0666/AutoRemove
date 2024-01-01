@@ -1,25 +1,7 @@
-# Auto Publish to WinGet
+# WinGetへの自動公開
 
-create an issue to add your software publish to winget easily
+簡単にあなたのソフトウェアの公開をwingetに追加するためのプルリクエストを作成してください。
 
-### Auto Publish Software List
+# ライセンス
 
-- ~~[Clash For Windows](https://github.com/Fndroid/clash_for_windows_pkg/)~~
-  - Stopped
-- [DooTask](https://github.com/kuaifan/dootask)
-- [Listen 1](https://github.com/listen1/listen1_desktop/)
-- ~~[Node.js Nightly](https://nodejs.org/download/nightly/)~~
-  - Stopped by microsoft/winget-pkgs#111537
-- [PicGo](https://github.com/Molunerfinn/PicGo)
-- [Deno](https://github.com/denoland/deno)
-- [GoLang](https://github.com/golang/go)
-- [scrcpy](https://github.com/Genymobile/scrcpy)
-- [NodeJS](https://github.com/nodejs/node)
-- [Notion](https://www.notion.so/)
-- [cloudflared](https://github.com/cloudflare/cloudflared)
-
-# License
-
-AutoPublish is Free Software: You can use, study share and improve it at your will. Specifically you can redistribute and/or
-modify it under the terms of the [GNU Affero General Public License](http://www.gnu.org/licenses/gpl-3.0.en.html) as published
-by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+AutoPublish はフリーソフトウェアです：あなたは自由に使用し、学習し、共有し、改良することができます。具体的には、あなたは[GNU Affero General Public License](http://www.gnu.org/licenses/gpl-3.0.en.html)に公開されている条件の下で、ライセンスのバージョン3、または（あなたの選択で）それ以降のバージョンで再配布および/または変更することができます。
