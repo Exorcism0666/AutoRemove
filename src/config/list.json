@@ -10,5 +10,8 @@
   "yt-dlp.yt-dlp": ["2023.12.30"],
   "yt-dlp.yt-dlp.nightly": ["2023.12.31.232713"],
   "Gyan.FFmpeg": ["6.1.1"],
-  "Gyan.FFmpeg.Shared": ["6.1.1"]
+  "Gyan.FFmpeg.Shared": ["6.1.1"],
+  "Gyan.FFmpeg.Essentials": ["6.1.1"],
+  "Obsidian.Obsidian": ["v1.5.3"],
+  "defi.defi": ["v4.0.8"]
 }
