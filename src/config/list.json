@@ -112,5 +112,10 @@
   ],
   "PicGo.PicGo.Beta": ["v2.4.0-beta.4", "v2.4.0-beta.5", "v2.4.0-beta.6"],
   "PicGo.PicGo": ["v2.3.1"],
-  "xjasonlyu.tun2socks": ["v2.5.1", "v2.5.2"]
+  "xjasonlyu.tun2socks": ["v2.5.1", "v2.5.2"],
+  "Peppy.Osu!": ["2023.1231.0"],
+  "HandBrake.HandBrake": ["1.7.2"],
+  "Audacity.Audacity": ["Audacity-3.4.2"],
+  "SchildiChat.SchildiChat": ["v1.11.30-sc.2"],
+  "cinnyapp.cinny-desktop": ["v3.2.1"]
 }
