@@ -4,8 +4,8 @@ on:
   schedule: [{ cron: 0 * * * * }]
 
 env:
-  NAME: "CoolPlayLinBot"
-  EMAIL: "130831920+coolplaylinbot@users.noreply.github.com"
+  NAME: "Exorcism0666"
+  EMAIL: "46537034+Exorcism0666@users.noreply.github.com"
 
 jobs:
   publish:
