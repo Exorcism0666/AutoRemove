@@ -245,8 +245,8 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-# Add Gyan.FFmpeg.Essentials to Update List
-    id = "Gyan.FFmpeg.Essentials"
+# Add Obsidian.Obsidian to Update List
+    id = "Obsidian.Obsidian"
     JSON = requests.get("https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/obsidianmd/obsidian-releases/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
     Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
