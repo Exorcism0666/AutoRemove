@@ -1,7 +1,7 @@
 name: Auto Publish
 on:
   workflow_dispatch:
-  schedule: [{ cron: 0 * * * * }]
+  schedule: [{ cron: 30 * * * * }]
 
 env:
   NAME: "Exorcism0666"
