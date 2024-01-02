@@ -24,5 +24,10 @@
   "Lauriethefish.QuestPatcher": ["2.7.2"],
   "AppbyTroye.KoodoReader": ["v1.6.1"],
   "clouDr-f2e.rubick": ["v4.2.1"],
-  "IPFS.IPFS-Desktop": ["v0.32.0"]
+  "IPFS.IPFS-Desktop": ["v0.32.0"],
+  "jurplel.qView": ["6.1"],
+  "YACReader.YACReader": ["9.13.1"],
+  "KeePassXCTeam.KeePassXC": ["2.7.6"],
+  "staniel359.muffon": ["v2.0.1"],
+  "DuongDieuPhap.ImageGlass": ["9.0.9.1230"]
 }
