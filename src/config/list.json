@@ -13,7 +13,7 @@
   "Gyan.FFmpeg.Shared": ["6.1.1"],
   "Gyan.FFmpeg.Essentials": ["6.1.1"],
   "Obsidian.Obsidian": ["v1.5.3"],
-  "defi.defi": ["v4.0.8"],
+  "defi.defi": ["v4.0.8", "v4.0.7"],
   "manosim.gitify": ["v4.5.1"],
   "dscalzi.HeliosLauncher": ["v2.1.0"],
   "ChrisKlimas.Twine": ["2.8.0"],
