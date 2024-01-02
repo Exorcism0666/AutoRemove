@@ -457,7 +457,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     id = "KeePassXCTeam.KeePassXC"
     JSON = requests.get("https://api.github.com/repos/keepassxreboot/keepassxc/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/keepassxreboot/keepassxc/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if ("msi" in each["browser_download_url"]) and not("sig" in each["browser_download_url"]) and (("LegacyWindows" in each["browser_download_url"]) or ("DIGEST" in each["browser_download_url"]))]
+    Urls = [each["browser_download_url"] for each in JSON if ("msi" in each["browser_download_url"]) and not("sig" in each["browser_download_url"]) or (("LegacyWindows" in each["browser_download_url"]) or ("DIGEST" in each["browser_download_url"]))]
     if not version_verify(Version, id):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -536,6 +536,45 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     JSON = requests.get("https://api.github.com/repos/DevelopersCommunity/cmake-luajit/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/DevelopersCommunity/cmake-luajit/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
     Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".msi")]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+    # Add Vendicated.Vencord.Canary to Update List
+    id = "Vendicated.Vencord.Canary"
+    JSON = requests.get("https://api.github.com/repos/Vencord/Installer/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/Vencord/Installer/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if " VencordInstallerCli.exe" in each["browser_download_url"]]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+    # Add Vendicated.Vencord.PTB to Update List
+    id = "Vendicated.Vencord.PTB"
+    JSON = requests.get("https://api.github.com/repos/Vencord/Installer/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/Vencord/Installer/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if " VencordInstallerCli.exe" in each["browser_download_url"]]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+    # Add Vendicated.Vencord to Update List
+    id = "Vendicated.Vencord"
+    JSON = requests.get("https://api.github.com/repos/Vencord/Installer/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/Vencord/Installer/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if " VencordInstallerCli.exe" in each["browser_download_url"]]
     if not version_verify(str_pop(Version, 0), id):
          report_existed(id, Version)
     elif do_list(id, Version, "verify"):
