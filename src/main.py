@@ -505,6 +505,45 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
+    # Add sebescudie.GammaLauncher to Update List
+    id = "sebescudie.GammaLauncher"
+    JSON = requests.get("https://api.github.com/repos/sebescudie/GammaLauncher/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/sebescudie/GammaLauncher/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+    # Add Ruben2776.PicView to Update List
+    id = "Ruben2776.PicView"
+    JSON = requests.get("https://api.github.com/repos/Ruben2776/PicView/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/Ruben2776/PicView/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+    # Add DEVCOM.LuaJIT to Update List
+    id = "DEVCOM.LuaJIT"
+    JSON = requests.get("https://api.github.com/repos/DevelopersCommunity/cmake-luajit/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/DevelopersCommunity/cmake-luajit/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".msi")]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
     # Updating
     if not debug:
         for each in Commands:
