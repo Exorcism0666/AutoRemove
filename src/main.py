@@ -651,7 +651,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     # Add Fly-io.flyctl to Update List
     id = "Fly-io.flyctl"
     JSON = requests.get("https://api.github.com/repos/superfly/flyctl/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/superfly/flyctl/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Version = requests.get("https://api.github.com/repos/superfly/flyctl/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
     Urls = [each["browser_download_url"] for each in JSON if "zip" in each["browser_download_url"]]
     if not version_verify(str_pop(Version, 0), id):
          report_existed(id, Version)
