@@ -39,5 +39,12 @@
   "chylex.DiscordHistoryTracker": ["v40.0"],
   "Ombrelin.PlexRichPresence": ["2.0.10"],
   "OleguerLlopart.OpenComic": ["v1.0.0"],
-  "JanProchazka.dbgate": ["v5.2.7"]
+  "JanProchazka.dbgate": ["v5.2.7"],
+  "PurpleI2P.i2pd": ["2.50.1"],
+  "Tribler.Tribler": ["v7.13.1"],
+  "Retroshare.Retroshare": ["v0.6.7.2"],
+  "Fly-io.flyctl": ["v0.1.136"],
+  "NextDNS.NextDNS.CLI": ["v1.41.0"],
+  "AdGuard.dnsproxy": ["v0.61.1"],
+  "AdGuard.AdGuardHome": ["v0.107.43"]
 }
