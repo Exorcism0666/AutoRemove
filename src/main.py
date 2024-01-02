@@ -587,7 +587,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     id = "chylex.DiscordHistoryTracker"
     JSON = requests.get("https://api.github.com/repos/chylex/Discord-History-Tracker/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/chylex/Discord-History-Tracker/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if "win-x64.zip " in each["browser_download_url"]]
+    Urls = [each["browser_download_url"] for each in JSON if "win-x64.zip" in each["browser_download_url"]]
     if not version_verify(str_pop(Version, 0), id):
          report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -600,7 +600,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     id = "Ombrelin.PlexRichPresence"
     JSON = requests.get("https://api.github.com/repos/Ombrelin/plex-rich-presence/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/Ombrelin/plex-rich-presence/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if "exe " in each["browser_download_url"]]
+    Urls = [each["browser_download_url"] for each in JSON if "exe" in each["browser_download_url"]]
     if not version_verify(Version, id):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
