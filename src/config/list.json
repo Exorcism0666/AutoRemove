@@ -16,10 +16,10 @@
   "defi.defi": ["v4.0.8", "v4.0.7"],
   "manosim.gitify": ["v4.5.1"],
   "dscalzi.HeliosLauncher": ["v2.1.0"],
-  "ChrisKlimas.Twine": ["2.8.0"],
+  "ChrisKlimas.Twine": ["2.8.0", "2.8.1"],
   "B3log.SiYuan": ["v2.11.4", "v2.12.0"],
   "DaCosySheeep.FactDownloader": ["v1.5.1"],
-  "jcv8000.Codex": ["v2.0.3"],
+  "jcv8000.Codex": ["v2.0.3", "v2.0.4"],
   "AivarAnnamaa.Thonny": ["v4.1.4"],
   "Lauriethefish.QuestPatcher": ["2.7.2"],
   "AppbyTroye.KoodoReader": ["v1.6.1"],
@@ -53,5 +53,6 @@
   "Balena.Etcher": ["v1.18.11"],
   "Balena.BalenaCLI": ["v17.4.9"],
   "GeekCorner.threema": ["v2.5.1"],
-  "OnionShare.OnionShare": ["v2.6"]
+  "OnionShare.OnionShare": ["v2.6"],
+  "quotient-im.Quaternion": ["0.0.95.1"]
 }
