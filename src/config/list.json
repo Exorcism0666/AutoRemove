@@ -49,5 +49,9 @@
   "AdGuard.AdGuardHome": ["v0.107.43"],
   "Genymobile.scrcpy": ["v2.3.1"],
   "Frontesque.scrcpy+": ["2.0.2"],
-  "Barry-ran.QtScrcpy": ["v2.1.2"]
+  "Barry-ran.QtScrcpy": ["v2.1.2"],
+  "Balena.Etcher": ["v1.18.11"],
+  "Balena.BalenaCLI": ["v17.4.9"],
+  "GeekCorner.threema": ["v2.5.1"],
+  "OnionShare.OnionShare": ["v2.6"]
 }
