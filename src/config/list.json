@@ -8,7 +8,7 @@
   "Tyrrrz.DiscordChatExporter.GUI": ["2.42.6"],
   "Tyrrrz.LightBulb": ["2.4.7"],
   "yt-dlp.yt-dlp": ["2023.12.30"],
-  "yt-dlp.yt-dlp.nightly": ["2023.12.31.232713"],
+  "yt-dlp.yt-dlp.nightly": ["2023.12.31.232713", "2024.01.02.232714"],
   "Gyan.FFmpeg": ["6.1.1"],
   "Gyan.FFmpeg.Shared": ["6.1.1"],
   "Gyan.FFmpeg.Essentials": ["6.1.1"],
@@ -46,5 +46,8 @@
   "Fly-io.flyctl": ["v0.1.136"],
   "NextDNS.NextDNS.CLI": ["v1.41.0"],
   "AdGuard.dnsproxy": ["v0.61.1"],
-  "AdGuard.AdGuardHome": ["v0.107.43"]
+  "AdGuard.AdGuardHome": ["v0.107.43"],
+  "Genymobile.scrcpy": ["v2.3.1"],
+  "Frontesque.scrcpy+": ["2.0.2"],
+  "Barry-ran.QtScrcpy": ["v2.1.2"]
 }
