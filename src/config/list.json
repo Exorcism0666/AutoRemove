@@ -61,5 +61,6 @@
   "xavidop.cxcli": ["v1.153.0"],
   "Chocolatey.ChocolateyGUI": ["2.1.0"],
   "Chocolatey.Chocolatey": ["2.2.2"],
-  "ChawyeHsu.Hok": ["v0.1.0-beta.4"]
+  "ChawyeHsu.Hok": ["v0.1.0-beta.4"],
+  "Ryujinx.Ryujinx.Ava": ["1.1.1104"]
 }
