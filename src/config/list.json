@@ -57,5 +57,9 @@
   "quotient-im.Quaternion": ["0.0.95.1"],
   "Telegram.TelegramDesktop": ["v4.14.2"],
   "DoltHub.Dolt": ["v1.30.5"],
-  "Armin2208.WindowsAutoNightMode": ["10.4.1.1"]
+  "Armin2208.WindowsAutoNightMode": ["10.4.1.1"],
+  "xavidop.cxcli": ["v1.153.0"],
+  "Chocolatey.ChocolateyGUI": ["2.1.0"],
+  "Chocolatey.Chocolatey": ["2.2.2"],
+  "ChawyeHsu.Hok": ["v0.1.0-beta.4"]
 }
