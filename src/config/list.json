@@ -66,6 +66,5 @@
   "CrowTranslate.CrowTranslate": ["2.11.1"],
   "kramo.Cartridges": ["v2.7.2"],
   "hikari-no-yume.touchHLE": ["v0.2.1"],
-  "LIJI32.SameBoy": ["v0.16.1"],
-  "Telegram.TelegramDesktop": ["v4.14.3"]
+  "LIJI32.SameBoy": ["v0.16.1"]
 }

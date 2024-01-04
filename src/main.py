@@ -804,19 +804,6 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-   # Add Telegram.TelegramDesktop to Update List
-    id = "Telegram.TelegramDesktop"
-    JSON = requests.get("https://api.github.com/repos/telegramdesktop/tdesktop/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/repos/telegramdesktop/tdesktop/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = Urls = [each["browser_download_url"] for each in JSON if ("zip" in each["browser_download_url"] or "exe" in each["browser_download_url"]) and (("tsetup-x64" in each["browser_download_url"]) or ("tsetup." in each["browser_download_url"]) or ("tportable-x64" in each["browser_download_url"]) or ("tportable." in each["browser_download_url"]))]
-    if not version_verify(str_pop(Version, 0), id):
-         report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
-
    # Add DoltHub.Dolt to Update List
     id = "DoltHub.Dolt"
     JSON = requests.get("https://api.github.com/repos/dolthub/dolt/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -979,6 +966,19 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     JSON = requests.get("https://api.github.com/repos/LIJI32/SameBoy/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/LIJI32/SameBoy/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
     Urls = [each["browser_download_url"] for each in JSON if ("zip" in each["browser_download_url"]) and not("cocoa" in each["browser_download_url"])]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+   # Add Windscribe.Windscribe to Update List
+    id = "Windscribe.Windscribe"
+    JSON = requests.get("https://api.github.com/repos/Windscribe/Desktop-App/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/Windscribe/Desktop-App/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if ("exe" in each["browser_download_url"]) and not("arm64" in each["browser_download_url"])]
     if not version_verify(str_pop(Version, 0), id):
          report_existed(id, Version)
     elif do_list(id, Version, "verify"):
