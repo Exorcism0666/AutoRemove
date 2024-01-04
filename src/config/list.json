@@ -54,5 +54,8 @@
   "Balena.BalenaCLI": ["v17.4.9"],
   "GeekCorner.threema": ["v2.5.1"],
   "OnionShare.OnionShare": ["v2.6"],
-  "quotient-im.Quaternion": ["0.0.95.1"]
+  "quotient-im.Quaternion": ["0.0.95.1"],
+  "Telegram.TelegramDesktop": ["v4.14.2"],
+  "DoltHub.Dolt": ["v1.30.5"],
+  "Armin2208.WindowsAutoNightMode": ["10.4.1.1"]
 }
