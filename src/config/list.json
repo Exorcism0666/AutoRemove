@@ -55,7 +55,7 @@
   "GeekCorner.threema": ["v2.5.1"],
   "OnionShare.OnionShare": ["v2.6"],
   "quotient-im.Quaternion": ["0.0.95.1"],
-  "DoltHub.Dolt": ["v1.30.5", "v1.30.6"],
+  "DoltHub.Dolt": ["v1.30.5", "v1.30.6", "v1.30.7"],
   "Armin2208.WindowsAutoNightMode": ["10.4.1.1"],
   "xavidop.cxcli": ["v1.153.0", "v1.155.0"],
   "Chocolatey.ChocolateyGUI": ["2.1.0"],
@@ -76,5 +76,10 @@
   "moneymanagerex.moneymanagerex": ["v1.7.0"],
   "GoXLR-on-Linux.GoXLR-Utility": ["v1.0.4"],
   "Hugo.Hugo": ["v0.121.2"],
-  "Hugo.Hugo.Extended": ["v0.121.2"]
+  "Hugo.Hugo.Extended": ["v0.121.2"],
+  "tangshimin.MuJing": ["v2.2.13"],
+  "Alist.Alist": ["v3.30.0"],
+  "dynobo.NormCap": ["v0.5.3"],
+  "Bruno.Bruno": ["v1.6.1"],
+  "SoftFever.OrcaSlicer": ["v1.9.0"]
 }
