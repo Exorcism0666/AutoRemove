@@ -43,7 +43,7 @@
   "PurpleI2P.i2pd": ["2.50.1"],
   "Tribler.Tribler": ["v7.13.1"],
   "Retroshare.Retroshare": ["v0.6.7.2"],
-  "Fly-io.flyctl": ["v0.1.136"],
+  "Fly-io.flyctl": ["v0.1.136", "v0.1.137"],
   "NextDNS.NextDNS.CLI": ["v1.41.0"],
   "AdGuard.dnsproxy": ["v0.61.1"],
   "AdGuard.AdGuardHome": ["v0.107.43"],
@@ -81,5 +81,7 @@
   "Alist.Alist": ["v3.30.0"],
   "dynobo.NormCap": ["v0.5.3"],
   "Bruno.Bruno": ["v1.6.1"],
-  "SoftFever.OrcaSlicer": ["v1.9.0"]
+  "SoftFever.OrcaSlicer": ["v1.9.0"],
+  "IPEP.Scantailor-Experimental": ["0.2024.01.02"],
+  "nzbget.nzbget": ["v22.0"]
 }
