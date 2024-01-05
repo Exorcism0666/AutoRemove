@@ -74,5 +74,7 @@
   "Status.Status": ["0.14.1"],
   "jendrikseipp.RedNotebook": ["v2.31"],
   "moneymanagerex.moneymanagerex": ["v1.7.0"],
-  "GoXLR-on-Linux.GoXLR-Utility": ["v1.0.4"]
+  "GoXLR-on-Linux.GoXLR-Utility": ["v1.0.4"],
+  "Hugo.Hugo": ["v0.121.2"],
+  "Hugo.Hugo.Extended": ["v0.121.2"]
 }
