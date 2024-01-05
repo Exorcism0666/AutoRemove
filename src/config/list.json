@@ -57,7 +57,7 @@
   "quotient-im.Quaternion": ["0.0.95.1"],
   "DoltHub.Dolt": ["v1.30.5", "v1.30.6"],
   "Armin2208.WindowsAutoNightMode": ["10.4.1.1"],
-  "xavidop.cxcli": ["v1.153.0"],
+  "xavidop.cxcli": ["v1.153.0", "v1.155.0"],
   "Chocolatey.ChocolateyGUI": ["2.1.0"],
   "Chocolatey.Chocolatey": ["2.2.2"],
   "ChawyeHsu.Hok": ["v0.1.0-beta.4"],
@@ -67,5 +67,10 @@
   "kramo.Cartridges": ["v2.7.2"],
   "hikari-no-yume.touchHLE": ["v0.2.1"],
   "LIJI32.SameBoy": ["v0.16.1"],
-  "Windscribe.Windscribe": ["v2.8.6"]
+  "Windscribe.Windscribe": ["v2.8.6"],
+  "TeXstudio.TeXstudio": ["4.7.2"],
+  "Aserto.DSLoad": ["v0.30.1"],
+  "Joplin.Joplin": ["v2.13.12"],
+  "Status.Status": ["0.14.1"],
+  "jendrikseipp.RedNotebook": ["v2.31"]
 }
