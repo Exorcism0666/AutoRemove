@@ -72,5 +72,7 @@
   "Aserto.DSLoad": ["v0.30.1"],
   "Joplin.Joplin": ["v2.13.12"],
   "Status.Status": ["0.14.1"],
-  "jendrikseipp.RedNotebook": ["v2.31"]
+  "jendrikseipp.RedNotebook": ["v2.31"],
+  "moneymanagerex.moneymanagerex": ["v1.7.0"],
+  "GoXLR-on-Linux.GoXLR-Utility": ["v1.0.4"]
 }
