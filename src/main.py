@@ -1235,7 +1235,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
 
    # Add gopass.gopass-jsonapi to Update List
     id = "gopass.gopass-jsonapi"
-    JSON = requests.get("https://api.github.com/repos/gopasspw/gopass-jsonapireleases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    JSON = requests.get("https://api.github.com/repos/gopasspw/gopass-jsonapi/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/gopasspw/gopass-jsonapi/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
     Urls = [each["browser_download_url"] for each in JSON if ("zip" in each["browser_download_url"]) and not(("armv6" in each["browser_download_url"]) or ("armv7" in each["browser_download_url"]))]
     if not version_verify(str_pop(Version, 0), id):
