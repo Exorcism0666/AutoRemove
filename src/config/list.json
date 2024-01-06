@@ -74,7 +74,7 @@
   "Windscribe.Windscribe": ["v2.8.6"],
   "TeXstudio.TeXstudio": ["4.7.2"],
   "Aserto.DSLoad": ["v0.30.1"],
-  "Joplin.Joplin": ["v2.13.12"],
+  "Joplin.Joplin": ["v2.13.12", "v2.13.13"],
   "Status.Status": ["0.14.1"],
   "jendrikseipp.RedNotebook": ["v2.31"],
   "moneymanagerex.moneymanagerex": ["v1.7.0"],
@@ -88,5 +88,7 @@
   "SoftFever.OrcaSlicer": ["v1.9.0"],
   "IPEP.Scantailor-Experimental": ["0.2024.01.02"],
   "nzbget.nzbget": ["v22.0"],
-  "RustDesk.RustDesk": ["1.2.3"]
+  "RustDesk.RustDesk": ["1.2.3"],
+  "LutzRoeder.Netron": ["v7.3.7"],
+  "SagerNet.sing-box": ["v1.8.0"]
 }
