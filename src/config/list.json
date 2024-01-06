@@ -8,7 +8,11 @@
   "Tyrrrz.DiscordChatExporter.GUI": ["2.42.6"],
   "Tyrrrz.LightBulb": ["2.4.7"],
   "yt-dlp.yt-dlp": ["2023.12.30"],
-  "yt-dlp.yt-dlp.nightly": ["2023.12.31.232713", "2024.01.02.232714"],
+  "yt-dlp.yt-dlp.nightly": [
+    "2023.12.31.232713",
+    "2024.01.02.232714",
+    "2024.01.05.232702"
+  ],
   "Gyan.FFmpeg": ["6.1.1"],
   "Gyan.FFmpeg.Shared": ["6.1.1"],
   "Gyan.FFmpeg.Essentials": ["6.1.1"],
@@ -51,7 +55,7 @@
   "Frontesque.scrcpy+": ["2.0.2"],
   "Barry-ran.QtScrcpy": ["v2.1.2"],
   "Balena.Etcher": ["v1.18.11"],
-  "Balena.BalenaCLI": ["v17.4.9"],
+  "Balena.BalenaCLI": ["v17.4.9", "v17.4.11"],
   "GeekCorner.threema": ["v2.5.1"],
   "OnionShare.OnionShare": ["v2.6"],
   "quotient-im.Quaternion": ["0.0.95.1"],
@@ -83,5 +87,6 @@
   "Bruno.Bruno": ["v1.6.1"],
   "SoftFever.OrcaSlicer": ["v1.9.0"],
   "IPEP.Scantailor-Experimental": ["0.2024.01.02"],
-  "nzbget.nzbget": ["v22.0"]
+  "nzbget.nzbget": ["v22.0"],
+  "RustDesk.RustDesk": ["1.2.3"]
 }
