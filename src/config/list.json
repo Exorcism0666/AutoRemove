@@ -101,5 +101,6 @@
   "mikf.gallery-dl": ["v1.26.6"],
   "houmain.keymapper": ["3.4.0"],
   "printfn.fend": ["v1.4.1"],
-  "gaphor.gaphor": ["2.23.0"]
+  "gaphor.gaphor": ["2.23.0"],
+  "oxen-io.lokinet": ["v0.9.11"]
 }
