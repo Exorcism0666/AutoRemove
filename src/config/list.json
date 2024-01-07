@@ -44,7 +44,7 @@
   "Ombrelin.PlexRichPresence": ["2.0.10"],
   "OleguerLlopart.OpenComic": ["v1.0.0"],
   "JanProchazka.dbgate": ["v5.2.7"],
-  "PurpleI2P.i2pd": ["2.50.1"],
+  "PurpleI2P.i2pd": ["2.50.1", "2.50.2"],
   "Tribler.Tribler": ["v7.13.1"],
   "Retroshare.Retroshare": ["v0.6.7.2"],
   "Fly-io.flyctl": ["v0.1.136", "v0.1.137"],
@@ -92,5 +92,6 @@
   "LutzRoeder.Netron": ["v7.3.7"],
   "SagerNet.sing-box": ["v1.8.0"],
   "gopass.gopass": ["v1.15.11"],
-  "gopass.gopass-jsonapi": ["v1.15.11"]
+  "gopass.gopass-jsonapi": ["v1.15.11"],
+  "AGSProjectTeam.AdventureGameStudio": ["v3.6.0.55"]
 }
