@@ -98,5 +98,8 @@
   "Alex313031.Thorium.AVX2": ["M119.0.6045.214"],
   "HTTPie.HTTPie": ["v2024.1.2"],
   "squalou.google-chat-linux": ["5.27.23-6"],
-  "mikf.gallery-dl": ["v1.26.6"]
+  "mikf.gallery-dl": ["v1.26.6"],
+  "houmain.keymapper": ["3.4.0"],
+  "printfn.fend": ["v1.4.1"],
+  "gaphor.gaphor": ["2.23.0"]
 }
