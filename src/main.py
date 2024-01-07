@@ -1248,7 +1248,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
 
     # Add AGSProjectTeam.AdventureGameStudio to Update List
     # id = "AGSProjectTeam.AdventureGameStudio"
-    JSON = requests.get("https://api.github.com/repos/adventuregamestudio/ags/latest", verify=False, headers=Headers[1]).json()["assets"]
+    JSON = requests.get("https://api.github.com/repos/adventuregamestudio/ags/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/adventuregamestudio/ags/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
     Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
     if not version_verify(str_pop(Version, 0), id):
