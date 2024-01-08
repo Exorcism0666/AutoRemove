@@ -59,7 +59,7 @@
   "GeekCorner.threema": ["v2.5.1"],
   "OnionShare.OnionShare": ["v2.6"],
   "quotient-im.Quaternion": ["0.0.95.1"],
-  "DoltHub.Dolt": ["v1.30.5", "v1.30.6", "v1.30.7"],
+  "DoltHub.Dolt": ["v1.30.5", "v1.30.6", "v1.30.7", "v1.31.0"],
   "Armin2208.WindowsAutoNightMode": ["10.4.1.1"],
   "xavidop.cxcli": ["v1.153.0", "v1.155.0", "v1.156.0"],
   "Chocolatey.ChocolateyGUI": ["2.1.0"],
