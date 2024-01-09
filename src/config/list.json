@@ -94,7 +94,7 @@
   "SagerNet.sing-box": ["v1.8.0"],
   "gopass.gopass": ["v1.15.11"],
   "gopass.gopass-jsonapi": ["v1.15.11"],
-  "AGSProjectTeam.AdventureGameStudio": ["v3.6.0.55"],
+  "AGSProjectTeam.AdventureGameStudio": ["v3.6.0.55", "v3.6.0.56"],
   "TailwindLabs.TailwindCSS": ["v3.4.1"],
   "Alex313031.Thorium.AVX2": ["M119.0.6045.214"],
   "HTTPie.HTTPie": ["v2024.1.2"],
