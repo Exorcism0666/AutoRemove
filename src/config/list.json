@@ -11,7 +11,8 @@
   "yt-dlp.yt-dlp.nightly": [
     "2023.12.31.232713",
     "2024.01.02.232714",
-    "2024.01.05.232702"
+    "2024.01.05.232702",
+    "2024.01.08.232709"
   ],
   "Gyan.FFmpeg": ["6.1.1"],
   "Gyan.FFmpeg.Shared": ["6.1.1"],
@@ -21,7 +22,7 @@
   "manosim.gitify": ["v4.5.1"],
   "dscalzi.HeliosLauncher": ["v2.1.0", "v2.1.1"],
   "ChrisKlimas.Twine": ["2.8.0", "2.8.1"],
-  "B3log.SiYuan": ["v2.11.4", "v2.12.0"],
+  "B3log.SiYuan": ["v2.11.4", "v2.12.0", "v2.12.1"],
   "DaCosySheeep.FactDownloader": ["v1.5.1"],
   "jcv8000.Codex": ["v2.0.3", "v2.0.4"],
   "AivarAnnamaa.Thonny": ["v4.1.4"],
