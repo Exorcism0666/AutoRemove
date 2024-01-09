@@ -1428,7 +1428,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-   # Add y-chan.SHAREVOX to Update List
+   # Add y-chan.SHAREVOX.CPU to Update List
     id = "y-chan.SHAREVOX.CPU"
     JSON = requests.get("https://api.github.com/repos/SHAREVOX/sharevox/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/SHAREVOX/sharevox/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
