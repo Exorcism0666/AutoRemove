@@ -1389,6 +1389,71 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
+   # Add HiroshibaKazuyuki.VOICEVOX to Update List
+    id = "HiroshibaKazuyuki.VOICEVOX"
+    JSON = requests.get("https://api.github.com/repos/VOICEVOX/voicevox/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/VOICEVOX/voicevox/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if ("zip" in each["browser_download_url"]) and not(("cpu" in each["browser_download_url"]) or ("macos" in each["browser_download_url"]))]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+   # Add HiroshibaKazuyuki.VOICEVOX.CPU to Update List
+    id = "HiroshibaKazuyuki.VOICEVOX.CPU"
+    JSON = requests.get("https://api.github.com/repos/VOICEVOX/voicevox/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/VOICEVOX/voicevox/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if ("zip" in each["browser_download_url"]) and not(("directml" in each["browser_download_url"]) or ("macos" in each["browser_download_url"]))]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+   # Add y-chan.SHAREVOX to Update List
+    id = "y-chan.SHAREVOX"
+    JSON = requests.get("https://api.github.com/repos/SHAREVOX/sharevox/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/SHAREVOX/sharevox/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if ("zip" in each["browser_download_url"]) and not(("cpu" in each["browser_download_url"]) or ("macos" in each["browser_download_url"]) or ("nvidia" in each["browser_download_url"]))]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+   # Add y-chan.SHAREVOX to Update List
+    id = "y-chan.SHAREVOX.CPU"
+    JSON = requests.get("https://api.github.com/repos/SHAREVOX/sharevox/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/SHAREVOX/sharevox/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if ("zip" in each["browser_download_url"]) and not(("directml" in each["browser_download_url"]) or ("macos" in each["browser_download_url"]) or ("nvidia" in each["browser_download_url"]))]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+   # Add y-chan.SHAREVOX.NVIDIA to Update List
+    id = "y-chan.SHAREVOX.NVIDIA"
+    JSON = requests.get("https://api.github.com/repos/SHAREVOX/sharevox/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/SHAREVOX/sharevox/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if ("zip" in each["browser_download_url"]) and not(("directml" in each["browser_download_url"]) or ("macos" in each["browser_download_url"]) or ("cpu" in each["browser_download_url"]))]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
     # Updating
     if not debug:
         for each in Commands:
