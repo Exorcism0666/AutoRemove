@@ -109,5 +109,7 @@
   "y-chan.SHAREVOX": ["0.2.1"],
   "y-chan.SHAREVOX.CPU": ["0.2.1"],
   "HiroshibaKazuyuki.VOICEVOX.CPU": ["0.14.10"],
-  "y-chan.SHAREVOX.NVIDIA": ["0.2.1"]
+  "y-chan.SHAREVOX.NVIDIA": ["0.2.1"],
+  "XmirrorSecurity.OpenSCA-cli": ["v3.0.4"],
+  "DEVCOM.JMeter": ["v5.6.3"]
 }
