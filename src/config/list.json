@@ -42,7 +42,7 @@
   "Vendicated.Vencord.Canary": ["v1.3.1"],
   "Vendicated.Vencord.PTB": ["v1.3.1"],
   "Vendicated.Vencord": ["v1.3.1"],
-  "chylex.DiscordHistoryTracker": ["v40.0"],
+  "chylex.DiscordHistoryTracker": ["v40.0", "v41.0"],
   "Ombrelin.PlexRichPresence": ["2.0.10"],
   "OleguerLlopart.OpenComic": ["v1.0.0"],
   "JanProchazka.dbgate": ["v5.2.7"],
