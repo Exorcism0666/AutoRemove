@@ -61,7 +61,7 @@
   "GeekCorner.threema": ["v2.5.1"],
   "OnionShare.OnionShare": ["v2.6"],
   "quotient-im.Quaternion": ["0.0.95.1"],
-  "DoltHub.Dolt": ["v1.30.5", "v1.30.6", "v1.30.7", "v1.31.0"],
+  "DoltHub.Dolt": ["v1.30.5", "v1.30.6", "v1.30.7", "v1.31.0", "v1.31.1"],
   "Armin2208.WindowsAutoNightMode": ["10.4.1.1"],
   "xavidop.cxcli": ["v1.153.0", "v1.155.0", "v1.156.0"],
   "Chocolatey.ChocolateyGUI": ["2.1.0"],
@@ -103,7 +103,7 @@
   "mikf.gallery-dl": ["v1.26.6"],
   "houmain.keymapper": ["3.4.0"],
   "printfn.fend": ["v1.4.1"],
-  "gaphor.gaphor": ["2.23.0"],
+  "gaphor.gaphor": ["2.23.0", "2.23.1"],
   "oxen-io.lokinet": ["v0.9.11"],
   "HiroshibaKazuyuki.VOICEVOX": ["0.14.10"],
   "y-chan.SHAREVOX": ["0.2.1"],
@@ -114,5 +114,7 @@
   "DEVCOM.JMeter": ["v5.6.3"],
   "Nethermind.Nethermind": ["1.25.0"],
   "Aserto.Topaz": ["v0.30.26"],
-  "UniversalMediaServer.UniversalMediaServer": ["13.8.1"]
+  "UniversalMediaServer.UniversalMediaServer": ["13.8.1"],
+  "lucasg.Dependencies": ["v1.11.1"],
+  "taers232c.GAMADV-XTD3": ["v6.67.14"]
 }
