@@ -49,7 +49,7 @@
   "PurpleI2P.i2pd": ["2.50.1", "2.50.2"],
   "Tribler.Tribler": ["v7.13.1"],
   "Retroshare.Retroshare": ["v0.6.7.2"],
-  "Fly-io.flyctl": ["v0.1.136", "v0.1.137", "v0.1.139"],
+  "Fly-io.flyctl": ["v0.1.136", "v0.1.137", "v0.1.139", "v0.1.141"],
   "NextDNS.NextDNS.CLI": ["v1.41.0"],
   "AdGuard.dnsproxy": ["v0.61.1"],
   "AdGuard.AdGuardHome": ["v0.107.43"],
