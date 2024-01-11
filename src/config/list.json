@@ -112,5 +112,7 @@
   "y-chan.SHAREVOX.NVIDIA": ["0.2.1"],
   "XmirrorSecurity.OpenSCA-cli": ["v3.0.4"],
   "DEVCOM.JMeter": ["v5.6.3"],
-  "Nethermind.Nethermind": ["1.25.0"]
+  "Nethermind.Nethermind": ["1.25.0"],
+  "Aserto.Topaz": ["v0.30.26"],
+  "UniversalMediaServer.UniversalMediaServer": ["13.8.1"]
 }
