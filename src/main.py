@@ -1623,8 +1623,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-   """
-   # Add Jubler.App to Update List
+   """# Add Jubler.App to Update List
     id = "Jubler.App"
     JSON = requests.get("https://api.github.com/repos/teras/Jubler/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/teras/Jubler/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
@@ -1635,8 +1634,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         report_existed(id, Version)
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
-    """
+    del JSON, Urls, Version, id"""
 
    # Add Task.Task to Update List
     id = "Task.Task"
