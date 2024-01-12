@@ -77,7 +77,7 @@
   "TeXstudio.TeXstudio": ["4.7.2"],
   "Aserto.DSLoad": ["v0.30.1", "v0.30.2"],
   "Joplin.Joplin": ["v2.13.12", "v2.13.13"],
-  "Status.Status": ["0.14.1"],
+  "Status.Status": ["0.14.1", "0.15.0"],
   "jendrikseipp.RedNotebook": ["v2.31"],
   "moneymanagerex.moneymanagerex": ["v1.7.0"],
   "GoXLR-on-Linux.GoXLR-Utility": ["v1.0.4"],
@@ -120,5 +120,7 @@
   "GAM-Team.GotYourBack": ["v1.74"],
   "Canonical.Multipass": ["v1.13.0"],
   "AppFlowy.AppFlowy": ["0.4.1"],
-  "errata-ai.Vale": ["v3.0.3"]
+  "errata-ai.Vale": ["v3.0.3"],
+  "Jubler.App": ["v8.0.0"],
+  "Task.Task": ["v3.33.1"]
 }
