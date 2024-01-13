@@ -67,7 +67,7 @@
   "Chocolatey.ChocolateyGUI": ["2.1.0"],
   "Chocolatey.Chocolatey": ["2.2.2"],
   "ChawyeHsu.Hok": ["v0.1.0-beta.4"],
-  "Ryujinx.Ryujinx.Ava": ["1.1.1104"],
+  "Ryujinx.Ryujinx.Ava": ["1.1.1104", "1.1.1106"],
   "TeamIDE.TeamIDE": ["v2.6.4"],
   "CrowTranslate.CrowTranslate": ["2.11.1"],
   "kramo.Cartridges": ["v2.7.2"],
