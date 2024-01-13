@@ -67,7 +67,7 @@
   "Chocolatey.ChocolateyGUI": ["2.1.0"],
   "Chocolatey.Chocolatey": ["2.2.2"],
   "ChawyeHsu.Hok": ["v0.1.0-beta.4"],
-  "Ryujinx.Ryujinx.Ava": ["1.1.1104", "1.1.1106"],
+  "Ryujinx.Ryujinx.Ava": ["1.1.1104", "1.1.1106", "1.1.1109"],
   "TeamIDE.TeamIDE": ["v2.6.4"],
   "CrowTranslate.CrowTranslate": ["2.11.1"],
   "kramo.Cartridges": ["v2.7.2"],
@@ -126,5 +126,6 @@
   "SpikeHD.Dorion": ["v4.0.1"],
   "PhapDieuDuong.ExifGlass": ["1.4.1.0"],
   "martinrotter.RSSGuard": ["4.6.3"],
-  "Stoplight.Prism": ["v5.5.3"]
+  "Stoplight.Prism": ["v5.5.3"],
+  "Ryujinx.Ryujinx": ["1.1.1109"]
 }
