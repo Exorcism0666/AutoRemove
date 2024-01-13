@@ -91,7 +91,7 @@
   "IPEP.Scantailor-Experimental": ["0.2024.01.02"],
   "nzbget.nzbget": ["v22.0"],
   "RustDesk.RustDesk": ["1.2.3"],
-  "LutzRoeder.Netron": ["v7.3.7"],
+  "LutzRoeder.Netron": ["v7.3.7", "v7.3.8"],
   "SagerNet.sing-box": ["v1.8.0"],
   "gopass.gopass": ["v1.15.11"],
   "gopass.gopass-jsonapi": ["v1.15.11"],
