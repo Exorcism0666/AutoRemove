@@ -1,5 +1,5 @@
 {
-  "Peppy.Osu!": ["2023.1231.0"],
+  "Peppy.Osu!": ["2023.1231.0", "2024.113.0"],
   "HandBrake.HandBrake": ["1.7.2"],
   "SchildiChat.SchildiChat": ["v1.11.30-sc.2"],
   "cinnyapp.cinny-desktop": ["v3.2.1"],
@@ -120,12 +120,14 @@
   "GAM-Team.GotYourBack": ["v1.74"],
   "Canonical.Multipass": ["v1.13.0"],
   "AppFlowy.AppFlowy": ["0.4.1"],
-  "errata-ai.Vale": ["v3.0.3"],
+  "errata-ai.Vale": ["v3.0.3", "v3.0.4"],
   "Jubler.App": ["v8.0.0"],
   "Task.Task": ["v3.33.1"],
   "SpikeHD.Dorion": ["v4.0.1"],
   "PhapDieuDuong.ExifGlass": ["1.4.1.0"],
   "martinrotter.RSSGuard": ["4.6.3"],
   "Stoplight.Prism": ["v5.5.3"],
-  "Ryujinx.Ryujinx": ["1.1.1109"]
+  "Ryujinx.Ryujinx": ["1.1.1109"],
+  "lycheeverse.lychee": ["v0.14.1"],
+  "SMPlayer.SMPlayer": ["v23.12.0"]
 }
