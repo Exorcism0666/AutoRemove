@@ -886,7 +886,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     id = "Ryujinx.Ryujinx.Ava"
     JSON = requests.get("https://api.github.com/repos/Ryujinx/release-channel-master/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/Ryujinx/release-channel-master/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if ("zip" in each["browser_download_url"]) and not(("sdl2" in each["browser_download_url"]) or ("test" in each["browser_download_url"]))]
+    Urls = [each["browser_download_url"] for each in JSON if ("zip" in each["browser_download_url"]) and ("ava" in each["browser_download_url"]) and not("sdl2" in each["browser_download_url"])]
     if not version_verify(Version, id):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
