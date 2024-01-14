@@ -116,7 +116,13 @@
   "Aserto.Topaz": ["v0.30.26"],
   "UniversalMediaServer.UniversalMediaServer": ["13.8.1"],
   "lucasg.Dependencies": ["v1.11.1"],
-  "taers232c.GAMADV-XTD3": ["v6.67.14", "v6.67.15", "v6.67.16", "v6.67.17"],
+  "taers232c.GAMADV-XTD3": [
+    "v6.67.14",
+    "v6.67.15",
+    "v6.67.16",
+    "v6.67.17",
+    "v6.67.18"
+  ],
   "GAM-Team.GotYourBack": ["v1.74"],
   "Canonical.Multipass": ["v1.13.0"],
   "AppFlowy.AppFlowy": ["0.4.1"],
