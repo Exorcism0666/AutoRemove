@@ -86,7 +86,7 @@
   "Hugo.Hugo.Extended": ["v0.121.2"],
   "tangshimin.MuJing": ["v2.2.13"],
   "Alist.Alist": ["v3.30.0"],
-  "dynobo.NormCap": ["v0.5.3"],
+  "dynobo.NormCap": ["v0.5.3", "v0.5.4"],
   "Bruno.Bruno": ["v1.6.1"],
   "SoftFever.OrcaSlicer": ["v1.9.0"],
   "IPEP.Scantailor-Experimental": ["0.2024.01.02"],
@@ -114,7 +114,7 @@
   "XmirrorSecurity.OpenSCA-cli": ["v3.0.4"],
   "DEVCOM.JMeter": ["v5.6.3"],
   "Nethermind.Nethermind": ["1.25.0"],
-  "Aserto.Topaz": ["v0.30.26", "v0.30.27"],
+  "Aserto.Topaz": ["v0.30.26", "v0.30.27", "v0.30.28"],
   "UniversalMediaServer.UniversalMediaServer": ["13.8.1"],
   "lucasg.Dependencies": ["v1.11.1"],
   "taers232c.GAMADV-XTD3": [
