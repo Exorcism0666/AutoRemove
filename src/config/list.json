@@ -50,7 +50,7 @@
   "PurpleI2P.i2pd": ["2.50.1", "2.50.2"],
   "Tribler.Tribler": ["v7.13.1"],
   "Retroshare.Retroshare": ["v0.6.7.2"],
-  "Fly-io.flyctl": ["v0.1.136", "v0.1.137", "v0.1.139", "v0.1.141"],
+  "Fly-io.flyctl": ["v0.1.136", "v0.1.137", "v0.1.139", "v0.1.141", "v0.1.142"],
   "NextDNS.NextDNS.CLI": ["v1.41.0"],
   "AdGuard.dnsproxy": ["v0.61.1", "v0.62.0"],
   "AdGuard.AdGuardHome": ["v0.107.43"],
@@ -76,7 +76,7 @@
   "LIJI32.SameBoy": ["v0.16.1", "v0.16.2"],
   "Windscribe.Windscribe": ["v2.8.6"],
   "TeXstudio.TeXstudio": ["4.7.2"],
-  "Aserto.DSLoad": ["v0.30.1", "v0.30.2"],
+  "Aserto.DSLoad": ["v0.30.1", "v0.30.2", "v0.30.3"],
   "Joplin.Joplin": ["v2.13.12", "v2.13.13", "v2.13.14", "v2.13.15"],
   "Status.Status": ["0.14.1", "0.15.0"],
   "jendrikseipp.RedNotebook": ["v2.31"],
@@ -114,7 +114,7 @@
   "XmirrorSecurity.OpenSCA-cli": ["v3.0.4"],
   "DEVCOM.JMeter": ["v5.6.3"],
   "Nethermind.Nethermind": ["1.25.0"],
-  "Aserto.Topaz": ["v0.30.26"],
+  "Aserto.Topaz": ["v0.30.26", "v0.30.27"],
   "UniversalMediaServer.UniversalMediaServer": ["13.8.1"],
   "lucasg.Dependencies": ["v1.11.1"],
   "taers232c.GAMADV-XTD3": [
@@ -122,7 +122,8 @@
     "v6.67.15",
     "v6.67.16",
     "v6.67.17",
-    "v6.67.18"
+    "v6.67.18",
+    "v6.67.19"
   ],
   "GAM-Team.GotYourBack": ["v1.74"],
   "Canonical.Multipass": ["v1.13.0"],
@@ -136,5 +137,6 @@
   "Stoplight.Prism": ["v5.5.3"],
   "Ryujinx.Ryujinx": ["1.1.1109", "1.1.1110"],
   "lycheeverse.lychee": ["v0.14.1"],
-  "SMPlayer.SMPlayer": ["v23.12.0"]
+  "SMPlayer.SMPlayer": ["v23.12.0"],
+  "YS-L.csvlens": ["v0.6.0"]
 }
