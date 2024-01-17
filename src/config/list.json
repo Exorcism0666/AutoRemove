@@ -29,7 +29,7 @@
   "jcv8000.Codex": ["v2.0.3", "v2.0.4"],
   "AivarAnnamaa.Thonny": ["v4.1.4"],
   "Lauriethefish.QuestPatcher": ["2.7.2", "2.7.3"],
-  "AppbyTroye.KoodoReader": ["v1.6.1", "v1.6.2"],
+  "AppbyTroye.KoodoReader": ["v1.6.1", "v1.6.2", "v1.6.3"],
   "clouDr-f2e.rubick": ["v4.2.1"],
   "IPFS.IPFS-Desktop": ["v0.32.0"],
   "jurplel.qView": ["6.1"],
@@ -167,5 +167,6 @@
   "Ablaze.Floorp": ["v11.8.0"],
   "Alex313031.Thorium": ["M119.0.6045.214"],
   "Wilfred.difftastic": ["0.54.0"],
-  "Stretchly.Stretchly": ["v1.15.1"]
+  "Stretchly.Stretchly": ["v1.15.1"],
+  "Logseq.Logseq": ["0.10.4"]
 }
