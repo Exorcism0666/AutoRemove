@@ -69,7 +69,14 @@
   "GeekCorner.threema": ["v2.5.1"],
   "OnionShare.OnionShare": ["v2.6"],
   "quotient-im.Quaternion": ["0.0.95.1", "0.0.96"],
-  "DoltHub.Dolt": ["v1.30.5", "v1.30.6", "v1.30.7", "v1.31.0", "v1.31.1"],
+  "DoltHub.Dolt": [
+    "v1.30.5",
+    "v1.30.6",
+    "v1.30.7",
+    "v1.31.0",
+    "v1.31.1",
+    "v1.31.2"
+  ],
   "Armin2208.WindowsAutoNightMode": ["10.4.1.1"],
   "xavidop.cxcli": ["v1.153.0", "v1.155.0", "v1.156.0", "v1.158.0"],
   "Chocolatey.ChocolateyGUI": ["2.1.0"],
@@ -151,5 +158,11 @@
   "Ryujinx.Ryujinx": ["1.1.1109", "1.1.1110", "1.1.1111"],
   "lycheeverse.lychee": ["v0.14.1"],
   "SMPlayer.SMPlayer": ["v23.12.0"],
-  "YS-L.csvlens": ["v0.6.0"]
+  "YS-L.csvlens": ["v0.6.0"],
+  "z-------------.cpod": ["v1.28.2"],
+  "Stripe.StripeCli": ["v1.19.1"],
+  "beekeeper-studio.beekeeper-studio": ["v4.1.13"],
+  "AsciidocFX.AsciidocFX": ["v1.8.7"],
+  "BookStairs.bookhunter": ["v0.14.0"],
+  "Ablaze.Floorp": ["v11.8.0"]
 }
