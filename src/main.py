@@ -1831,8 +1831,8 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-   # Add Ablaze.Floorp to Update List
-    id = "Ablaze.Floorp"
+   # Add Wilfred.difftastic to Update List
+    id = "Wilfred.difftastic"
     JSON = requests.get("https://api.github.com/repos/Wilfred/difftastic/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/Wilfred/difftastic/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
     Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".zip")]
