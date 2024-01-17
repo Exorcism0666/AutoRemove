@@ -175,5 +175,15 @@
   "BiglySoftware.BiglyBT": ["v3.5.0.0"],
   "szTheory.exifcleaner": ["v3.6.0"],
   "qarmin.czkawka.cli": ["6.1.0"],
-  "Syncthing.Syncthing": ["v1.27.2"]
+  "Syncthing.Syncthing": ["v1.27.2"],
+  "EvanSu.Picocrypt": ["1.33"],
+  "DNSCrypt.dnscrypt-proxy": ["2.1.5"],
+  "Oxen.Session": ["v1.11.5"],
+  "deltachat.deltachat": ["v1.42.2"],
+  "uTox.uTox": ["v0.18.1"],
+  "RocketChat.RocketChat": ["3.9.11"],
+  "Jitsi.Meet": ["v2024.1.0"],
+  "Bisq.Bisq": ["v1.9.14"],
+  "BinanceTech.Binance": ["v1.49.0"],
+  "Mullvad.Browser": ["13.0.7"]
 }
