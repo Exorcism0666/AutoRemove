@@ -164,9 +164,16 @@
   "beekeeper-studio.beekeeper-studio": ["v4.1.13"],
   "AsciidocFX.AsciidocFX": ["v1.8.7"],
   "BookStairs.bookhunter": ["v0.14.0", "v1.14.1", "v0.14.3"],
-  "Ablaze.Floorp": ["v11.8.0"],
+  "Ablaze.Floorp": ["v11.8.0", "v11.8.1"],
   "Alex313031.Thorium": ["M119.0.6045.214"],
   "Wilfred.difftastic": ["0.54.0"],
   "Stretchly.Stretchly": ["v1.15.1"],
-  "Logseq.Logseq": ["0.10.4"]
+  "Logseq.Logseq": ["0.10.4"],
+  "creativeprojects.resticprofile": ["v0.24.0"],
+  "Streetwriters.Notesnook": ["v2.6.14"],
+  "Transmission.Transmission": ["4.0.5"],
+  "BiglySoftware.BiglyBT": ["v3.5.0.0"],
+  "szTheory.exifcleaner": ["v3.6.0"],
+  "qarmin.czkawka.cli": ["6.1.0"],
+  "Syncthing.Syncthing": ["v1.27.2"]
 }
