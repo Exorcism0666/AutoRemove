@@ -148,7 +148,7 @@
     "v6.67.19",
     "v6.67.20"
   ],
-  "GAM-Team.GotYourBack": ["v1.74"],
+  "GAM-Team.GotYourBack": ["v1.74", "v1.80"],
   "Canonical.Multipass": ["v1.13.0"],
   "AppFlowy.AppFlowy": ["0.4.1", "0.4.2", "0.4.3"],
   "errata-ai.Vale": ["v3.0.3", "v3.0.4", "v3.0.5"],
@@ -171,7 +171,7 @@
   "Alex313031.Thorium": ["M119.0.6045.214"],
   "Wilfred.difftastic": ["0.54.0"],
   "Stretchly.Stretchly": ["v1.15.1"],
-  "Logseq.Logseq": ["0.10.4"],
+  "Logseq.Logseq": ["0.10.4", "0.10.5"],
   "creativeprojects.resticprofile": ["v0.24.0"],
   "Streetwriters.Notesnook": ["v2.6.14"],
   "Transmission.Transmission": ["4.0.5"],
