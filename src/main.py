@@ -2078,8 +2078,8 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-   # Add Mullvad.Browser to Update List
-    id = "Mullvad.Browser"
+   # Add MullvadVPN.MullvadBrowser to Update List
+    id = "MullvadVPN.MullvadBrowser"
     JSON = requests.get("https://api.github.com/repos/mullvad/mullvad-browser/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/mullvad/mullvad-browser/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
     Urls = [each["browser_download_url"] for each in JSON if ("exe" in each["browser_download_url"]) and not("asc" in each["browser_download_url"])]
