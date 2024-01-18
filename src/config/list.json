@@ -188,5 +188,7 @@
   "Jitsi.Meet": ["v2024.1.0"],
   "Bisq.Bisq": ["v1.9.14"],
   "BinanceTech.Binance": ["v1.49.0"],
-  "Mullvad.Browser": ["13.0.7"]
+  "Mullvad.Browser": ["13.0.7"],
+  "MullvadVPN.MullvadBrowser": ["13.0.7"],
+  "MysteriumNetwork.Mysterium": ["10.16.0"]
 }
