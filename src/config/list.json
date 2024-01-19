@@ -127,7 +127,7 @@
   "HTTPie.HTTPie": ["v2024.1.2"],
   "squalou.google-chat-linux": ["5.27.23-6"],
   "mikf.gallery-dl": ["v1.26.6"],
-  "houmain.keymapper": ["3.4.0", "3.5.0"],
+  "houmain.keymapper": ["3.4.0", "3.5.0", "3.5.1"],
   "printfn.fend": ["v1.4.1"],
   "gaphor.gaphor": ["2.23.0", "2.23.1", "2.23.2"],
   "oxen-io.lokinet": ["v0.9.11"],
