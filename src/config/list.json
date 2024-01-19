@@ -81,7 +81,7 @@
     "v1.32.0"
   ],
   "Armin2208.WindowsAutoNightMode": ["10.4.1.1"],
-  "xavidop.cxcli": ["v1.153.0", "v1.155.0", "v1.156.0", "v1.158.0"],
+  "xavidop.cxcli": ["v1.153.0", "v1.155.0", "v1.156.0", "v1.158.0", "v1.159.0"],
   "Chocolatey.ChocolateyGUI": ["2.1.0"],
   "Chocolatey.Chocolatey": ["2.2.2"],
   "ChawyeHsu.Hok": ["v0.1.0-beta.4"],
@@ -199,5 +199,7 @@
   "BinanceTech.Binance": ["v1.49.0"],
   "Mullvad.Browser": ["13.0.7"],
   "MullvadVPN.MullvadBrowser": ["13.0.7"],
-  "MysteriumNetwork.Mysterium": ["10.16.0"]
+  "MysteriumNetwork.Mysterium": ["10.16.0"],
+  "Databricks.DatabricksCLI": ["v0.212.1"],
+  "Meta.Zstandard": ["v1.5.5"]
 }
