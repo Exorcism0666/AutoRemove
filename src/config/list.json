@@ -212,5 +212,6 @@
   "Databricks.DatabricksCLI": ["v0.212.1"],
   "Meta.Zstandard": ["v1.5.5"],
   "Sonosaurus.SonoBus": ["1.7.2"],
-  "YggdrasilNetwork.Yggdrasil": ["v0.5.4"]
+  "YggdrasilNetwork.Yggdrasil": ["v0.5.4"],
+  "YuzuEmu.Yuzu.Mainline": ["1689"]
 }
