@@ -2170,6 +2170,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
+   # Add StandardNotes.StandardNotes to Update List
+    id = "StandardNotes.StandardNotes"
+    JSON = requests.get("https://api.github.com/repos/standardnotes/app/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = re.sub(r'[^\d.]', '', requests.get("https://api.github.com/repos/standardnotes/app/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"])
+    Urls = [each["browser_download_url"] for each in JSON if ("exe" in each["browser_download_url"]) and (("ia32" in each["browser_download_url"]) or ("x64" in each["browser_download_url"]))]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
 
     # Updating
     if not debug:
