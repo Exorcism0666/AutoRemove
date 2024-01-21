@@ -96,7 +96,8 @@
     "1.1.1112",
     "1.1.1114",
     "1.1.1115",
-    "1.1.1117"
+    "1.1.1117",
+    "1.1.1118"
   ],
   "TeamIDE.TeamIDE": ["v2.6.4", "v2.6.5"],
   "CrowTranslate.CrowTranslate": ["2.11.1"],
@@ -130,7 +131,7 @@
   "Alex313031.Thorium.AVX2": ["M119.0.6045.214"],
   "HTTPie.HTTPie": ["v2024.1.2"],
   "squalou.google-chat-linux": ["5.27.23-6"],
-  "mikf.gallery-dl": ["v1.26.6"],
+  "mikf.gallery-dl": ["v1.26.6", "v1.26.7"],
   "houmain.keymapper": ["3.4.0", "3.5.0", "3.5.1"],
   "printfn.fend": ["v1.4.1"],
   "gaphor.gaphor": ["2.23.0", "2.23.1", "2.23.2"],
@@ -142,7 +143,7 @@
   "y-chan.SHAREVOX.NVIDIA": ["0.2.1"],
   "XmirrorSecurity.OpenSCA-cli": ["v3.0.4"],
   "DEVCOM.JMeter": ["v5.6.3"],
-  "Nethermind.Nethermind": ["1.25.0", "1.25.1"],
+  "Nethermind.Nethermind": ["1.25.0", "1.25.1", "1.25.2"],
   "Aserto.Topaz": ["v0.30.26", "v0.30.27", "v0.30.28"],
   "UniversalMediaServer.UniversalMediaServer": ["13.8.1"],
   "lucasg.Dependencies": ["v1.11.1"],
@@ -175,7 +176,8 @@
     "1.1.1112",
     "1.1.1114",
     "1.1.1115",
-    "1.1.1117"
+    "1.1.1117",
+    "1.1.1118"
   ],
   "lycheeverse.lychee": ["v0.14.1"],
   "SMPlayer.SMPlayer": ["v23.12.0"],
@@ -213,5 +215,8 @@
   "Meta.Zstandard": ["v1.5.5"],
   "Sonosaurus.SonoBus": ["1.7.2"],
   "YggdrasilNetwork.Yggdrasil": ["v0.5.4"],
-  "YuzuEmu.Yuzu.Mainline": ["1689"]
+  "YuzuEmu.Yuzu.Mainline": ["1689"],
+  "StandardNotes.StandardNotes": ["3.184.0"],
+  "stakira.OpenUTAU": ["0.1.327"],
+  "RaspberryPiFoundation.RaspberryPiImager": ["v1.8.5"]
 }
