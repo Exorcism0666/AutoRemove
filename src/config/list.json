@@ -216,7 +216,7 @@
   "Meta.Zstandard": ["v1.5.5"],
   "Sonosaurus.SonoBus": ["1.7.2"],
   "YggdrasilNetwork.Yggdrasil": ["v0.5.4"],
-  "YuzuEmu.Yuzu.Mainline": ["1689"],
+  "YuzuEmu.Yuzu.Mainline": ["1689", "1690"],
   "StandardNotes.StandardNotes": ["3.184.0"],
   "stakira.OpenUTAU": ["0.1.327"],
   "RaspberryPiFoundation.RaspberryPiImager": ["v1.8.5"]
