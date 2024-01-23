@@ -169,7 +169,8 @@
     "v6.67.21",
     "v6.67.22",
     "v6.67.23",
-    "v6.67.24"
+    "v6.67.24",
+    "v6.67.25"
   ],
   "GAM-Team.GotYourBack": ["v1.74", "v1.80"],
   "Canonical.Multipass": ["v1.13.0"],
@@ -196,7 +197,7 @@
   "SMPlayer.SMPlayer": ["v23.12.0"],
   "YS-L.csvlens": ["v0.6.0"],
   "z-------------.cpod": ["v1.28.2"],
-  "Stripe.StripeCli": ["v1.19.1"],
+  "Stripe.StripeCli": ["v1.19.1", "v1.19.2"],
   "beekeeper-studio.beekeeper-studio": ["v4.1.13"],
   "AsciidocFX.AsciidocFX": ["v1.8.7"],
   "BookStairs.bookhunter": ["v0.14.0", "v1.14.1", "v0.14.3"],
@@ -231,5 +232,6 @@
   "YuzuEmu.Yuzu.Mainline": ["1689", "1690", "1691"],
   "StandardNotes.StandardNotes": ["3.184.0"],
   "stakira.OpenUTAU": ["0.1.327"],
-  "RaspberryPiFoundation.RaspberryPiImager": ["v1.8.5"]
+  "RaspberryPiFoundation.RaspberryPiImager": ["v1.8.5"],
+  "K8stooling.Kubazulo": ["v0.0.8-beta"]
 }
