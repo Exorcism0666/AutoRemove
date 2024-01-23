@@ -18,14 +18,15 @@
     "2024.01.18.232658",
     "2024.01.19.232708",
     "2024.01.20.232722",
-    "2024.01.21.232719"
+    "2024.01.21.232719",
+    "2024.01.22.232713"
   ],
   "Gyan.FFmpeg": ["6.1.1"],
   "Gyan.FFmpeg.Shared": ["6.1.1"],
   "Gyan.FFmpeg.Essentials": ["6.1.1"],
   "Obsidian.Obsidian": ["v1.5.3"],
   "defi.defi": ["v4.0.8", "v4.0.7"],
-  "manosim.gitify": ["v4.5.1"],
+  "manosim.gitify": ["v4.5.1", "v4.6.1"],
   "dscalzi.HeliosLauncher": ["v2.1.0", "v2.1.1"],
   "ChrisKlimas.Twine": ["2.8.0", "2.8.1"],
   "B3log.SiYuan": ["v2.11.4", "v2.12.0", "v2.12.1", "v2.12.2", "v2.12.3"],
@@ -44,9 +45,9 @@
   "sebescudie.GammaLauncher": ["5.2.2"],
   "Ruben2776.PicView": ["2.2"],
   "DEVCOM.LuaJIT": ["v2.1.1703358377"],
-  "Vendicated.Vencord.Canary": ["v1.3.1"],
-  "Vendicated.Vencord.PTB": ["v1.3.1"],
-  "Vendicated.Vencord": ["v1.3.1"],
+  "Vendicated.Vencord.Canary": ["v1.3.1", "v1.4.0"],
+  "Vendicated.Vencord.PTB": ["v1.3.1", "v1.4.0"],
+  "Vendicated.Vencord": ["v1.3.1", "v1.4.0"],
   "chylex.DiscordHistoryTracker": ["v40.0", "v41.0"],
   "Ombrelin.PlexRichPresence": ["2.0.10"],
   "OleguerLlopart.OpenComic": ["v1.0.0", "v1.1.0"],
@@ -81,7 +82,8 @@
     "v1.31.1",
     "v1.31.2",
     "v1.31.3",
-    "v1.32.0"
+    "v1.32.0",
+    "v1.32.1"
   ],
   "Armin2208.WindowsAutoNightMode": ["10.4.1.1"],
   "xavidop.cxcli": ["v1.153.0", "v1.155.0", "v1.156.0", "v1.158.0", "v1.159.0"],
@@ -98,7 +100,8 @@
     "1.1.1114",
     "1.1.1115",
     "1.1.1117",
-    "1.1.1118"
+    "1.1.1118",
+    "1.1.1122"
   ],
   "TeamIDE.TeamIDE": ["v2.6.4", "v2.6.5"],
   "CrowTranslate.CrowTranslate": ["2.11.1"],
@@ -124,7 +127,7 @@
   "nzbget.nzbget": ["v22.0"],
   "RustDesk.RustDesk": ["1.2.3"],
   "LutzRoeder.Netron": ["v7.3.7", "v7.3.8"],
-  "SagerNet.sing-box": ["v1.8.0", "v1.8.1", "v1.8.2"],
+  "SagerNet.sing-box": ["v1.8.0", "v1.8.1", "v1.8.2", "v1.8.4"],
   "gopass.gopass": ["v1.15.11"],
   "gopass.gopass-jsonapi": ["v1.15.11"],
   "AGSProjectTeam.AdventureGameStudio": ["v3.6.0.55", "v3.6.0.56"],
@@ -179,7 +182,8 @@
     "1.1.1114",
     "1.1.1115",
     "1.1.1117",
-    "1.1.1118"
+    "1.1.1118",
+    "1.1.1122"
   ],
   "lycheeverse.lychee": ["v0.14.1"],
   "SMPlayer.SMPlayer": ["v23.12.0"],
