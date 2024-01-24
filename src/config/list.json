@@ -246,5 +246,6 @@
   "StandardNotes.StandardNotes": ["3.184.0", "3.186.0"],
   "stakira.OpenUTAU": ["0.1.327"],
   "RaspberryPiFoundation.RaspberryPiImager": ["v1.8.5"],
-  "K8stooling.Kubazulo": ["v0.0.8-beta"]
+  "K8stooling.Kubazulo": ["v0.0.8-beta"],
+  "Speek.Speek": ["1.7.0"]
 }
