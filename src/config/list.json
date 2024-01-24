@@ -36,7 +36,8 @@
     "v2.12.1",
     "v2.12.2",
     "v2.12.3",
-    "v2.12.4"
+    "v2.12.4",
+    "v2.12.5"
   ],
   "DaCosySheeep.FactDownloader": ["v1.5.1"],
   "jcv8000.Codex": ["v2.0.3", "v2.0.4"],
@@ -181,7 +182,8 @@
     "v6.67.24",
     "v6.67.25",
     "v6.67.26",
-    "6.67.27"
+    "6.67.27",
+    "v6.67.28"
   ],
   "GAM-Team.GotYourBack": ["v1.74", "v1.80"],
   "Canonical.Multipass": ["v1.13.0"],
@@ -240,8 +242,8 @@
   "Meta.Zstandard": ["v1.5.5"],
   "Sonosaurus.SonoBus": ["1.7.2"],
   "YggdrasilNetwork.Yggdrasil": ["v0.5.4"],
-  "YuzuEmu.Yuzu.Mainline": ["1689", "1690", "1691"],
-  "StandardNotes.StandardNotes": ["3.184.0"],
+  "YuzuEmu.Yuzu.Mainline": ["1689", "1690", "1691", "1692"],
+  "StandardNotes.StandardNotes": ["3.184.0", "3.186.0"],
   "stakira.OpenUTAU": ["0.1.327"],
   "RaspberryPiFoundation.RaspberryPiImager": ["v1.8.5"],
   "K8stooling.Kubazulo": ["v0.0.8-beta"]
