@@ -124,7 +124,8 @@
     "1.1.1122",
     "1.1.1125",
     "1.1.1130",
-    "1.1.1131"
+    "1.1.1131",
+    "1.1.1137"
   ],
   "TeamIDE.TeamIDE": ["v2.6.4", "v2.6.5", "v2.6.6"],
   "CrowTranslate.CrowTranslate": ["2.11.1"],
@@ -196,7 +197,7 @@
   "AppFlowy.AppFlowy": ["0.4.1", "0.4.2", "0.4.3"],
   "errata-ai.Vale": ["v3.0.3", "v3.0.4", "v3.0.5"],
   "Jubler.App": ["v8.0.0"],
-  "Task.Task": ["v3.33.1"],
+  "Task.Task": ["v3.33.1", "v3.34.0"],
   "SpikeHD.Dorion": ["v4.0.1", "v4.1.0"],
   "PhapDieuDuong.ExifGlass": ["1.4.1.0"],
   "martinrotter.RSSGuard": ["4.6.3"],
@@ -213,7 +214,8 @@
     "1.1.1122",
     "1.1.1125",
     "1.1.1130",
-    "1.1.1131"
+    "1.1.1131",
+    "1.1.1137"
   ],
   "lycheeverse.lychee": ["v0.14.1"],
   "SMPlayer.SMPlayer": ["v23.12.0"],
