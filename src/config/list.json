@@ -126,7 +126,8 @@
     "1.1.1125",
     "1.1.1130",
     "1.1.1131",
-    "1.1.1137"
+    "1.1.1137",
+    "1.1.1138"
   ],
   "TeamIDE.TeamIDE": ["v2.6.4", "v2.6.5", "v2.6.6"],
   "CrowTranslate.CrowTranslate": ["2.11.1"],
@@ -141,8 +142,8 @@
   "jendrikseipp.RedNotebook": ["v2.31"],
   "moneymanagerex.moneymanagerex": ["v1.7.0"],
   "GoXLR-on-Linux.GoXLR-Utility": ["v1.0.4"],
-  "Hugo.Hugo": ["v0.121.2"],
-  "Hugo.Hugo.Extended": ["v0.121.2"],
+  "Hugo.Hugo": ["v0.121.2", "v0.122.0"],
+  "Hugo.Hugo.Extended": ["v0.121.2", "v0.122.0"],
   "tangshimin.MuJing": ["v2.2.13"],
   "Alist.Alist": ["v3.30.0"],
   "dynobo.NormCap": ["v0.5.3", "v0.5.4"],
@@ -217,9 +218,10 @@
     "1.1.1125",
     "1.1.1130",
     "1.1.1131",
-    "1.1.1137"
+    "1.1.1137",
+    "1.1.1138"
   ],
-  "lycheeverse.lychee": ["v0.14.1"],
+  "lycheeverse.lychee": ["v0.14.1", "v0.14.2"],
   "SMPlayer.SMPlayer": ["v23.12.0"],
   "YS-L.csvlens": ["v0.6.0"],
   "z-------------.cpod": ["v1.28.2"],
@@ -255,7 +257,7 @@
   "Meta.Zstandard": ["v1.5.5"],
   "Sonosaurus.SonoBus": ["1.7.2"],
   "YggdrasilNetwork.Yggdrasil": ["v0.5.4"],
-  "YuzuEmu.Yuzu.Mainline": ["1689", "1690", "1691", "1692", "1693"],
+  "YuzuEmu.Yuzu.Mainline": ["1689", "1690", "1691", "1692", "1693", "1694"],
   "StandardNotes.StandardNotes": ["3.184.0", "3.186.0"],
   "stakira.OpenUTAU": ["0.1.327"],
   "RaspberryPiFoundation.RaspberryPiImager": ["v1.8.5"],
