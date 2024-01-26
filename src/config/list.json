@@ -202,7 +202,7 @@
   "errata-ai.Vale": ["v3.0.3", "v3.0.4", "v3.0.5"],
   "Jubler.App": ["v8.0.0"],
   "Task.Task": ["v3.33.1", "v3.34.0"],
-  "SpikeHD.Dorion": ["v4.0.1", "v4.1.0"],
+  "SpikeHD.Dorion": ["v4.0.1", "v4.1.0", "v4.1.1"],
   "PhapDieuDuong.ExifGlass": ["1.4.1.0"],
   "martinrotter.RSSGuard": ["4.6.3"],
   "Stoplight.Prism": ["v5.5.3"],
@@ -265,5 +265,6 @@
   "RaspberryPiFoundation.RaspberryPiImager": ["v1.8.5"],
   "K8stooling.Kubazulo": ["v0.0.8-beta"],
   "Speek.Speek": ["1.7.0"],
-  "Hydrogen-Music.Hydrogen": ["1.2.3"]
+  "Hydrogen-Music.Hydrogen": ["1.2.3"],
+  "ElectronCommunity.ElectronFiddle": ["v0.36.0"]
 }
