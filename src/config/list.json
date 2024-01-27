@@ -130,7 +130,8 @@
     "1.1.1137",
     "1.1.1138",
     "1.1.1139",
-    "1.1.1140"
+    "1.1.1140",
+    "1.1.1141"
   ],
   "TeamIDE.TeamIDE": ["v2.6.4", "v2.6.5", "v2.6.6"],
   "CrowTranslate.CrowTranslate": ["2.11.1"],
@@ -224,7 +225,8 @@
     "1.1.1137",
     "1.1.1138",
     "1.1.1139",
-    "1.1.1140"
+    "1.1.1140",
+    "1.1.1141"
   ],
   "lycheeverse.lychee": ["v0.14.1", "v0.14.2"],
   "SMPlayer.SMPlayer": ["v23.12.0"],
@@ -278,5 +280,11 @@
   "Speek.Speek": ["1.7.0"],
   "Hydrogen-Music.Hydrogen": ["1.2.3"],
   "ElectronCommunity.ElectronFiddle": ["v0.36.0"],
-  "win32ss.Supermium": ["121.0.6167.81"]
+  "win32ss.Supermium": ["121.0.6167.81"],
+  "OpenRocket.OpenRocket": ["23.09"],
+  "GnuCash.GnuCash": ["5.5"],
+  "JohnMacFarlane.Pandoc": ["3.1.11.1"],
+  "Natron.Natron": ["v2.5.0"],
+  "JeremyHu.Dust3D": ["1.0.0-rc.9"],
+  "RandyHollines.Objeck": ["v2023.12.0"]
 }
