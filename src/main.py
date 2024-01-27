@@ -2248,10 +2248,10 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-    # Add win32ss.Supermium to Update List
+   # Add win32ss.Supermium to Update List
     id = "win32ss.Supermium"
     JSON = requests.get("https://api.github.com/repos/win32ss/supermium/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = re.search(r'[^\d.]', '', requests.get("https://api.github.com/repos/win32ss/supermium/releases/latest", verify=False, headers=Headers[1]).json()["name"])
+    Version = re.search(r'\d+(\.\d+)+', requests.get("https://api.github.com/repos/win32ss/supermium/releases/latest", verify=False, headers=Headers[1]).json()["name"]).group()
     Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
     if not version_verify(Version, id):
         report_existed(id, Version)
