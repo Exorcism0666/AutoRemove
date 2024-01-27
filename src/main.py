@@ -2264,7 +2264,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
    # Add OpenRocket.OpenRocket to Update List
     id = "OpenRocket.OpenRocket"
     JSON = requests.get("https://api.github.com/repos/openrocket/openrocket/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = re.sub(r'[^\d.]', '', requests.get("https://api.github.com/openrocket/openrocket/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"])
+    Version = re.sub(r'[^\d.]', '', requests.get("https://api.github.com/repos/openrocket/openrocket/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"])
     Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
     if not version_verify(Version, id):
         report_existed(id, Version)
