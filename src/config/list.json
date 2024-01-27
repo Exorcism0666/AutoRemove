@@ -269,5 +269,6 @@
   "K8stooling.Kubazulo": ["v0.0.8-beta"],
   "Speek.Speek": ["1.7.0"],
   "Hydrogen-Music.Hydrogen": ["1.2.3"],
-  "ElectronCommunity.ElectronFiddle": ["v0.36.0"]
+  "ElectronCommunity.ElectronFiddle": ["v0.36.0"],
+  "win32ss.Supermium": ["121.0.6167.81"]
 }
