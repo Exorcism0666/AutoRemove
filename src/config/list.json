@@ -148,7 +148,7 @@
   "GoXLR-on-Linux.GoXLR-Utility": ["v1.0.4"],
   "Hugo.Hugo": ["v0.121.2", "v0.122.0"],
   "Hugo.Hugo.Extended": ["v0.121.2", "v0.122.0"],
-  "tangshimin.MuJing": ["v2.2.13"],
+  "tangshimin.MuJing": ["v2.2.13", "v2.2.16"],
   "Alist.Alist": ["v3.30.0"],
   "dynobo.NormCap": ["v0.5.3", "v0.5.4"],
   "Bruno.Bruno": ["v1.6.1"],
@@ -287,5 +287,8 @@
   "JohnMacFarlane.Pandoc": ["3.1.11.1"],
   "Natron.Natron": ["v2.5.0"],
   "JeremyHu.Dust3D": ["1.0.0-rc.9"],
-  "RandyHollines.Objeck": ["v2023.12.0"]
+  "RandyHollines.Objeck": ["v2023.12.0"],
+  "Meltytech.Shotcut": ["v23.12.15"],
+  "ossia.score": ["v3.1.12"],
+  "FreeCAD.FreeCAD": ["0.21.2"]
 }
