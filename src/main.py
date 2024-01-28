@@ -2365,6 +2365,32 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
+    # Add InkStitch.InkStitch to Update List
+    id = "InkStitch.InkStitch"
+    JSON = requests.get("https://api.github.com/repos/inkstitch/inkstitch/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/inkstitch/inkstitch/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+   # Add stakira.OpenUTAU to Update List
+    id = "stakira.OpenUTAU"
+    JSON = requests.get("https://api.github.com/repos/stakira/OpenUtau/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = re.search(r'\d+(\.\d+)+', requests.get("https://api.github.com/repos/stakira/OpenUtau/releases/latest", verify=False, headers=Headers[1]).json()["name"]).group()
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith((".zip", ".exe"))]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
     # Updating
     if not debug:
         for each in Commands:
