@@ -14,15 +14,15 @@ def report_existed(id: str, Version: str) -> None:
     print(f"{id}: {Version} has already existed, skip publishing")
 
 def komac(path: str, debug: bool = False) -> pathlib.Path:
-    Komac = pathlib.Path(path)/"komac.jar"
+    Komac = pathlib.Path(path)/"komac.exe"
     if not debug:
         with open(Komac, "wb+") as f:
-            file = requests.get("https://gh.xfisxf.top/https://github.com/russellbanks/Komac/releases/download/v1.11.0/Komac-1.11.0-all.jar", verify=False)
+            file = requests.get("https://github.com/russellbanks/Komac/releases/download/v2.0.2/KomacPortable-v2.0.2-x64.exe", verify=False)
             f.write(file.content)
     return Komac
 
 def command(komac: pathlib.Path, id: str, urls: str, version: str, token: str) -> str:
-    Commands = "java -jar {} update --id {} --urls {} --version {} --submit --token {}".format(komac.__str__(), id, urls, version, token)
+    Commands = "{} update --id {} --urls {} --version {} --submit --token {}".format(komac.__str__(), id, urls, version, token)
     return Commands
 
 def clean_string(string: str, keywords: dict[str, str]) -> str:
@@ -2398,7 +2398,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 do_list(*each[1])
     
     # Cleanup the merged branch
-    os.system(f"java -jar {Komac} branch cleanup --only-merged --token {GH_TOKEN}")
+    os.system(f"{Komac} cleanup --only-merged --token {GH_TOKEN}")
 
     return Commands
 
