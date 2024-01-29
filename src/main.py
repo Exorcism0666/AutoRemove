@@ -22,7 +22,7 @@ def komac(path: str, debug: bool = False) -> pathlib.Path:
     return Komac
 
 def command(komac: pathlib.Path, id: str, urls: str, version: str, token: str) -> str:
-    Commands = "{} update --id {} --urls {} --version {} --submit --token {}".format(komac.__str__(), id, urls, version, token)
+    Commands = "{} update --identifier {} --urls {} --version {} --submit --token {}".format(komac.__str__(), id, urls, version, token)
     return Commands
 
 def clean_string(string: str, keywords: dict[str, str]) -> str:
