@@ -136,7 +136,8 @@
     "1.1.1140",
     "1.1.1141",
     "1.1.1143",
-    "1.1.1151"
+    "1.1.1151",
+    "1.1.1152"
   ],
   "TeamIDE.TeamIDE": ["v2.6.4", "v2.6.5", "v2.6.6"],
   "CrowTranslate.CrowTranslate": ["2.11.1"],
@@ -156,7 +157,7 @@
   "tangshimin.MuJing": ["v2.2.13", "v2.2.16"],
   "Alist.Alist": ["v3.30.0"],
   "dynobo.NormCap": ["v0.5.3", "v0.5.4"],
-  "Bruno.Bruno": ["v1.6.1", "v1.7.0"],
+  "Bruno.Bruno": ["v1.6.1", "v1.7.0", "v1.7.1"],
   "SoftFever.OrcaSlicer": ["v1.9.0"],
   "IPEP.Scantailor-Experimental": ["0.2024.01.02"],
   "nzbget.nzbget": ["v22.0"],
@@ -234,7 +235,8 @@
     "1.1.1140",
     "1.1.1141",
     "1.1.1143",
-    "1.1.1151"
+    "1.1.1151",
+    "1.1.1152"
   ],
   "lycheeverse.lychee": ["v0.14.1", "v0.14.2"],
   "SMPlayer.SMPlayer": ["v23.12.0"],
