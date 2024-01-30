@@ -43,7 +43,8 @@ def list_to_str(List: list) -> str:
          "[": "",
          "]": "",
          " ": "",
-         "'": ""
+         "'": "",
+         ",": " "
     })
     return new
 
