@@ -21,7 +21,8 @@
     "2024.01.21.232719",
     "2024.01.22.232713",
     "2024.01.23.232723",
-    "2024.01.28.232706"
+    "2024.01.28.232706",
+    "2024.01.29.232706"
   ],
   "Gyan.FFmpeg": ["6.1.1"],
   "Gyan.FFmpeg.Shared": ["6.1.1"],
@@ -77,7 +78,14 @@
     "v0.1.146"
   ],
   "NextDNS.NextDNS.CLI": ["v1.41.0"],
-  "AdGuard.dnsproxy": ["v0.61.1", "v0.62.0", "v0.63.0", "v0.63.1", "v0.64.0"],
+  "AdGuard.dnsproxy": [
+    "v0.61.1",
+    "v0.62.0",
+    "v0.63.0",
+    "v0.63.1",
+    "v0.64.0",
+    "v0.64.1"
+  ],
   "AdGuard.AdGuardHome": ["v0.107.43"],
   "Genymobile.scrcpy": ["v2.3.1"],
   "Frontesque.scrcpy+": ["2.0.2"],
@@ -110,7 +118,8 @@
     "v1.159.0",
     "v1.160.0",
     "v1.161.0",
-    "v1.162.0"
+    "v1.162.0",
+    "v1.163.0"
   ],
   "Chocolatey.ChocolateyGUI": ["2.1.0"],
   "Chocolatey.Chocolatey": ["2.2.2"],
@@ -209,7 +218,7 @@
   "GAM-Team.GotYourBack": ["v1.74", "v1.80"],
   "Canonical.Multipass": ["v1.13.0"],
   "AppFlowy.AppFlowy": ["0.4.1", "0.4.2", "0.4.3"],
-  "errata-ai.Vale": ["v3.0.3", "v3.0.4", "v3.0.5"],
+  "errata-ai.Vale": ["v3.0.3", "v3.0.4", "v3.0.5", "v3.0.6"],
   "Jubler.App": ["v8.0.0"],
   "Task.Task": ["v3.33.1", "v3.34.0", "v3.34.1"],
   "SpikeHD.Dorion": ["v4.0.1", "v4.1.0", "v4.1.1"],
@@ -252,7 +261,7 @@
   "Stretchly.Stretchly": ["v1.15.1"],
   "Logseq.Logseq": ["0.10.4", "0.10.5"],
   "creativeprojects.resticprofile": ["v0.24.0"],
-  "Streetwriters.Notesnook": ["v2.6.14"],
+  "Streetwriters.Notesnook": ["v2.6.14", "v2.6.15"],
   "Transmission.Transmission": ["4.0.5"],
   "BiglySoftware.BiglyBT": ["v3.5.0.0"],
   "szTheory.exifcleaner": ["v3.6.0"],
