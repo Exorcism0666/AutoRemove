@@ -2123,7 +2123,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     id = "YuzuEmu.Yuzu.Mainline"
     JSON = requests.get("https://api.github.com/repos/yuzu-emu/yuzu-mainline/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = re.search(r'\d+', requests.get("https://api.github.com/repos/yuzu-emu/yuzu-mainline/releases/latest", verify=False, headers=Headers[1]).json()["name"]).group()
-    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".zip")]
+    Urls = [each["browser_download_url"] for each in JSON if ("zip" in each["browser_download_url"]) and not("debugsymbols" in each["browser_download_url"])]
     if not version_verify(Version, id):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
