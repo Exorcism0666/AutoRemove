@@ -2136,7 +2136,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     id = "StandardNotes.StandardNotes"
     JSON = requests.get("https://api.github.com/repos/standardnotes/app/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = re.sub(r'[^\d.]', '', requests.get("https://api.github.com/repos/standardnotes/app/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"])
-    Urls = [each["browser_download_url"] for each in JSON if ("exe" in each["browser_download_url"]) and (("ia32" in each["browser_download_url"]) or ("x64" in each["browser_download_url"]))]
+    Urls = [each["browser_download_url"] for each in JSON if ("exe" in each["browser_download_url"]) and (("ia32" in each["browser_download_url"]) or ("x64" in each["browser_download_url"])) and not("blockmap" in each["browser_download_url"])]
     if not version_verify(Version, id):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
