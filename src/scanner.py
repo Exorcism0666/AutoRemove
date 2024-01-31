@@ -20,7 +20,7 @@ def Komac(path: str, debug: bool = False) -> pathlib.Path:
     Komac = pathlib.Path(path)/"komac.exe"
     if not debug:
         with open(Komac, "wb+") as f:
-            file = requests.get("https://github.com/russellbanks/Komac/releases/download/v2.0.2/KomacPortable-v2.0.2-x64.exe", verify=False)
+            file = requests.get("https://github.com/russellbanks/Komac/releases/download/nightly/KomacPortable-nightly-x64.exe", verify=False)
             f.write(file.content)
     return Komac
 komac = Komac(pathlib.Path(__file__).parents[0])
