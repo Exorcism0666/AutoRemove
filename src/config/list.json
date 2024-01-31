@@ -91,7 +91,7 @@
   "Frontesque.scrcpy+": ["2.0.2"],
   "Barry-ran.QtScrcpy": ["v2.1.2"],
   "Balena.Etcher": ["v1.18.11"],
-  "Balena.BalenaCLI": ["v17.4.9", "v17.4.11", "v17.4.12", "v17.5.0"],
+  "Balena.BalenaCLI": ["v17.4.9", "v17.4.11", "v17.4.12", "v17.5.0", "v17.5.1"],
   "GeekCorner.threema": ["v2.5.1"],
   "OnionShare.OnionShare": ["v2.6"],
   "quotient-im.Quaternion": ["0.0.95.1", "0.0.96"],
