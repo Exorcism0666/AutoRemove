@@ -23,9 +23,9 @@ def Komac(path: str, debug: bool = False) -> pathlib.Path:
             file = requests.get("https://github.com/russellbanks/Komac/releases/download/nightly/KomacPortable-nightly-x64.exe", verify=False)
             f.write(file.content)
     return Komac
-
-def command_generator(Komac: pathlib.Path, token: str, id: str, version: str, reason: str) -> bool:
-    return f"{} remove --identifier {id} --version {version} --reason '{reason}' --submit --token {token}"
+komac = Komac(pathlib.Path(__file__).parents[0])
+def command_generator(komac: pathlib.Path, token: str, id: str, version: str, reason: str) -> bool:
+    return f"{komac_path} remove --identifier {id} --version {version} --reason '{reason}' --submit --token {token}"
 
 def scan(_yaml: dict, token: str):
     id = _yaml["PackageIdentifier"]
