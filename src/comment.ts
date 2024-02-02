@@ -28,7 +28,7 @@ const login = "coolplaylinbot";
   datas.forEach((data) => {
     data.forEach(async (obj) => {
       try {
-        api.rest.issues.removeAssignees({
+        await api.rest.issues.removeAssignees({
           repo: repo,
           owner: owner,
           issue_number: obj.number,
