@@ -41,7 +41,7 @@ const login = "coolplaylinbot";
           body: `Sorry, currently I can't reply you now, I'll call @CoolPlayLin instead.\n\n**Note: DO NOT ASSIGN TO THIS ACCOUNT AGAIN, ALL ASSIGNEES OF THIS ACCOUNT WILL BE REMOVED AUTOMATICALLY**`,
         });
       } catch (error) {
-        console.log(error);
+        console.log("No assignee need to be removed");
       }
       const comments = await api.rest.issues.listComments({
         repo: repo,
