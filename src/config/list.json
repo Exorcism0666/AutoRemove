@@ -237,7 +237,7 @@
   "SpikeHD.Dorion": ["v4.0.1", "v4.1.0", "v4.1.1"],
   "PhapDieuDuong.ExifGlass": ["1.4.1.0"],
   "martinrotter.RSSGuard": ["4.6.3"],
-  "Stoplight.Prism": ["v5.5.3"],
+  "Stoplight.Prism": ["v5.5.3", "v5.5.4"],
   "Ryujinx.Ryujinx": [
     "1.1.1109",
     "1.1.1110",
