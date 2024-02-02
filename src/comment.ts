@@ -27,6 +27,22 @@ const login = "coolplaylinbot";
   }
   datas.forEach((data) => {
     data.forEach(async (obj) => {
+      try {
+        api.rest.issues.removeAssignees({
+          repo: repo,
+          owner: owner,
+          issue_number: obj.number,
+          assignees: ["coolplaylinbot"],
+        });
+        await api.rest.issues.createComment({
+          owner: owner,
+          repo: repo,
+          issue_number: obj.number,
+          body: `Sorry, currently I can't reply you now, I'll call @CoolPlayLin instead.\n\n**Note: DO NOT ASSIGN TO THIS ACCOUNT AGAIN, ALL ASSIGNEES OF THIS ACCOUNT WILL BE REMOVED AUTOMATICALLY**`,
+        });
+      } catch (error) {
+        console.log(error);
+      }
       const comments = await api.rest.issues.listComments({
         repo: repo,
         owner: owner,
