@@ -2392,8 +2392,8 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-   # Add ArminOsaj&SamuelSchiegg.AutoDarkMode to Update List
-    id = "'ArminOsaj&SamuelSchiegg.AutoDarkMode'"
+   # Add Armin2208.WindowsAutoNightMode to Update List
+    id = "Armin2208.WindowsAutoNightMode"
     JSON = requests.get("https://api.github.com/repos/AutoDarkMode/Windows-Auto-Night-Mode/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/AutoDarkMode/Windows-Auto-Night-Mode/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
     Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
@@ -2449,6 +2449,19 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     JSON = requests.get("https://api.github.com/repos/doublecmd/doublecmd/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/doublecmd/doublecmd/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
     Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".msi")]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+   # Add divVerent.AAAAXY to Update List
+    id = "divVerent.AAAAXY"
+    JSON = requests.get("https://api.github.com/repos/divVerent/aaaaxy/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/divVerent/aaaaxy/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if ("zip" in each["browser_download_url"]) and (("386" in each["browser_download_url"]) or ("amd64" in each["browser_download_url"])) and not("linux" in each["browser_download_url"])]
     if not version_verify(str_pop(Version, 0), id):
          report_existed(id, Version)
     elif do_list(id, Version, "verify"):
