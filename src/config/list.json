@@ -185,7 +185,7 @@
   "nzbget.nzbget": ["v22.0"],
   "RustDesk.RustDesk": ["1.2.3"],
   "LutzRoeder.Netron": ["v7.3.7", "v7.3.8"],
-  "SagerNet.sing-box": ["v1.8.0", "v1.8.1", "v1.8.2", "v1.8.4"],
+  "SagerNet.sing-box": ["v1.8.0", "v1.8.1", "v1.8.2", "v1.8.4", "v1.8.5"],
   "gopass.gopass": ["v1.15.11"],
   "gopass.gopass-jsonapi": ["v1.15.11"],
   "AGSProjectTeam.AdventureGameStudio": ["v3.6.0.55", "v3.6.0.56"],
