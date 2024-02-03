@@ -60,7 +60,7 @@
   "jurplel.qView": ["6.1"],
   "YACReader.YACReader": ["9.13.1"],
   "KeePassXCTeam.KeePassXC": ["2.7.6"],
-  "staniel359.muffon": ["v2.0.1"],
+  "staniel359.muffon": ["v2.0.1", "v2.0.2"],
   "DuongDieuPhap.ImageGlass": ["9.0.9.1230", "9.0.10.201"],
   "sebescudie.GammaLauncher": ["5.2.2"],
   "Ruben2776.PicView": ["2.2", "2.2.1"],
@@ -231,7 +231,8 @@
     "v6.67.31",
     "v6.67.32",
     "v6.67.33",
-    "v6.67.34"
+    "v6.67.34",
+    "v6.67.35"
   ],
   "GAM-Team.GotYourBack": ["v1.74", "v1.80"],
   "Canonical.Multipass": ["v1.13.0"],
