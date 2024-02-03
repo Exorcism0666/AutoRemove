@@ -159,7 +159,8 @@
     "1.1.1151",
     "1.1.1152",
     "1.1.1154",
-    "1.1.1155"
+    "1.1.1155",
+    "1.1.1156"
   ],
   "TeamIDE.TeamIDE": ["v2.6.4", "v2.6.5", "v2.6.6"],
   "CrowTranslate.CrowTranslate": ["2.11.1"],
@@ -181,7 +182,7 @@
   "dynobo.NormCap": ["v0.5.3", "v0.5.4"],
   "Bruno.Bruno": ["v1.6.1", "v1.7.0", "v1.7.1"],
   "SoftFever.OrcaSlicer": ["v1.9.0"],
-  "IPEP.Scantailor-Experimental": ["0.2024.01.02"],
+  "IPEP.Scantailor-Experimental": ["0.2024.01.02", "0.2024.02.04"],
   "nzbget.nzbget": ["v22.0"],
   "RustDesk.RustDesk": ["1.2.3"],
   "LutzRoeder.Netron": ["v7.3.7", "v7.3.8"],
@@ -264,7 +265,8 @@
     "1.1.1151",
     "1.1.1152",
     "1.1.1154",
-    "1.1.1155"
+    "1.1.1155",
+    "1.1.1156"
   ],
   "lycheeverse.lychee": ["v0.14.1", "v0.14.2"],
   "SMPlayer.SMPlayer": ["v23.12.0"],
