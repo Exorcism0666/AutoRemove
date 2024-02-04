@@ -161,9 +161,10 @@
     "1.1.1152",
     "1.1.1154",
     "1.1.1155",
-    "1.1.1156"
+    "1.1.1156",
+    "1.1.1157"
   ],
-  "TeamIDE.TeamIDE": ["v2.6.4", "v2.6.5", "v2.6.6"],
+  "TeamIDE.TeamIDE": ["v2.6.4", "v2.6.5", "v2.6.6", "v2.6.7"],
   "CrowTranslate.CrowTranslate": ["2.11.1"],
   "kramo.Cartridges": ["v2.7.2"],
   "hikari-no-yume.touchHLE": ["v0.2.1"],
@@ -270,7 +271,8 @@
     "1.1.1152",
     "1.1.1154",
     "1.1.1155",
-    "1.1.1156"
+    "1.1.1156",
+    "1.1.1157"
   ],
   "lycheeverse.lychee": ["v0.14.1", "v0.14.2"],
   "SMPlayer.SMPlayer": ["v23.12.0"],
@@ -342,5 +344,6 @@
   "foldynl.QLog": ["v0.31.0"],
   "keif888.SSISMHash": ["v1.7.6.0"],
   "alexx2000.DoubleCommander": ["v1.0.11"],
-  "divVerent.AAAAXY": ["v1.4.160"]
+  "divVerent.AAAAXY": ["v1.4.160"],
+  "Microsoft.PerfView": ["v3.1.8"]
 }
