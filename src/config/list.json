@@ -60,7 +60,7 @@
   "clouDr-f2e.rubick": ["v4.2.1"],
   "IPFS.IPFS-Desktop": ["v0.32.0", "v0.33.0"],
   "jurplel.qView": ["6.1"],
-  "YACReader.YACReader": ["9.13.1"],
+  "YACReader.YACReader": ["9.13.1", "9.14.1"],
   "KeePassXCTeam.KeePassXC": ["2.7.6"],
   "staniel359.muffon": ["v2.0.1", "v2.0.2"],
   "DuongDieuPhap.ImageGlass": ["9.0.9.1230", "9.0.10.201"],
@@ -88,7 +88,7 @@
     "v0.1.146",
     "v0.1.147"
   ],
-  "NextDNS.NextDNS.CLI": ["v1.41.0"],
+  "NextDNS.NextDNS.CLI": ["v1.41.0", "v1.42.0"],
   "AdGuard.dnsproxy": [
     "v0.61.1",
     "v0.62.0",
@@ -341,7 +341,7 @@
   "JeremyHu.Dust3D": ["1.0.0-rc.9"],
   "RandyHollines.Objeck": ["v2023.12.0"],
   "Meltytech.Shotcut": ["v23.12.15", "v24.01.28"],
-  "ossia.score": ["v3.1.12"],
+  "ossia.score": ["v3.1.12", "v3.1.13"],
   "FreeCAD.FreeCAD": ["0.21.2"],
   "InkStitch.InkStitch": ["v3.0.1"],
   "Nextcloud.NextcloudDesktop": ["v3.11.1"],
