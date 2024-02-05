@@ -164,7 +164,8 @@
     "1.1.1155",
     "1.1.1156",
     "1.1.1157",
-    "1.1.1159"
+    "1.1.1159",
+    "1.1.1160"
   ],
   "TeamIDE.TeamIDE": ["v2.6.4", "v2.6.5", "v2.6.6", "v2.6.7"],
   "CrowTranslate.CrowTranslate": ["2.11.1"],
@@ -275,9 +276,10 @@
     "1.1.1155",
     "1.1.1156",
     "1.1.1157",
-    "1.1.1159"
+    "1.1.1159",
+    "1.1.1160"
   ],
-  "lycheeverse.lychee": ["v0.14.1", "v0.14.2"],
+  "lycheeverse.lychee": ["v0.14.1", "v0.14.2", "v0.14.3"],
   "SMPlayer.SMPlayer": ["v23.12.0"],
   "YS-L.csvlens": ["v0.6.0"],
   "z-------------.cpod": ["v1.28.2"],
@@ -289,7 +291,7 @@
   "Alex313031.Thorium": ["M119.0.6045.214", "M120.0.6099.235"],
   "Wilfred.difftastic": ["0.54.0", "0.55.0"],
   "Stretchly.Stretchly": ["v1.15.1"],
-  "Logseq.Logseq": ["0.10.4", "0.10.5"],
+  "Logseq.Logseq": ["0.10.4", "0.10.5", "0.10.6"],
   "creativeprojects.resticprofile": ["v0.24.0"],
   "Streetwriters.Notesnook": ["v2.6.14", "v2.6.15"],
   "Transmission.Transmission": ["4.0.5"],
