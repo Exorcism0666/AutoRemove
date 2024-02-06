@@ -99,7 +99,7 @@
     "v0.64.0",
     "v0.64.1"
   ],
-  "AdGuard.AdGuardHome": ["v0.107.43"],
+  "AdGuard.AdGuardHome": ["v0.107.43", "v0.107.44"],
   "Genymobile.scrcpy": ["v2.3.1"],
   "Frontesque.scrcpy+": ["2.0.2"],
   "Barry-ran.QtScrcpy": ["v2.1.2"],
