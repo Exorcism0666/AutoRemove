@@ -88,7 +88,8 @@
     "v0.1.143",
     "v0.1.145",
     "v0.1.146",
-    "v0.1.147"
+    "v0.1.147",
+    "v0.1.148"
   ],
   "NextDNS.NextDNS.CLI": ["v1.41.0", "v1.42.0"],
   "AdGuard.dnsproxy": [
@@ -97,7 +98,8 @@
     "v0.63.0",
     "v0.63.1",
     "v0.64.0",
-    "v0.64.1"
+    "v0.64.1",
+    "v0.65.0"
   ],
   "AdGuard.AdGuardHome": ["v0.107.43", "v0.107.44"],
   "Genymobile.scrcpy": ["v2.3.1"],
@@ -314,7 +316,7 @@
   "Wilfred.difftastic": ["0.54.0", "0.55.0"],
   "Stretchly.Stretchly": ["v1.15.1"],
   "Logseq.Logseq": ["0.10.4", "0.10.5", "0.10.6"],
-  "creativeprojects.resticprofile": ["v0.24.0"],
+  "creativeprojects.resticprofile": ["v0.24.0", "v0.25.0"],
   "Streetwriters.Notesnook": ["v2.6.14", "v2.6.15"],
   "Transmission.Transmission": ["4.0.5"],
   "BiglySoftware.BiglyBT": ["v3.5.0.0"],
