@@ -146,7 +146,8 @@
     "v1.163.0",
     "v1.167.0",
     "v1.168.0",
-    "v1.169.0"
+    "v1.169.0",
+    "v1.170.0"
   ],
   "Chocolatey.ChocolateyGUI": ["2.1.0"],
   "Chocolatey.Chocolatey": ["2.2.2"],
