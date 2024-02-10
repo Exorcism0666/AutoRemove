@@ -13,16 +13,16 @@ GH_TOKEN = sys.argv[1]
 def report_existed(id: str, Version: str) -> None:
     print(f"{id}: {Version} has already existed, skip publishing")
 
-def wingetcreate(path: str, debug: bool = False) -> pathlib.Path:
-    Wingetcreate = pathlib.Path(path)/"wingetcreate.exe"
+def komac(path: str, debug: bool = False) -> pathlib.Path:
+    Komac = pathlib.Path(path)/"komac.exe"
     if not debug:
-        with open(Wingetcreate, "wb+") as f:
-            file = requests.get("https://github.com/microsoft/winget-create/releases/download/v1.5.7.0/wingetcreate.exe", verify=False)
+        with open(Komac, "wb+") as f:
+            file = requests.get("https://github.com/Exorcism0666/Komac/releases/download/nightly/KomacPortable-nightly-x64.exe", verify=False)
             f.write(file.content)
-    return Wingetcreate
+    return Komac
 
-def command(wingetcreate: pathlib.Path, urls: str, version: str, id: str, token: str) -> str:
-    Commands = "{} update --submit --urls {} --version {} {} --submit --token {}".format(wingetcreate.__str__(), urls, version, id, token)
+def command(komac: pathlib.Path, id: str, urls: str, version: str, token: str) -> str:
+    Commands = "{} update --identifier {} --urls {} --version {} --submit --token {}".format(komac.__str__(), id, urls, version, token)
     return Commands
 
 def clean_string(string: str, keywords: dict[str, str]) -> str:
@@ -58,7 +58,7 @@ def do_list(id: str, version: str, mode: str) -> bool | None:
     """
     Mode: write or verify
     """
-    path = pathlib.Path(__file__).parents[0] / "config" / "listpckgr.json"
+    path = pathlib.Path(__file__).parents[0] / "config" / "list.json"
     with open(path, "r", encoding="utf-8") as f:
         try:
             JSON: dict[str, list[str]] = json.loads(f.read())
@@ -83,7 +83,7 @@ def do_list(id: str, version: str, mode: str) -> bool | None:
 def main() -> list[tuple[str, tuple[str, str, str]]]:
     Commands:list[tuple[str, tuple[str, str, str]]] = []
     debug = bool([each for each in sys.argv if each == "debug"])
-    Winegtcreate = wingetcreate(pathlib.Path(__file__).parents[0], debug)
+    Komac = komac(pathlib.Path(__file__).parents[0], debug)
     Headers = [{
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.67",
     }, {
@@ -91,17 +91,17 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "Authorization": f"Bearer {GH_TOKEN}"
     }]
 
-# Add Peppy.Osu! to Update List
-    id = "Peppy.Osu!"
-    JSON = requests.get("https://api.github.com/repos/ppy/osu/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/repos/ppy/osu/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if ".exe" in each["browser_download_url"]]
+# Add GitHub.Atom_Pckgr to Update List
+    id = "GitHub.Atom_Pckgr"
+    JSON = requests.get("https://api.github.com/repos/atom/atom/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/atom/atom/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if ("exe" in each["browser_download_url"]) and ("x64" in each["browser_download_url"])]
     if not version_verify(Version, id):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, list_to_str(Urls), Version, id, GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
     # Updating
@@ -109,6 +109,9 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         for each in Commands:
             if os.system(each[0]) == 0:
                 do_list(*each[1])
+    
+    # Cleanup the merged branch
+    os.system(f"{Komac} cleanup --only-merged --token {GH_TOKEN}")
 
     return Commands
 
