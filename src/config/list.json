@@ -392,5 +392,6 @@
   "AssetRipper.AssetRipper": ["1.0.6"],
   "soopercool101.BrawlCrate": ["v0.41"],
   "GitHub.Atom_Pckgr": ["v1.60.0"],
-  "GitHub.GitLFS_Pckgr": ["v3.4.1"]
+  "GitHub.GitLFS_Pckgr": ["v3.4.1"],
+  "Rufus.Rufus_Pckgr": ["v4.4"]
 }
