@@ -406,5 +406,17 @@
   "AutoHotkey.AutoHotkey": ["v2.0.11"],
   "Microsoft.Azure.StorageExplorer": ["v1.32.1"],
   "RedHat.Podman-Desktop": ["v1.7.1"],
-  "dotPDNLLC.paintdotnet": ["v5.0.12"]
+  "dotPDNLLC.paintdotnet": ["v5.0.12"],
+  "Kopia.KopiaUI_Pckgr": ["v0.15.0"],
+  "Kitware.CMake_Pckgr": ["v3.28.3"],
+  "Audacity.Audacity_Pckgr": ["3.4.2"],
+  "Sonosaurus.SonoBus_Pckgr": ["1.7.2"],
+  "Kubernetes.minikube_Pckgr": ["v1.32.0"],
+  "AutoHotkey.AutoHotkey_Pckgr": ["v2.0.11"],
+  "JohnMacFarlane.Pandoc_Pckgr": ["3.1.11.1"],
+  "DuongDieuPhap.ImageGlass_Pckgr": ["9.0.10.201"],
+  "Nextcloud.NextcloudDesktop_Pckgr": ["v3.11.1"],
+  "Microsoft.Azure.StorageExplorer_Pckgr": ["v1.32.1"],
+  "RedHat.Podman-Desktop_Pckgr": ["v1.7.1"],
+  "dotPDNLLC.paintdotnet_Pckgr": ["v5.0.12"]
 }
