@@ -9,7 +9,7 @@
   "HandBrake.HandBrake": ["1.7.2"],
   "SchildiChat.SchildiChat": ["v1.11.30-sc.2"],
   "cinnyapp.cinny-desktop": ["v3.2.1"],
-  "Audacity.Audacity": ["Audacity-3.4.2"],
+  "Audacity.Audacity": ["Audacity-3.4.2", "3.4.2"],
   "Tyrrrz.DiscordChatExporter.CLI": ["2.42.6", "2.42.7"],
   "Tyrrrz.DiscordChatExporter.GUI": ["2.42.6", "2.42.7"],
   "Tyrrrz.LightBulb": ["2.4.7"],
@@ -189,7 +189,8 @@
     "1.1.1163",
     "1.1.1164",
     "1.1.1173",
-    "1.1.1174"
+    "1.1.1174",
+    "1.1.1179"
   ],
   "TeamIDE.TeamIDE": ["v2.6.4", "v2.6.5", "v2.6.6", "v2.6.7"],
   "CrowTranslate.CrowTranslate": ["2.11.1"],
@@ -313,7 +314,8 @@
     "1.1.1163",
     "1.1.1164",
     "1.1.1173",
-    "1.1.1174"
+    "1.1.1174",
+    "1.1.1179"
   ],
   "lycheeverse.lychee": ["v0.14.1", "v0.14.2", "v0.14.3"],
   "SMPlayer.SMPlayer": ["v23.12.0"],
@@ -393,5 +395,16 @@
   "soopercool101.BrawlCrate": ["v0.41"],
   "GitHub.Atom_Pckgr": ["v1.60.0"],
   "GitHub.GitLFS_Pckgr": ["v3.4.1"],
-  "Rufus.Rufus_Pckgr": ["v4.4"]
+  "Rufus.Rufus_Pckgr": ["v4.4"],
+  "GitHub.Atom": ["v1.60.0"],
+  "GitHub.GitLFS": ["v3.4.1"],
+  "Rufus.Rufus": ["v4.4"],
+  "Kopia.KopiaUI": ["v0.15.0"],
+  "Kitware.CMake": ["v3.28.3"],
+  "dnGrep.dnGrep": ["v4.1.7.0"],
+  "Kubernetes.minikube": ["v1.32.0"],
+  "AutoHotkey.AutoHotkey": ["v2.0.11"],
+  "Microsoft.Azure.StorageExplorer": ["v1.32.1"],
+  "RedHat.Podman-Desktop": ["v1.7.1"],
+  "dotPDNLLC.paintdotnet": ["v5.0.12"]
 }
