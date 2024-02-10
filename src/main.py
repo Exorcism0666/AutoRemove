@@ -2626,19 +2626,6 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-# Add Sonosaurus.SonoBus to Update List
-    id = "Sonosaurus.SonoBus"
-    JSON = requests.get("https://api.github.com/repos/sonosaurus/sonobus/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/repos/sonosaurus/sonobus/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
-    if not version_verify(Version, id):
-        report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
-
 # Add Kubernetes.minikube to Update List
     id = "Kubernetes.minikube"
     JSON = requests.get("https://api.github.com/repos/kubernetes/minikube/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
