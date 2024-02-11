@@ -8,7 +8,9 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v4.1.1
+      with:
+        token: ${{ secrets.COOLPLAYLIN_BOT_TOKEN }}
 
     - name: Download WinGet and its dependencies
       shell: pwsh
@@ -21,10 +23,6 @@ jobs:
         wingetcreate info
         Remove-Item -Path "$env:LOCALAPPDATA\Packages\Microsoft.WindowsPackageManagerManifestCreator_8wekyb3d8bbwe\LocalState\settings.json"
         Invoke-WebRequest -Uri "https://gist.githubusercontent.com/Exorcism0666/3808dfc6db419f5f2ada7985c6750e70/raw/2d673d5cc6b829316cfc7797ec89e9d1189014d6/settings.json" -OutFile "$env:LOCALAPPDATA\Packages\Microsoft.WindowsPackageManagerManifestCreator_8wekyb3d8bbwe\LocalState\settings.json"
-    - name: Checkout
-      uses: actions/checkout@v4.1.1
-      with:
-        token: ${{ secrets.COOLPLAYLIN_BOT_TOKEN }}
     - name: Setup Python
       uses: actions/setup-python@v5
       with:
@@ -60,7 +58,7 @@ jobs:
         python3 -m pip install -r requirements.txt
         pnpm install
     - name: Publish
-      run: python3 src/main.py ${{ secrets.TOKEN }}
+      run: python3 src/pckgrbot.py ${{ secrets.TOKEN }}
     - name: Format
       run: npm run format
     - name: Post on Always
