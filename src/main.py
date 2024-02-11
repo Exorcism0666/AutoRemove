@@ -48,7 +48,7 @@ def list_to_str(List: list) -> str:
 
 def version_verify(version: str, id: str) -> bool:
     try:
-        if len([v for v in requests.get(f"https://vedantmgoyal.vercel.app/api/winget-pkgs/versions/{id}").json()[id] if v == version]) > 0:
+        if len([v for v in requests.get(f"https://vedantmgoyal.vercel.app/api/winget-pkgs/versions/{id}").json()["Versions"] if v == version]) > 0:
             return False
         else:
             return True
