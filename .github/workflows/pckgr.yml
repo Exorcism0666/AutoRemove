@@ -1,7 +1,4 @@
 name: Auto Publish (Pckgrbot)
-on:
-  workflow_dispatch:
-  schedule: [{ cron: 45 0/3 * * * }]
 
 env:
   NAME: "Exorcism0666"
