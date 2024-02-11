@@ -111,7 +111,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     id = "HandBrake.HandBrake"
     JSON = requests.get("https://api.github.com/repos/HandBrake/HandBrake/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/HandBrake/HandBrake/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if ("exe" in each["browser_download_url"]) and not("blockmap" in each["browser_download_url"]) and (("arm64" in each["browser_download_url"]) or ("x86_64" in each["browser_download_url"]))]
+    Urls = [each["browser_download_url"] for each in JSON if ("exe" in each["browser_download_url"]) and not(("blockmap" in each["browser_download_url"]) or ("sig" in each["browser_download_url"])) and (("arm64" in each["browser_download_url"]) or ("x86_64" in each["browser_download_url"]))]
     if not version_verify(Version, id):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
