@@ -18,6 +18,5 @@ jobs:
         Repair-WinGetPackageManager -Latest -AllUsers -Verbose
         winget settings --enable LocalManifestFiles
         winget --info
-        winget install wingetcreate
-        Y
+        echo Y | winget install wingetcreate
         wingetcreate
