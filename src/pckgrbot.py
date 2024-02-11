@@ -13,13 +13,8 @@ GH_TOKEN = sys.argv[1]
 def report_existed(id: str, Version: str) -> None:
     print(f"{id}: {Version} has already existed, skip publishing")
 
-def wingetcreate(path: str, debug: bool = False) -> pathlib.Path:
-    Wingetcreate = pathlib.Path(path)/"wingetcreate.exe"
-    if not debug:
-        with open(Wingetcreate, "wb+") as f:
-            file = requests.get("https://github.com/microsoft/winget-create/releases/download/v1.5.7.0/wingetcreate.exe", verify=False)
-            f.write(file.content)
-    return Wingetcreate
+def wingetcreate(path: str, debug: bool = False) -> str:
+    return "wingetcreate"
 
 def command(wingetcreate: pathlib.Path, urls: str, version: str,  id: str, token: str) -> str:
     Commands = "{} update --submit --urls {} --version {} {} --token {}".format(wingetcreate.__str__(), urls, version, id, token)
@@ -90,56 +85,6 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.67",
         "Authorization": f"Bearer {GH_TOKEN}"
     }]
-
-# Fonction pour supprimer le fichier settings.json
-def delete_settings_file() -> None:
-    try:
-        # Chemin du répertoire où se trouve le fichier settings.json
-        directory = os.path.join(os.path.expanduser("~"), "AppData", "Local", "WindowsPackageManagerManifestCreator")
-        
-        # Chemin complet du fichier settings.json
-        settings_file = os.path.join(directory, "settings.json")
-
-        # Vérification de l'existence du fichier
-        if os.path.exists(settings_file):
-            os.remove(settings_file)
-    except Exception as e:
-        print(f"Une erreur s'est produite lors de la suppression du fichier settings.json : {e}")
-
-# Fonction pour télécharger et remplacer le fichier settings.json
-def download_settings_file() -> None:
-    try:
-        # Chemin du répertoire où se trouve le fichier settings.json
-        directory = os.path.join(os.path.expanduser("~"), "AppData", "Local", "WindowsPackageManagerManifestCreator")
-        
-        # URL du nouveau fichier settings.json
-        url = "https://gist.githubusercontent.com/Exorcism0666/3808dfc6db419f5f2ada7985c6750e70/raw/2d673d5cc6b829316cfc7797ec89e9d1189014d6/settings.json"
-
-        # Téléchargement du nouveau fichier settings.json
-        response = requests.get(url)
-        with open(os.path.join(directory, "settings.json"), "wb") as f:
-            f.write(response.content)
-    except Exception as e:
-        print(f"Une erreur s'est produite lors du téléchargement du nouveau fichier settings.json : {e}")
-
-# Fonction pour exécuter le wingetcreate.exe
-def execute_wingetcreate(wingetcreate_path: str) -> None:
-    try:
-        # Exécuter le wingetcreate.exe
-        os.system(wingetcreate_path)
-    except Exception as e:
-        print(f"Une erreur s'est produite lors de l'exécution de wingetcreate.exe : {e}")
-
-# Main function to perform the requested tasks
-def perform_tasks(wingetcreate_path: str) -> None:
-    # Execute wingetcreate.exe to generate the settings.json file
-    execute_wingetcreate(wingetcreate_path)
-    
-    # Remove the existing settings.json file
-    delete_settings_file()
-    
-    # Download and replace the settings.json file
-    download_settings_file()
 
 # Add GitHub.Atom_Pckgr to Update List
     id = "GitHub.Atom_Pckgr"
@@ -371,9 +316,4 @@ def perform_tasks(wingetcreate_path: str) -> None:
     return Commands
 
 if __name__ == "__main__":
-    # Récupérer le chemin du wingetcreate.exe
-    wingetcreate_path = wingetcreate(pathlib.Path(__file__).parents[0])  # Utilisation de la fonction wingetcreate() de votre script existant
-    
-    # Appeler la fonction pour effectuer les tâches demandées
-    perform_tasks(wingetcreate_path)
     print([each[0] for each in main()])
