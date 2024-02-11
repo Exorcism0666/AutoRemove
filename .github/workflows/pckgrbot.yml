@@ -20,3 +20,9 @@ jobs:
         winget --info
         winget install wingetcreate --accept-source-agreements --accept-package-agreements
         wingetcreate
+        $settingsFilePath = Get-ChildItem -Path $env:USERPROFILE -Recurse -Filter "settings.json" -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName
+        if ($settingsFilePath) {
+          Write-Output "Le fichier settings.json a été trouvé à l'emplacement : $settingsFilePath"
+        } else {
+          Write-Output "Le fichier settings.json n'a pas été trouvé."
+        }
