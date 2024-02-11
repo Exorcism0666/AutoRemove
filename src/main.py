@@ -47,9 +47,12 @@ def list_to_str(List: list) -> str:
     return new
 
 def version_verify(version: str, id: str) -> bool:
-    if len([v for v in requests.get(f"https://vedantmgoyal.vercel.app/api/winget-pkgs/versions/{id}").json()[id] if v == version]) > 0:
-        return False
-    else:
+    try:
+        if len([v for v in requests.get(f"https://vedantmgoyal.vercel.app/api/winget-pkgs/versions/{id}").json()[id] if v == version]) > 0:
+            return False
+        else:
+            return True
+    except BaseException:
         return True
 
 def do_list(id: str, version: str, mode: str) -> bool | None:
