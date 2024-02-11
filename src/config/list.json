@@ -6,7 +6,7 @@
     "2024.130.2",
     "2024.131.0"
   ],
-  "HandBrake.HandBrake": ["1.7.2"],
+  "HandBrake.HandBrake": ["1.7.2", "1.7.3"],
   "SchildiChat.SchildiChat": ["v1.11.30-sc.2"],
   "cinnyapp.cinny-desktop": ["v3.2.1"],
   "Audacity.Audacity": ["Audacity-3.4.2", "3.4.2"],
@@ -192,7 +192,8 @@
     "1.1.1174",
     "1.1.1179",
     "1.1.1188",
-    "1.1.1189"
+    "1.1.1189",
+    "1.1.1191"
   ],
   "TeamIDE.TeamIDE": ["v2.6.4", "v2.6.5", "v2.6.6", "v2.6.7"],
   "CrowTranslate.CrowTranslate": ["2.11.1"],
@@ -277,7 +278,15 @@
   ],
   "GAM-Team.GotYourBack": ["v1.74", "v1.80"],
   "Canonical.Multipass": ["v1.13.0"],
-  "AppFlowy.AppFlowy": ["0.4.1", "0.4.2", "0.4.3", "0.4.4", "0.4.5", "0.4.6"],
+  "AppFlowy.AppFlowy": [
+    "0.4.1",
+    "0.4.2",
+    "0.4.3",
+    "0.4.4",
+    "0.4.5",
+    "0.4.6",
+    "0.4.7"
+  ],
   "errata-ai.Vale": ["v3.0.3", "v3.0.4", "v3.0.5", "v3.0.6", "v3.0.7"],
   "Jubler.App": ["v8.0.0"],
   "Task.Task": ["v3.33.1", "v3.34.0", "v3.34.1"],
@@ -319,7 +328,8 @@
     "1.1.1174",
     "1.1.1179",
     "1.1.1188",
-    "1.1.1189"
+    "1.1.1189",
+    "1.1.1191"
   ],
   "lycheeverse.lychee": ["v0.14.1", "v0.14.2", "v0.14.3"],
   "SMPlayer.SMPlayer": ["v23.12.0"],
