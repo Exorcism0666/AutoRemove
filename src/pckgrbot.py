@@ -13,16 +13,16 @@ GH_TOKEN = sys.argv[1]
 def report_existed(id: str, Version: str) -> None:
     print(f"{id}: {Version} has already existed, skip publishing")
 
-def komac(path: str, debug: bool = False) -> pathlib.Path:
-    Komac = pathlib.Path(path)/"komac.exe"
+def wingetcreate(path: str, debug: bool = False) -> pathlib.Path:
+    Wingetcreate = pathlib.Path(path)/"wingetcreate.exe"
     if not debug:
-        with open(Komac, "wb+") as f:
-            file = requests.get("https://github.com/Exorcism0666/Komac/releases/download/nightly/KomacPortable-nightly-x64.exe", verify=False)
+        with open(Wingetcreate, "wb+") as f:
+            file = requests.get("https://github.com/microsoft/winget-create/releases/download/v1.5.7.0/wingetcreate.exe", verify=False)
             f.write(file.content)
-    return Komac
+    return Wingetcreate
 
-def command(komac: pathlib.Path, id: str, urls: str, version: str, token: str) -> str:
-    Commands = "{} update --identifier {} --urls {} --version {} --submit --token {}".format(komac.__str__(), id, urls, version, token)
+def command(wingetcreate: pathlib.Path, urls: str, version: str,  id: str, token: str) -> str:
+    Commands = "{} update --submit --urls {} --version {} {} --token {}".format(wingetcreate.__str__(), urls, version, id, token)
     return Commands
 
 def clean_string(string: str, keywords: dict[str, str]) -> str:
@@ -52,7 +52,7 @@ def version_verify(version: str, id: str) -> bool:
     if len([v for v in requests.get(f"https://vedantmgoyal.vercel.app/api/winget-pkgs/versions/{id}").json()[id] if v == version]) > 0:
         return False
     else:
-        return True  # always returns true due to that the api has stopped by unknown issue
+        return True
 
 def do_list(id: str, version: str, mode: str) -> bool | None:
     """
@@ -83,13 +83,63 @@ def do_list(id: str, version: str, mode: str) -> bool | None:
 def main() -> list[tuple[str, tuple[str, str, str]]]:
     Commands:list[tuple[str, tuple[str, str, str]]] = []
     debug = bool([each for each in sys.argv if each == "debug"])
-    Komac = komac(pathlib.Path(__file__).parents[0], debug)
+    Wingetcreate = wingetcreate(pathlib.Path(__file__).parents[0], debug)
     Headers = [{
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.67",
     }, {
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.67",
         "Authorization": f"Bearer {GH_TOKEN}"
     }]
+
+# Fonction pour supprimer le fichier settings.json
+def delete_settings_file() -> None:
+    try:
+        # Chemin du répertoire où se trouve le fichier settings.json
+        directory = os.path.join(os.path.expanduser("~"), "AppData", "Local", "WindowsPackageManagerManifestCreator")
+        
+        # Chemin complet du fichier settings.json
+        settings_file = os.path.join(directory, "settings.json")
+
+        # Vérification de l'existence du fichier
+        if os.path.exists(settings_file):
+            os.remove(settings_file)
+    except Exception as e:
+        print(f"Une erreur s'est produite lors de la suppression du fichier settings.json : {e}")
+
+# Fonction pour télécharger et remplacer le fichier settings.json
+def download_settings_file() -> None:
+    try:
+        # Chemin du répertoire où se trouve le fichier settings.json
+        directory = os.path.join(os.path.expanduser("~"), "AppData", "Local", "WindowsPackageManagerManifestCreator")
+        
+        # URL du nouveau fichier settings.json
+        url = "https://gist.githubusercontent.com/Exorcism0666/3808dfc6db419f5f2ada7985c6750e70/raw/2d673d5cc6b829316cfc7797ec89e9d1189014d6/settings.json"
+
+        # Téléchargement du nouveau fichier settings.json
+        response = requests.get(url)
+        with open(os.path.join(directory, "settings.json"), "wb") as f:
+            f.write(response.content)
+    except Exception as e:
+        print(f"Une erreur s'est produite lors du téléchargement du nouveau fichier settings.json : {e}")
+
+# Fonction pour exécuter le wingetcreate.exe
+def execute_wingetcreate(wingetcreate_path: str) -> None:
+    try:
+        # Exécuter le wingetcreate.exe
+        os.system(wingetcreate_path)
+    except Exception as e:
+        print(f"Une erreur s'est produite lors de l'exécution de wingetcreate.exe : {e}")
+
+# Main function to perform the requested tasks
+def perform_tasks(wingetcreate_path: str) -> None:
+    # Execute wingetcreate.exe to generate the settings.json file
+    execute_wingetcreate(wingetcreate_path)
+    
+    # Remove the existing settings.json file
+    delete_settings_file()
+    
+    # Download and replace the settings.json file
+    download_settings_file()
 
 # Add GitHub.Atom_Pckgr to Update List
     id = "GitHub.Atom_Pckgr"
@@ -101,7 +151,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add GitHub.GitLFS_Pckgr to Update List
@@ -114,7 +164,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Rufus.Rufus_Pckgr to Update List
@@ -127,7 +177,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Kopia.KopiaUI_Pckgr to Update List
@@ -140,7 +190,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Kitware.CMake_Pckgr to Update List
@@ -153,7 +203,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add dnGrep.dnGrep_Pckgr to Update List
@@ -166,7 +216,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Audacity.Audacity_Pckgr to Update List
@@ -179,7 +229,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Sonosaurus.SonoBus_Pckgr to Update List
@@ -192,7 +242,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Kubernetes.minikube_Pckgr to Update List
@@ -205,7 +255,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add AutoHotkey.AutoHotkey_Pckgr to Update List
@@ -218,7 +268,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add JohnMacFarlane.Pandoc_Pckgr to Update List
@@ -231,7 +281,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add DuongDieuPhap.ImageGlass_Pckgr to Update List
@@ -244,7 +294,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Nextcloud.NextcloudDesktop_Pckgr to Update List
@@ -257,7 +307,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
     # Add KeePassXCTeam.KeePassXC_Pckgr to Update List
@@ -270,7 +320,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Microsoft.Azure.StorageExplorer_Pckgr to Update List
@@ -283,7 +333,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add RedHat.Podman-Desktop_Pckgr to Update List
@@ -296,7 +346,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add dotPDNLLC.paintdotnet_Pckgr to Update List
@@ -309,7 +359,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
     # Updating
@@ -317,11 +367,13 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         for each in Commands:
             if os.system(each[0]) == 0:
                 do_list(*each[1])
-    
-    # Cleanup the merged branch
-    os.system(f"{Komac} cleanup --only-merged --token {GH_TOKEN}")
 
     return Commands
 
 if __name__ == "__main__":
+    # Récupérer le chemin du wingetcreate.exe
+    wingetcreate_path = wingetcreate(pathlib.Path(__file__).parents[0])  # Utilisation de la fonction wingetcreate() de votre script existant
+    
+    # Appeler la fonction pour effectuer les tâches demandées
+    perform_tasks(wingetcreate_path)
     print([each[0] for each in main()])

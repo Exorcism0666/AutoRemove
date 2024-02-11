@@ -52,7 +52,7 @@ def version_verify(version: str, id: str) -> bool:
     if len([v for v in requests.get(f"https://vedantmgoyal.vercel.app/api/winget-pkgs/versions/{id}").json()[id] if v == version]) > 0:
         return False
     else:
-        return True  # always returns true due to that the api has stopped by unknown issue
+        return True
 
 def do_list(id: str, version: str, mode: str) -> bool | None:
     """
