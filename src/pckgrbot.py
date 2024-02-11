@@ -96,7 +96,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), str_pop(Version, 0), id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add GitHub.GitLFS_Pckgr to Update List
@@ -109,7 +109,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), str_pop(Version, 0), id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Rufus.Rufus_Pckgr to Update List
@@ -122,7 +122,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), str_pop(Version, 0), id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Kopia.KopiaUI_Pckgr to Update List
@@ -135,7 +135,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), str_pop(Version, 0), id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Kitware.CMake_Pckgr to Update List
@@ -148,7 +148,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), str_pop(Version, 0), id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add dnGrep.dnGrep_Pckgr to Update List
@@ -161,7 +161,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), str_pop(Version, 0), id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Audacity.Audacity_Pckgr to Update List
@@ -174,7 +174,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), Version, id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Sonosaurus.SonoBus_Pckgr to Update List
@@ -187,7 +187,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), Version, id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Kubernetes.minikube_Pckgr to Update List
@@ -200,7 +200,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), str_pop(Version, 0), id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add AutoHotkey.AutoHotkey_Pckgr to Update List
@@ -213,7 +213,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), str_pop(Version, 0), id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add JohnMacFarlane.Pandoc_Pckgr to Update List
@@ -226,7 +226,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), Version, id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add DuongDieuPhap.ImageGlass_Pckgr to Update List
@@ -239,7 +239,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), Version, id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Nextcloud.NextcloudDesktop_Pckgr to Update List
@@ -252,7 +252,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), str_pop(Version, 0), id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
     # Add KeePassXCTeam.KeePassXC_Pckgr to Update List
@@ -265,7 +265,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), Version, id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add Microsoft.Azure.StorageExplorer_Pckgr to Update List
@@ -278,7 +278,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), str_pop(Version, 0), id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add RedHat.Podman-Desktop_Pckgr to Update List
@@ -291,7 +291,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), str_pop(Version, 0), id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
 # Add dotPDNLLC.paintdotnet_Pckgr to Update List
@@ -304,7 +304,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Wingetcreate, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Wingetcreate, list_to_str(Urls), str_pop(Version, 0), id, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
     # Updating
