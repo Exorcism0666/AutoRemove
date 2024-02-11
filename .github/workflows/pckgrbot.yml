@@ -19,10 +19,4 @@ jobs:
         winget settings --enable LocalManifestFiles
         winget --info
         winget install wingetcreate --accept-source-agreements --accept-package-agreements
-        wingetcreate
-        $path = Get-ChildItem -Path . -Filter settings.json -Recurse -ErrorAction SilentlyContinue | Select-Object -ExpandProperty FullName
-        if ($null -ne $path) {
-          Write-Output "Found settings.json at $path"
-        } else {
-          Write-Output "settings.json not found"
-        }
+        wingetcreate info
