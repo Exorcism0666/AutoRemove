@@ -217,7 +217,7 @@
   "Bruno.Bruno": ["v1.6.1", "v1.7.0", "v1.7.1", "v1.8.0"],
   "SoftFever.OrcaSlicer": ["v1.9.0"],
   "IPEP.Scantailor-Experimental": ["0.2024.01.02", "0.2024.02.04"],
-  "nzbget.nzbget": ["v22.0"],
+  "nzbget.nzbget": ["v22.0", "v23.0"],
   "RustDesk.RustDesk": ["1.2.3"],
   "LutzRoeder.Netron": ["v7.3.7", "v7.3.8"],
   "SagerNet.sing-box": ["v1.8.0", "v1.8.1", "v1.8.2", "v1.8.4", "v1.8.5"],
