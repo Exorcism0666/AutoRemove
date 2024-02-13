@@ -93,7 +93,8 @@
     "v0.1.147",
     "v0.1.148",
     "v0.1.149",
-    "v0.2.0"
+    "v0.2.0",
+    "v0.2.2"
   ],
   "NextDNS.NextDNS.CLI": ["v1.41.0", "v1.42.0"],
   "AdGuard.dnsproxy": [
@@ -278,7 +279,8 @@
     "V6.68.02",
     "v6.68.02",
     "v6.68.04",
-    "v6.68.05"
+    "v6.68.05",
+    "v6.68.06"
   ],
   "GAM-Team.GotYourBack": ["v1.74", "v1.80"],
   "Canonical.Multipass": ["v1.13.0", "v1.13.1"],
@@ -420,7 +422,7 @@
   "Rufus.Rufus": ["v4.4"],
   "Kopia.KopiaUI": ["v0.15.0"],
   "Kitware.CMake": ["v3.28.3"],
-  "dnGrep.dnGrep": ["v4.1.7.0"],
+  "dnGrep.dnGrep": ["v4.1.7.0", "v4.1.27.0"],
   "Kubernetes.minikube": ["v1.32.0"],
   "AutoHotkey.AutoHotkey": ["v2.0.11"],
   "Microsoft.Azure.StorageExplorer": ["v1.32.1"],
