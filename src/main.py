@@ -2759,6 +2759,57 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
+# Add WinMerge.WinMerge to Update List
+    id = "WinMerge.WinMerge"
+    JSON = requests.get("https://api.github.com/repos/WinMerge/winmerge/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/WinMerge/winmerge/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+# Add ShareX.ShareX to Update List
+    id = "ShareX.ShareX"
+    JSON = requests.get("https://api.github.com/repos/ShareX/ShareX/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/ShareX/ShareX/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+# Add DaxStudio.DaxStudio to Update List
+    id = "DaxStudio.DaxStudio"
+    JSON = requests.get("https://api.github.com/repos/DaxStudio/DaxStudio/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/DaxStudio/DaxStudio/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+# Add Gephi.Gephi to Update List
+    id = "Gephi.Gephi"
+    JSON = requests.get("https://api.github.com/repos/gephi/gephi/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/gephi/gephi/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe") and not("x32" in each["browser_download_url"])]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
 
     # Updating
     if not debug:
