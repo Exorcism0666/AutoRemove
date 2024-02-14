@@ -1,1 +1,970 @@
-{"Peppy.Osu!": ["2023.1231.0", "2024.113.0", "2024.114.0", "2024.130.2", "2024.131.0"], "HandBrake.HandBrake": ["1.7.2", "1.7.3"], "SchildiChat.SchildiChat": ["v1.11.30-sc.2"], "cinnyapp.cinny-desktop": ["v3.2.1"], "Audacity.Audacity": ["Audacity-3.4.2", "3.4.2"], "Tyrrrz.DiscordChatExporter.CLI": ["2.42.6", "2.42.7"], "Tyrrrz.DiscordChatExporter.GUI": ["2.42.6", "2.42.7"], "Tyrrrz.LightBulb": ["2.4.7"], "yt-dlp.yt-dlp": ["2023.12.30"], "yt-dlp.yt-dlp.nightly": ["2023.12.31.232713", "2024.01.02.232714", "2024.01.05.232702", "2024.01.08.232709", "2024.01.09.232723", "2024.01.14.232710", "2024.01.18.232658", "2024.01.19.232708", "2024.01.20.232722", "2024.01.21.232719", "2024.01.22.232713", "2024.01.23.232723", "2024.01.28.232706", "2024.01.29.232706", "2024.01.31.232703", "2024.02.02.232707", "2024.02.03.232712", "2024.02.04.232659", "2024.02.05.232712", "2024.02.09.232659", "2024.02.13.232701"], "Gyan.FFmpeg": ["6.1.1"], "Gyan.FFmpeg.Shared": ["6.1.1"], "Gyan.FFmpeg.Essentials": ["6.1.1"], "Obsidian.Obsidian": ["v1.5.3"], "defi.defi": ["v4.0.8", "v4.0.7"], "manosim.gitify": ["v4.5.1", "v4.6.1"], "dscalzi.HeliosLauncher": ["v2.1.0", "v2.1.1"], "ChrisKlimas.Twine": ["2.8.0", "2.8.1"], "B3log.SiYuan": ["v2.11.4", "v2.12.0", "v2.12.1", "v2.12.2", "v2.12.3", "v2.12.4", "v2.12.5", "v2.12.6", "v2.12.7", "v2.12.8"], "DaCosySheeep.FactDownloader": ["v1.5.1"], "jcv8000.Codex": ["v2.0.3", "v2.0.4"], "AivarAnnamaa.Thonny": ["v4.1.4"], "Lauriethefish.QuestPatcher": ["2.7.2", "2.7.3"], "AppbyTroye.KoodoReader": ["v1.6.1", "v1.6.2", "v1.6.3"], "clouDr-f2e.rubick": ["v4.2.1"], "IPFS.IPFS-Desktop": ["v0.32.0", "v0.33.0"], "jurplel.qView": ["6.1"], "YACReader.YACReader": ["9.13.1", "9.14.1"], "KeePassXCTeam.KeePassXC": ["2.7.6"], "staniel359.muffon": ["v2.0.1", "v2.0.2"], "DuongDieuPhap.ImageGlass": ["9.0.9.1230", "9.0.10.201"], "sebescudie.GammaLauncher": ["5.2.2"], "Ruben2776.PicView": ["2.2", "2.2.1", "2.2.2"], "DEVCOM.LuaJIT": ["v2.1.1703358377", "v2.1.1706185428", "v2.1.19757"], "Vendicated.Vencord.Canary": ["v1.3.1", "v1.4.0"], "Vendicated.Vencord.PTB": ["v1.3.1", "v1.4.0"], "Vendicated.Vencord": ["v1.3.1", "v1.4.0"], "chylex.DiscordHistoryTracker": ["v40.0", "v41.0"], "Ombrelin.PlexRichPresence": ["2.0.10"], "OleguerLlopart.OpenComic": ["v1.0.0", "v1.1.0"], "JanProchazka.dbgate": ["v5.2.7"], "PurpleI2P.i2pd": ["2.50.1", "2.50.2"], "Tribler.Tribler": ["v7.13.1"], "Retroshare.Retroshare": ["v0.6.7.2"], "Fly-io.flyctl": ["v0.1.136", "v0.1.137", "v0.1.139", "v0.1.141", "v0.1.142", "v0.1.143", "v0.1.145", "v0.1.146", "v0.1.147", "v0.1.148", "v0.1.149", "v0.2.0", "v0.2.2", "v0.2.3"], "NextDNS.NextDNS.CLI": ["v1.41.0", "v1.42.0"], "AdGuard.dnsproxy": ["v0.61.1", "v0.62.0", "v0.63.0", "v0.63.1", "v0.64.0", "v0.64.1", "v0.65.0"], "AdGuard.AdGuardHome": ["v0.107.43", "v0.107.44"], "Genymobile.scrcpy": ["v2.3.1"], "Frontesque.scrcpy+": ["2.0.2"], "Barry-ran.QtScrcpy": ["v2.1.2"], "Balena.Etcher": ["v1.18.11"], "Balena.BalenaCLI": ["v17.4.9", "v17.4.11", "v17.4.12", "v17.5.0", "v17.5.1", "v18.0.0"], "GeekCorner.threema": ["v2.5.1"], "OnionShare.OnionShare": ["v2.6"], "quotient-im.Quaternion": ["0.0.95.1", "0.0.96"], "DoltHub.Dolt": ["v1.30.5", "v1.30.6", "v1.30.7", "v1.31.0", "v1.31.1", "v1.31.2", "v1.31.3", "v1.32.0", "v1.32.1", "v1.32.2", "v1.32.3", "v1.32.4", "v1.32.6", "v1.33.0", "v1.34.0"], "Armin2208.WindowsAutoNightMode": ["10.4.1.1"], "xavidop.cxcli": ["v1.153.0", "v1.155.0", "v1.156.0", "v1.158.0", "v1.159.0", "v1.160.0", "v1.161.0", "v1.162.0", "v1.163.0", "v1.167.0", "v1.168.0", "v1.169.0", "v1.170.0", "v1.172.0"], "Chocolatey.ChocolateyGUI": ["2.1.0"], "Chocolatey.Chocolatey": ["2.2.2"], "ChawyeHsu.Hok": ["v0.1.0-beta.4"], "Ryujinx.Ryujinx.Ava": ["1.1.1104", "1.1.1106", "1.1.1109", "1.1.1110", "1.1.1111", "1.1.1112", "1.1.1114", "1.1.1115", "1.1.1117", "1.1.1118", "1.1.1122", "1.1.1125", "1.1.1130", "1.1.1131", "1.1.1137", "1.1.1138", "1.1.1139", "1.1.1140", "1.1.1141", "1.1.1143", "1.1.1151", "1.1.1152", "1.1.1154", "1.1.1155", "1.1.1156", "1.1.1157", "1.1.1159", "1.1.1160", "1.1.1161", "1.1.1163", "1.1.1164", "1.1.1173", "1.1.1174", "1.1.1179", "1.1.1188", "1.1.1189", "1.1.1191", "1.1.1192"], "TeamIDE.TeamIDE": ["v2.6.4", "v2.6.5", "v2.6.6", "v2.6.7"], "CrowTranslate.CrowTranslate": ["2.11.1"], "kramo.Cartridges": ["v2.7.2"], "hikari-no-yume.touchHLE": ["v0.2.1"], "LIJI32.SameBoy": ["v0.16.1", "v0.16.2"], "Windscribe.Windscribe": ["v2.8.6"], "TeXstudio.TeXstudio": ["4.7.2"], "Aserto.DSLoad": ["v0.30.1", "v0.30.2", "v0.30.3"], "Joplin.Joplin": ["v2.13.12", "v2.13.13", "v2.13.14", "v2.13.15"], "Status.Status": ["0.14.1", "0.15.0"], "jendrikseipp.RedNotebook": ["v2.31"], "moneymanagerex.moneymanagerex": ["v1.7.0"], "GoXLR-on-Linux.GoXLR-Utility": ["v1.0.4", "v1.0.5"], "Hugo.Hugo": ["v0.121.2", "v0.122.0"], "Hugo.Hugo.Extended": ["v0.121.2", "v0.122.0"], "tangshimin.MuJing": ["v2.2.13", "v2.2.16"], "Alist.Alist": ["v3.30.0"], "dynobo.NormCap": ["v0.5.3", "v0.5.4"], "Bruno.Bruno": ["v1.6.1", "v1.7.0", "v1.7.1", "v1.8.0"], "SoftFever.OrcaSlicer": ["v1.9.0"], "IPEP.Scantailor-Experimental": ["0.2024.01.02", "0.2024.02.04"], "nzbget.nzbget": ["v22.0", "v23.0"], "RustDesk.RustDesk": ["1.2.3"], "LutzRoeder.Netron": ["v7.3.7", "v7.3.8"], "SagerNet.sing-box": ["v1.8.0", "v1.8.1", "v1.8.2", "v1.8.4", "v1.8.5"], "gopass.gopass": ["v1.15.11"], "gopass.gopass-jsonapi": ["v1.15.11"], "AGSProjectTeam.AdventureGameStudio": ["v3.6.0.55", "v3.6.0.56"], "TailwindLabs.TailwindCSS": ["v3.4.1"], "Alex313031.Thorium.AVX2": ["M119.0.6045.214"], "HTTPie.HTTPie": ["v2024.1.2"], "squalou.google-chat-linux": ["5.27.23-6"], "mikf.gallery-dl": ["v1.26.6", "v1.26.7"], "houmain.keymapper": ["3.4.0", "3.5.0", "3.5.1", "3.5.2"], "printfn.fend": ["v1.4.1", "v1.4.2"], "gaphor.gaphor": ["2.23.0", "2.23.1", "2.23.2"], "oxen-io.lokinet": ["v0.9.11"], "HiroshibaKazuyuki.VOICEVOX": ["0.14.10", "0.15.2", "0.16.0"], "y-chan.SHAREVOX": ["0.2.1"], "y-chan.SHAREVOX.CPU": ["0.2.1"], "HiroshibaKazuyuki.VOICEVOX.CPU": ["0.14.10", "0.15.2", "0.16.0"], "y-chan.SHAREVOX.NVIDIA": ["0.2.1"], "XmirrorSecurity.OpenSCA-cli": ["v3.0.4"], "DEVCOM.JMeter": ["v5.6.3"], "Nethermind.Nethermind": ["1.25.0", "1.25.1", "1.25.2", "1.25.3"], "Aserto.Topaz": ["v0.30.26", "v0.30.27", "v0.30.28"], "UniversalMediaServer.UniversalMediaServer": ["13.8.1"], "lucasg.Dependencies": ["v1.11.1"], "taers232c.GAMADV-XTD3": ["v6.67.14", "v6.67.15", "v6.67.16", "v6.67.17", "v6.67.18", "v6.67.19", "v6.67.20", "v6.67.21", "v6.67.22", "v6.67.23", "v6.67.24", "v6.67.25", "v6.67.26", "6.67.27", "v6.67.28", "v6.67.29", "v6.67.30", "v6.67.31", "v6.67.32", "v6.67.33", "v6.67.34", "v6.67.35", "v6.67.36", "v6.67.37", "v6.67.38", "v6.67.39", "v6.68.00", "v6.68.01", "V6.68.02", "v6.68.02", "v6.68.04", "v6.68.05", "v6.68.06"], "GAM-Team.GotYourBack": ["v1.74", "v1.80"], "Canonical.Multipass": ["v1.13.0", "v1.13.1"], "AppFlowy.AppFlowy": ["0.4.1", "0.4.2", "0.4.3", "0.4.4", "0.4.5", "0.4.6", "0.4.7", "0.4.8"], "errata-ai.Vale": ["v3.0.3", "v3.0.4", "v3.0.5", "v3.0.6", "v3.0.7"], "Jubler.App": ["v8.0.0"], "Task.Task": ["v3.33.1", "v3.34.0", "v3.34.1"], "SpikeHD.Dorion": ["v4.0.1", "v4.1.0", "v4.1.1", "v4.1.2"], "PhapDieuDuong.ExifGlass": ["1.4.1.0"], "martinrotter.RSSGuard": ["4.6.3"], "Stoplight.Prism": ["v5.5.3", "v5.5.4"], "Ryujinx.Ryujinx": ["1.1.1109", "1.1.1110", "1.1.1111", "1.1.1112", "1.1.1114", "1.1.1115", "1.1.1117", "1.1.1118", "1.1.1122", "1.1.1125", "1.1.1130", "1.1.1131", "1.1.1137", "1.1.1138", "1.1.1139", "1.1.1140", "1.1.1141", "1.1.1143", "1.1.1151", "1.1.1152", "1.1.1154", "1.1.1155", "1.1.1156", "1.1.1157", "1.1.1159", "1.1.1160", "1.1.1161", "1.1.1163", "1.1.1164", "1.1.1173", "1.1.1174", "1.1.1179", "1.1.1188", "1.1.1189", "1.1.1191", "1.1.1192"], "lycheeverse.lychee": ["v0.14.1", "v0.14.2", "v0.14.3"], "SMPlayer.SMPlayer": ["v23.12.0"], "YS-L.csvlens": ["v0.6.0"], "z-------------.cpod": ["v1.28.2"], "Stripe.StripeCli": ["v1.19.1", "v1.19.2"], "beekeeper-studio.beekeeper-studio": ["v4.1.13"], "AsciidocFX.AsciidocFX": ["v1.8.7", "v1.8.8"], "BookStairs.bookhunter": ["v0.14.0", "v1.14.1", "v0.14.3"], "Ablaze.Floorp": ["v11.8.0", "v11.8.1", "v11.8.2", "v11.9.0"], "Alex313031.Thorium": ["M119.0.6045.214", "M120.0.6099.235"], "Wilfred.difftastic": ["0.54.0", "0.55.0"], "Stretchly.Stretchly": ["v1.15.1"], "Logseq.Logseq": ["0.10.4", "0.10.5", "0.10.6"], "creativeprojects.resticprofile": ["v0.24.0", "v0.25.0"], "Streetwriters.Notesnook": ["v2.6.14", "v2.6.15"], "Transmission.Transmission": ["4.0.5"], "BiglySoftware.BiglyBT": ["v3.5.0.0"], "szTheory.exifcleaner": ["v3.6.0"], "qarmin.czkawka.cli": ["6.1.0"], "Syncthing.Syncthing": ["v1.27.2", "v1.27.3"], "EvanSu.Picocrypt": ["1.33"], "DNSCrypt.dnscrypt-proxy": ["2.1.5"], "Oxen.Session": ["v1.11.5"], "deltachat.deltachat": ["v1.42.2"], "uTox.uTox": ["v0.18.1"], "RocketChat.RocketChat": ["3.9.11", "3.9.12", "3.9.13"], "Jitsi.Meet": ["v2024.1.0"], "Bisq.Bisq": ["v1.9.14"], "BinanceTech.Binance": ["v1.49.0", "v1.50.1"], "Mullvad.Browser": ["13.0.7"], "MullvadVPN.MullvadBrowser": ["13.0.7", "13.0.9"], "MysteriumNetwork.Mysterium": ["10.16.0"], "Databricks.DatabricksCLI": ["v0.212.1", "v0.212.2"], "Meta.Zstandard": ["v1.5.5"], "Sonosaurus.SonoBus": ["1.7.2"], "YggdrasilNetwork.Yggdrasil": ["v0.5.4", "v0.5.5"], "YuzuEmu.Yuzu.Mainline": ["1689", "1690", "1691", "1692", "1693", "1694", "1695", "1696", "1697"], "StandardNotes.StandardNotes": ["3.184.0", "3.186.0", "3.187.1", "3.187.3"], "stakira.OpenUTAU": ["0.1.327"], "RaspberryPiFoundation.RaspberryPiImager": ["v1.8.5"], "K8stooling.Kubazulo": ["v0.0.8-beta"], "Speek.Speek": ["1.7.0"], "Hydrogen-Music.Hydrogen": ["1.2.3"], "ElectronCommunity.ElectronFiddle": ["v0.36.0"], "win32ss.Supermium": ["121.0.6167.81"], "OpenRocket.OpenRocket": ["23.09"], "GnuCash.GnuCash": ["5.5"], "JohnMacFarlane.Pandoc": ["3.1.11.1"], "Natron.Natron": ["v2.5.0"], "JeremyHu.Dust3D": ["1.0.0-rc.9"], "RandyHollines.Objeck": ["v2023.12.0", "v2024.2.0"], "Meltytech.Shotcut": ["v23.12.15", "v24.01.28"], "ossia.score": ["v3.1.12", "v3.1.13"], "FreeCAD.FreeCAD": ["0.21.2"], "InkStitch.InkStitch": ["v3.0.1"], "Nextcloud.NextcloudDesktop": ["v3.11.1", "v3.12.0"], "f4exb.sdrangel": ["v7.17.3"], "foldynl.QLog": ["v0.31.0", "v0.32.0"], "keif888.SSISMHash": ["v1.7.6.0"], "alexx2000.DoubleCommander": ["v1.0.11"], "divVerent.AAAAXY": ["v1.4.160"], "Microsoft.PerfView": ["v3.1.8"], "Google.Brotli": ["v1.1.0"], "developersu.ns-usbloader": ["v7.1"], "AssetRipper.AssetRipper": ["1.0.6"], "soopercool101.BrawlCrate": ["v0.41"], "GitHub.Atom_Pckgr": ["v1.60.0"], "GitHub.GitLFS_Pckgr": ["v3.4.1"], "Rufus.Rufus_Pckgr": ["v4.4"], "GitHub.Atom": ["v1.60.0"], "GitHub.GitLFS": ["v3.4.1"], "Rufus.Rufus": ["v4.4"], "Kopia.KopiaUI": ["v0.15.0"], "Kitware.CMake": ["v3.28.3"], "dnGrep.dnGrep": ["v4.1.7.0", "v4.1.27.0"], "Kubernetes.minikube": ["v1.32.0"], "AutoHotkey.AutoHotkey": ["v2.0.11"], "Microsoft.Azure.StorageExplorer": ["v1.32.1"], "RedHat.Podman-Desktop": ["v1.7.1"], "dotPDNLLC.paintdotnet": ["v5.0.12"], "Kopia.KopiaUI_Pckgr": ["v0.15.0"], "Kitware.CMake_Pckgr": ["v3.28.3"], "Audacity.Audacity_Pckgr": ["3.4.2"], "Sonosaurus.SonoBus_Pckgr": ["1.7.2"], "Kubernetes.minikube_Pckgr": ["v1.32.0"], "AutoHotkey.AutoHotkey_Pckgr": ["v2.0.11"], "JohnMacFarlane.Pandoc_Pckgr": ["3.1.11.1"], "DuongDieuPhap.ImageGlass_Pckgr": ["9.0.10.201"], "Nextcloud.NextcloudDesktop_Pckgr": ["v3.11.1"], "Microsoft.Azure.StorageExplorer_Pckgr": ["v1.32.1"], "RedHat.Podman-Desktop_Pckgr": ["v1.7.1"], "dotPDNLLC.paintdotnet_Pckgr": ["v5.0.12"]}
+{
+  "AGSProjectTeam.AdventureGameStudio": [
+    "v3.6.0.55",
+    "v3.6.0.56"
+  ],
+  "Ablaze.Floorp": [
+    "v11.8.0",
+    "v11.8.1",
+    "v11.8.2",
+    "v11.9.0"
+  ],
+  "AdGuard.AdGuardHome": [
+    "v0.107.43",
+    "v0.107.44"
+  ],
+  "AdGuard.dnsproxy": [
+    "v0.61.1",
+    "v0.62.0",
+    "v0.63.0",
+    "v0.63.1",
+    "v0.64.0",
+    "v0.64.1",
+    "v0.65.0"
+  ],
+  "AivarAnnamaa.Thonny": [
+    "v4.1.4"
+  ],
+  "Alex313031.Thorium": [
+    "M119.0.6045.214",
+    "M120.0.6099.235"
+  ],
+  "Alex313031.Thorium.AVX2": [
+    "M119.0.6045.214"
+  ],
+  "Alist.Alist": [
+    "v3.30.0"
+  ],
+  "AppFlowy.AppFlowy": [
+    "0.4.1",
+    "0.4.2",
+    "0.4.3",
+    "0.4.4",
+    "0.4.5",
+    "0.4.6",
+    "0.4.7",
+    "0.4.8"
+  ],
+  "AppbyTroye.KoodoReader": [
+    "v1.6.1",
+    "v1.6.2",
+    "v1.6.3"
+  ],
+  "Armin2208.WindowsAutoNightMode": [
+    "10.4.1.1"
+  ],
+  "AsciidocFX.AsciidocFX": [
+    "v1.8.7",
+    "v1.8.8"
+  ],
+  "Aserto.DSLoad": [
+    "v0.30.1",
+    "v0.30.2",
+    "v0.30.3"
+  ],
+  "Aserto.Topaz": [
+    "v0.30.26",
+    "v0.30.27",
+    "v0.30.28"
+  ],
+  "AssetRipper.AssetRipper": [
+    "1.0.6"
+  ],
+  "Audacity.Audacity": [
+    "Audacity-3.4.2",
+    "3.4.2"
+  ],
+  "Audacity.Audacity_Pckgr": [
+    "3.4.2"
+  ],
+  "AutoHotkey.AutoHotkey": [
+    "v2.0.11"
+  ],
+  "AutoHotkey.AutoHotkey_Pckgr": [
+    "v2.0.11"
+  ],
+  "B3log.SiYuan": [
+    "v2.11.4",
+    "v2.12.0",
+    "v2.12.1",
+    "v2.12.2",
+    "v2.12.3",
+    "v2.12.4",
+    "v2.12.5",
+    "v2.12.6",
+    "v2.12.7",
+    "v2.12.8"
+  ],
+  "Balena.BalenaCLI": [
+    "v17.4.9",
+    "v17.4.11",
+    "v17.4.12",
+    "v17.5.0",
+    "v17.5.1",
+    "v18.0.0"
+  ],
+  "Balena.Etcher": [
+    "v1.18.11"
+  ],
+  "Barry-ran.QtScrcpy": [
+    "v2.1.2"
+  ],
+  "BiglySoftware.BiglyBT": [
+    "v3.5.0.0"
+  ],
+  "BinanceTech.Binance": [
+    "v1.49.0",
+    "v1.50.1"
+  ],
+  "Bisq.Bisq": [
+    "v1.9.14"
+  ],
+  "BookStairs.bookhunter": [
+    "v0.14.0",
+    "v1.14.1",
+    "v0.14.3"
+  ],
+  "Bruno.Bruno": [
+    "v1.6.1",
+    "v1.7.0",
+    "v1.7.1",
+    "v1.8.0"
+  ],
+  "Canonical.Multipass": [
+    "v1.13.0",
+    "v1.13.1"
+  ],
+  "ChawyeHsu.Hok": [
+    "v0.1.0-beta.4"
+  ],
+  "Chocolatey.Chocolatey": [
+    "2.2.2"
+  ],
+  "Chocolatey.ChocolateyGUI": [
+    "2.1.0"
+  ],
+  "ChrisKlimas.Twine": [
+    "2.8.0",
+    "2.8.1"
+  ],
+  "CrowTranslate.CrowTranslate": [
+    "2.11.1"
+  ],
+  "DEVCOM.JMeter": [
+    "v5.6.3"
+  ],
+  "DEVCOM.LuaJIT": [
+    "v2.1.1703358377",
+    "v2.1.1706185428",
+    "v2.1.19757"
+  ],
+  "DNSCrypt.dnscrypt-proxy": [
+    "2.1.5"
+  ],
+  "DaCosySheeep.FactDownloader": [
+    "v1.5.1"
+  ],
+  "Databricks.DatabricksCLI": [
+    "v0.212.1",
+    "v0.212.2"
+  ],
+  "DoltHub.Dolt": [
+    "v1.30.5",
+    "v1.30.6",
+    "v1.30.7",
+    "v1.31.0",
+    "v1.31.1",
+    "v1.31.2",
+    "v1.31.3",
+    "v1.32.0",
+    "v1.32.1",
+    "v1.32.2",
+    "v1.32.3",
+    "v1.32.4",
+    "v1.32.6",
+    "v1.33.0",
+    "v1.34.0"
+  ],
+  "DuongDieuPhap.ImageGlass": [
+    "9.0.9.1230",
+    "9.0.10.201"
+  ],
+  "DuongDieuPhap.ImageGlass_Pckgr": [
+    "9.0.10.201"
+  ],
+  "ElectronCommunity.ElectronFiddle": [
+    "v0.36.0"
+  ],
+  "EvanSu.Picocrypt": [
+    "1.33"
+  ],
+  "Fly-io.flyctl": [
+    "v0.1.136",
+    "v0.1.137",
+    "v0.1.139",
+    "v0.1.141",
+    "v0.1.142",
+    "v0.1.143",
+    "v0.1.145",
+    "v0.1.146",
+    "v0.1.147",
+    "v0.1.148",
+    "v0.1.149",
+    "v0.2.0",
+    "v0.2.2",
+    "v0.2.3"
+  ],
+  "FreeCAD.FreeCAD": [
+    "0.21.2"
+  ],
+  "Frontesque.scrcpy+": [
+    "2.0.2"
+  ],
+  "GAM-Team.GotYourBack": [
+    "v1.74",
+    "v1.80"
+  ],
+  "GeekCorner.threema": [
+    "v2.5.1"
+  ],
+  "Genymobile.scrcpy": [
+    "v2.3.1"
+  ],
+  "GitHub.Atom": [
+    "v1.60.0"
+  ],
+  "GitHub.Atom_Pckgr": [
+    "v1.60.0"
+  ],
+  "GitHub.GitLFS": [
+    "v3.4.1"
+  ],
+  "GitHub.GitLFS_Pckgr": [
+    "v3.4.1"
+  ],
+  "GnuCash.GnuCash": [
+    "5.5"
+  ],
+  "GoXLR-on-Linux.GoXLR-Utility": [
+    "v1.0.4",
+    "v1.0.5"
+  ],
+  "Google.Brotli": [
+    "v1.1.0"
+  ],
+  "Gyan.FFmpeg": [
+    "6.1.1"
+  ],
+  "Gyan.FFmpeg.Essentials": [
+    "6.1.1"
+  ],
+  "Gyan.FFmpeg.Shared": [
+    "6.1.1"
+  ],
+  "HTTPie.HTTPie": [
+    "v2024.1.2"
+  ],
+  "HandBrake.HandBrake": [
+    "1.7.2",
+    "1.7.3"
+  ],
+  "HiroshibaKazuyuki.VOICEVOX": [
+    "0.14.10",
+    "0.15.2",
+    "0.16.0"
+  ],
+  "HiroshibaKazuyuki.VOICEVOX.CPU": [
+    "0.14.10",
+    "0.15.2",
+    "0.16.0"
+  ],
+  "Hugo.Hugo": [
+    "v0.121.2",
+    "v0.122.0"
+  ],
+  "Hugo.Hugo.Extended": [
+    "v0.121.2",
+    "v0.122.0"
+  ],
+  "Hydrogen-Music.Hydrogen": [
+    "1.2.3"
+  ],
+  "IPEP.Scantailor-Experimental": [
+    "0.2024.01.02",
+    "0.2024.02.04"
+  ],
+  "IPFS.IPFS-Desktop": [
+    "v0.32.0",
+    "v0.33.0"
+  ],
+  "InkStitch.InkStitch": [
+    "v3.0.1"
+  ],
+  "JanProchazka.dbgate": [
+    "v5.2.7"
+  ],
+  "JeremyHu.Dust3D": [
+    "1.0.0-rc.9"
+  ],
+  "Jitsi.Meet": [
+    "v2024.1.0"
+  ],
+  "JohnMacFarlane.Pandoc": [
+    "3.1.11.1"
+  ],
+  "JohnMacFarlane.Pandoc_Pckgr": [
+    "3.1.11.1"
+  ],
+  "Joplin.Joplin": [
+    "v2.13.12",
+    "v2.13.13",
+    "v2.13.14",
+    "v2.13.15"
+  ],
+  "Jubler.App": [
+    "v8.0.0"
+  ],
+  "K8stooling.Kubazulo": [
+    "v0.0.8-beta"
+  ],
+  "KeePassXCTeam.KeePassXC": [
+    "2.7.6"
+  ],
+  "Kitware.CMake": [
+    "v3.28.3"
+  ],
+  "Kitware.CMake_Pckgr": [
+    "v3.28.3"
+  ],
+  "Kopia.KopiaUI": [
+    "v0.15.0"
+  ],
+  "Kopia.KopiaUI_Pckgr": [
+    "v0.15.0"
+  ],
+  "Kubernetes.minikube": [
+    "v1.32.0"
+  ],
+  "Kubernetes.minikube_Pckgr": [
+    "v1.32.0"
+  ],
+  "LIJI32.SameBoy": [
+    "v0.16.1",
+    "v0.16.2"
+  ],
+  "Lauriethefish.QuestPatcher": [
+    "2.7.2",
+    "2.7.3"
+  ],
+  "Logseq.Logseq": [
+    "0.10.4",
+    "0.10.5",
+    "0.10.6"
+  ],
+  "LutzRoeder.Netron": [
+    "v7.3.7",
+    "v7.3.8"
+  ],
+  "Meltytech.Shotcut": [
+    "v23.12.15",
+    "v24.01.28"
+  ],
+  "Meta.Zstandard": [
+    "v1.5.5"
+  ],
+  "Microsoft.Azure.StorageExplorer": [
+    "v1.32.1"
+  ],
+  "Microsoft.Azure.StorageExplorer_Pckgr": [
+    "v1.32.1"
+  ],
+  "Microsoft.PerfView": [
+    "v3.1.8"
+  ],
+  "Mullvad.Browser": [
+    "13.0.7"
+  ],
+  "MullvadVPN.MullvadBrowser": [
+    "13.0.7",
+    "13.0.9"
+  ],
+  "MysteriumNetwork.Mysterium": [
+    "10.16.0"
+  ],
+  "Natron.Natron": [
+    "v2.5.0"
+  ],
+  "Nethermind.Nethermind": [
+    "1.25.0",
+    "1.25.1",
+    "1.25.2",
+    "1.25.3"
+  ],
+  "NextDNS.NextDNS.CLI": [
+    "v1.41.0",
+    "v1.42.0"
+  ],
+  "Nextcloud.NextcloudDesktop": [
+    "v3.11.1",
+    "v3.12.0"
+  ],
+  "Nextcloud.NextcloudDesktop_Pckgr": [
+    "v3.11.1"
+  ],
+  "Obsidian.Obsidian": [
+    "v1.5.3"
+  ],
+  "OleguerLlopart.OpenComic": [
+    "v1.0.0",
+    "v1.1.0"
+  ],
+  "Ombrelin.PlexRichPresence": [
+    "2.0.10"
+  ],
+  "OnionShare.OnionShare": [
+    "v2.6"
+  ],
+  "OpenRocket.OpenRocket": [
+    "23.09"
+  ],
+  "Oxen.Session": [
+    "v1.11.5"
+  ],
+  "PDFsam.PDFsam": [
+    "v5.2.2"
+  ],
+  "Peppy.Osu!": [
+    "2023.1231.0",
+    "2024.113.0",
+    "2024.114.0",
+    "2024.130.2",
+    "2024.131.0"
+  ],
+  "PhapDieuDuong.ExifGlass": [
+    "1.4.1.0"
+  ],
+  "PurpleI2P.i2pd": [
+    "2.50.1",
+    "2.50.2"
+  ],
+  "RandyHollines.Objeck": [
+    "v2023.12.0",
+    "v2024.2.0"
+  ],
+  "RaspberryPiFoundation.RaspberryPiImager": [
+    "v1.8.5"
+  ],
+  "RedHat.Podman-Desktop": [
+    "v1.7.1"
+  ],
+  "RedHat.Podman-Desktop_Pckgr": [
+    "v1.7.1"
+  ],
+  "Retroshare.Retroshare": [
+    "v0.6.7.2"
+  ],
+  "RocketChat.RocketChat": [
+    "3.9.11",
+    "3.9.12",
+    "3.9.13"
+  ],
+  "Ruben2776.PicView": [
+    "2.2",
+    "2.2.1",
+    "2.2.2"
+  ],
+  "Rufus.Rufus": [
+    "v4.4"
+  ],
+  "Rufus.Rufus_Pckgr": [
+    "v4.4"
+  ],
+  "RustDesk.RustDesk": [
+    "1.2.3"
+  ],
+  "Ryujinx.Ryujinx": [
+    "1.1.1109",
+    "1.1.1110",
+    "1.1.1111",
+    "1.1.1112",
+    "1.1.1114",
+    "1.1.1115",
+    "1.1.1117",
+    "1.1.1118",
+    "1.1.1122",
+    "1.1.1125",
+    "1.1.1130",
+    "1.1.1131",
+    "1.1.1137",
+    "1.1.1138",
+    "1.1.1139",
+    "1.1.1140",
+    "1.1.1141",
+    "1.1.1143",
+    "1.1.1151",
+    "1.1.1152",
+    "1.1.1154",
+    "1.1.1155",
+    "1.1.1156",
+    "1.1.1157",
+    "1.1.1159",
+    "1.1.1160",
+    "1.1.1161",
+    "1.1.1163",
+    "1.1.1164",
+    "1.1.1173",
+    "1.1.1174",
+    "1.1.1179",
+    "1.1.1188",
+    "1.1.1189",
+    "1.1.1191",
+    "1.1.1192"
+  ],
+  "Ryujinx.Ryujinx.Ava": [
+    "1.1.1104",
+    "1.1.1106",
+    "1.1.1109",
+    "1.1.1110",
+    "1.1.1111",
+    "1.1.1112",
+    "1.1.1114",
+    "1.1.1115",
+    "1.1.1117",
+    "1.1.1118",
+    "1.1.1122",
+    "1.1.1125",
+    "1.1.1130",
+    "1.1.1131",
+    "1.1.1137",
+    "1.1.1138",
+    "1.1.1139",
+    "1.1.1140",
+    "1.1.1141",
+    "1.1.1143",
+    "1.1.1151",
+    "1.1.1152",
+    "1.1.1154",
+    "1.1.1155",
+    "1.1.1156",
+    "1.1.1157",
+    "1.1.1159",
+    "1.1.1160",
+    "1.1.1161",
+    "1.1.1163",
+    "1.1.1164",
+    "1.1.1173",
+    "1.1.1174",
+    "1.1.1179",
+    "1.1.1188",
+    "1.1.1189",
+    "1.1.1191",
+    "1.1.1192"
+  ],
+  "SMPlayer.SMPlayer": [
+    "v23.12.0"
+  ],
+  "SagerNet.sing-box": [
+    "v1.8.0",
+    "v1.8.1",
+    "v1.8.2",
+    "v1.8.4",
+    "v1.8.5"
+  ],
+  "SchildiChat.SchildiChat": [
+    "v1.11.30-sc.2"
+  ],
+  "SoftFever.OrcaSlicer": [
+    "v1.9.0"
+  ],
+  "Sonosaurus.SonoBus": [
+    "1.7.2"
+  ],
+  "Sonosaurus.SonoBus_Pckgr": [
+    "1.7.2"
+  ],
+  "Speek.Speek": [
+    "1.7.0"
+  ],
+  "SpikeHD.Dorion": [
+    "v4.0.1",
+    "v4.1.0",
+    "v4.1.1",
+    "v4.1.2"
+  ],
+  "StandardNotes.StandardNotes": [
+    "3.184.0",
+    "3.186.0",
+    "3.187.1",
+    "3.187.3"
+  ],
+  "Status.Status": [
+    "0.14.1",
+    "0.15.0"
+  ],
+  "Stoplight.Prism": [
+    "v5.5.3",
+    "v5.5.4"
+  ],
+  "Streetwriters.Notesnook": [
+    "v2.6.14",
+    "v2.6.15"
+  ],
+  "Stretchly.Stretchly": [
+    "v1.15.1"
+  ],
+  "Stripe.StripeCli": [
+    "v1.19.1",
+    "v1.19.2"
+  ],
+  "Syncthing.Syncthing": [
+    "v1.27.2",
+    "v1.27.3"
+  ],
+  "TailwindLabs.TailwindCSS": [
+    "v3.4.1"
+  ],
+  "Task.Task": [
+    "v3.33.1",
+    "v3.34.0",
+    "v3.34.1"
+  ],
+  "TeXstudio.TeXstudio": [
+    "4.7.2"
+  ],
+  "TeamIDE.TeamIDE": [
+    "v2.6.4",
+    "v2.6.5",
+    "v2.6.6",
+    "v2.6.7"
+  ],
+  "Transmission.Transmission": [
+    "4.0.5"
+  ],
+  "Tribler.Tribler": [
+    "v7.13.1"
+  ],
+  "Tyrrrz.DiscordChatExporter.CLI": [
+    "2.42.6",
+    "2.42.7"
+  ],
+  "Tyrrrz.DiscordChatExporter.GUI": [
+    "2.42.6",
+    "2.42.7"
+  ],
+  "Tyrrrz.LightBulb": [
+    "2.4.7"
+  ],
+  "UniversalMediaServer.UniversalMediaServer": [
+    "13.8.1"
+  ],
+  "Vendicated.Vencord": [
+    "v1.3.1",
+    "v1.4.0"
+  ],
+  "Vendicated.Vencord.Canary": [
+    "v1.3.1",
+    "v1.4.0"
+  ],
+  "Vendicated.Vencord.PTB": [
+    "v1.3.1",
+    "v1.4.0"
+  ],
+  "Wilfred.difftastic": [
+    "0.54.0",
+    "0.55.0"
+  ],
+  "Windscribe.Windscribe": [
+    "v2.8.6"
+  ],
+  "XmirrorSecurity.OpenSCA-cli": [
+    "v3.0.4"
+  ],
+  "YACReader.YACReader": [
+    "9.13.1",
+    "9.14.1"
+  ],
+  "YS-L.csvlens": [
+    "v0.6.0"
+  ],
+  "YggdrasilNetwork.Yggdrasil": [
+    "v0.5.4",
+    "v0.5.5"
+  ],
+  "YuzuEmu.Yuzu.Mainline": [
+    "1689",
+    "1690",
+    "1691",
+    "1692",
+    "1693",
+    "1694",
+    "1695",
+    "1696",
+    "1697"
+  ],
+  "alexx2000.DoubleCommander": [
+    "v1.0.11"
+  ],
+  "beekeeper-studio.beekeeper-studio": [
+    "v4.1.13"
+  ],
+  "chylex.DiscordHistoryTracker": [
+    "v40.0",
+    "v41.0"
+  ],
+  "cinnyapp.cinny-desktop": [
+    "v3.2.1"
+  ],
+  "clouDr-f2e.rubick": [
+    "v4.2.1"
+  ],
+  "creativeprojects.resticprofile": [
+    "v0.24.0",
+    "v0.25.0"
+  ],
+  "defi.defi": [
+    "v4.0.8",
+    "v4.0.7"
+  ],
+  "deltachat.deltachat": [
+    "v1.42.2"
+  ],
+  "developersu.ns-usbloader": [
+    "v7.1"
+  ],
+  "divVerent.AAAAXY": [
+    "v1.4.160"
+  ],
+  "dnGrep.dnGrep": [
+    "v4.1.7.0",
+    "v4.1.27.0"
+  ],
+  "dotPDNLLC.paintdotnet": [
+    "v5.0.12"
+  ],
+  "dotPDNLLC.paintdotnet_Pckgr": [
+    "v5.0.12"
+  ],
+  "dscalzi.HeliosLauncher": [
+    "v2.1.0",
+    "v2.1.1"
+  ],
+  "dynobo.NormCap": [
+    "v0.5.3",
+    "v0.5.4"
+  ],
+  "errata-ai.Vale": [
+    "v3.0.3",
+    "v3.0.4",
+    "v3.0.5",
+    "v3.0.6",
+    "v3.0.7"
+  ],
+  "f4exb.sdrangel": [
+    "v7.17.3"
+  ],
+  "foldynl.QLog": [
+    "v0.31.0",
+    "v0.32.0"
+  ],
+  "gaphor.gaphor": [
+    "2.23.0",
+    "2.23.1",
+    "2.23.2"
+  ],
+  "gopass.gopass": [
+    "v1.15.11"
+  ],
+  "gopass.gopass-jsonapi": [
+    "v1.15.11"
+  ],
+  "hikari-no-yume.touchHLE": [
+    "v0.2.1"
+  ],
+  "houmain.keymapper": [
+    "3.4.0",
+    "3.5.0",
+    "3.5.1",
+    "3.5.2"
+  ],
+  "jcv8000.Codex": [
+    "v2.0.3",
+    "v2.0.4"
+  ],
+  "jendrikseipp.RedNotebook": [
+    "v2.31"
+  ],
+  "jurplel.qView": [
+    "6.1"
+  ],
+  "keif888.SSISMHash": [
+    "v1.7.6.0"
+  ],
+  "kramo.Cartridges": [
+    "v2.7.2"
+  ],
+  "lucasg.Dependencies": [
+    "v1.11.1"
+  ],
+  "lycheeverse.lychee": [
+    "v0.14.1",
+    "v0.14.2",
+    "v0.14.3"
+  ],
+  "manosim.gitify": [
+    "v4.5.1",
+    "v4.6.1"
+  ],
+  "martinrotter.RSSGuard": [
+    "4.6.3"
+  ],
+  "mikf.gallery-dl": [
+    "v1.26.6",
+    "v1.26.7"
+  ],
+  "moneymanagerex.moneymanagerex": [
+    "v1.7.0"
+  ],
+  "nomacs.nomacs": [
+    "3.16.224"
+  ],
+  "nzbget.nzbget": [
+    "v22.0",
+    "v23.0"
+  ],
+  "ossia.score": [
+    "v3.1.12",
+    "v3.1.13"
+  ],
+  "oxen-io.lokinet": [
+    "v0.9.11"
+  ],
+  "printfn.fend": [
+    "v1.4.1",
+    "v1.4.2"
+  ],
+  "qarmin.czkawka.cli": [
+    "6.1.0"
+  ],
+  "quotient-im.Quaternion": [
+    "0.0.95.1",
+    "0.0.96"
+  ],
+  "sebescudie.GammaLauncher": [
+    "5.2.2"
+  ],
+  "soopercool101.BrawlCrate": [
+    "v0.41"
+  ],
+  "squalou.google-chat-linux": [
+    "5.27.23-6"
+  ],
+  "stakira.OpenUTAU": [
+    "0.1.327"
+  ],
+  "staniel359.muffon": [
+    "v2.0.1",
+    "v2.0.2"
+  ],
+  "szTheory.exifcleaner": [
+    "v3.6.0"
+  ],
+  "taers232c.GAMADV-XTD3": [
+    "v6.67.14",
+    "v6.67.15",
+    "v6.67.16",
+    "v6.67.17",
+    "v6.67.18",
+    "v6.67.19",
+    "v6.67.20",
+    "v6.67.21",
+    "v6.67.22",
+    "v6.67.23",
+    "v6.67.24",
+    "v6.67.25",
+    "v6.67.26",
+    "6.67.27",
+    "v6.67.28",
+    "v6.67.29",
+    "v6.67.30",
+    "v6.67.31",
+    "v6.67.32",
+    "v6.67.33",
+    "v6.67.34",
+    "v6.67.35",
+    "v6.67.36",
+    "v6.67.37",
+    "v6.67.38",
+    "v6.67.39",
+    "v6.68.00",
+    "v6.68.01",
+    "V6.68.02",
+    "v6.68.02",
+    "v6.68.04",
+    "v6.68.05",
+    "v6.68.06"
+  ],
+  "tangshimin.MuJing": [
+    "v2.2.13",
+    "v2.2.16"
+  ],
+  "uTox.uTox": [
+    "v0.18.1"
+  ],
+  "win32ss.Supermium": [
+    "121.0.6167.81"
+  ],
+  "xavidop.cxcli": [
+    "v1.153.0",
+    "v1.155.0",
+    "v1.156.0",
+    "v1.158.0",
+    "v1.159.0",
+    "v1.160.0",
+    "v1.161.0",
+    "v1.162.0",
+    "v1.163.0",
+    "v1.167.0",
+    "v1.168.0",
+    "v1.169.0",
+    "v1.170.0",
+    "v1.172.0"
+  ],
+  "y-chan.SHAREVOX": [
+    "0.2.1"
+  ],
+  "y-chan.SHAREVOX.CPU": [
+    "0.2.1"
+  ],
+  "y-chan.SHAREVOX.NVIDIA": [
+    "0.2.1"
+  ],
+  "yt-dlp.yt-dlp": [
+    "2023.12.30"
+  ],
+  "yt-dlp.yt-dlp.nightly": [
+    "2023.12.31.232713",
+    "2024.01.02.232714",
+    "2024.01.05.232702",
+    "2024.01.08.232709",
+    "2024.01.09.232723",
+    "2024.01.14.232710",
+    "2024.01.18.232658",
+    "2024.01.19.232708",
+    "2024.01.20.232722",
+    "2024.01.21.232719",
+    "2024.01.22.232713",
+    "2024.01.23.232723",
+    "2024.01.28.232706",
+    "2024.01.29.232706",
+    "2024.01.31.232703",
+    "2024.02.02.232707",
+    "2024.02.03.232712",
+    "2024.02.04.232659",
+    "2024.02.05.232712",
+    "2024.02.09.232659",
+    "2024.02.13.232701"
+  ],
+  "z-------------.cpod": [
+    "v1.28.2"
+  ]
+}
