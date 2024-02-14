@@ -74,7 +74,7 @@ def do_list(id: str, version: str, mode: str) -> bool | None:
             if version not in JSON[id]:
                 JSON[id].append(version)
             with open(path, "w+", encoding="utf-8") as w:
-                w.write(json.dumps(JSON))
+                w.write(json.dumps(JSON, indent=2, sort_keys=True))
         elif mode == "verify":
             if version in JSON[id]:
                 return True
@@ -2702,63 +2702,6 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     
     # Cleanup the merged branch
     os.system(f"{Komac} cleanup --only-merged --token {GH_TOKEN}")
-
-    # Integrating the second program
-    owner = "microsoft"
-    repo = "winget-pkgs"
-    login = "Exorcism0666"
-
-    headers = {
-        "Authorization": f"token {GH_TOKEN}"
-    }
-    with open("./docs/template.md", "r", encoding="utf-8") as f:
-        content = f.read()
-
-    datas = []
-    i = 0
-    while True:
-        i += 1
-        response = requests.get(
-            f"https://api.github.com/search/issues?q=user:microsoft+repo:winget-pkgs+author:Exorcism0666+state:open+is:pr&per_page=100&page={i}",
-            headers=headers
-        )
-        data = response.json().get("items", [])
-        if not data:
-            break
-        datas.extend(data)
-
-    for data in datas:
-        issue_number = data["number"]
-        comments_response = requests.get(
-            f"https://api.github.com/repos/{owner}/{repo}/issues/{issue_number}/comments",
-            headers=headers
-        )
-        comments = comments_response.json()
-        for comment in comments:
-            if comment["user"]["login"] == "Exorcism0666":
-                body = comment["body"]
-                if re.search(r"@Exorcism0666 Close", body, re.IGNORECASE):
-                    print(f"Close #{issue_number}")
-                    close_comment = "I've received my owner's request to close this PR, I'll close it right now"
-                    requests.post(
-                        f"https://api.github.com/repos/{owner}/{repo}/issues/{issue_number}/comments",
-                        headers=headers,
-                        json={"body": close_comment}
-                    )
-                    requests.patch(
-                        f"https://api.github.com/repos/{owner}/{repo}/pulls/{issue_number}",
-                        headers=headers,
-                        json={"state": "closed"}
-                    )
-        ready_comments = [obj for obj in comments if obj["user"]["login"] == login and "## For moderators" in obj["body"]]
-        if not ready_comments:
-            create_comment_response = requests.post(
-                f"https://api.github.com/repos/{owner}/{repo}/issues/{issue_number}/comments",
-                headers=headers,
-                json={"body": content}
-            )
-            print(f"Create #{issue_number}")
-
     return Commands
 
 if __name__ == "__main__":
