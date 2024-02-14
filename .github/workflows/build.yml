@@ -30,8 +30,9 @@ jobs:
           python3 -m pip install -r requirements.txt
           pnpm install
       - name: Publish
-        run: python3 src/main.py ${{ secrets.TOKEN }}
-        run: python3 src/comment.py
+        run: |
+          python3 src/main.py ${{ secrets.TOKEN }}
+          python3 src/comment.py ${{ secrets.TOKEN }}
       - name: Update metadata
         if: always()
         run: |
@@ -40,7 +41,3 @@ jobs:
           git add .
           git commit -m "Update metadata"
           git push origin --force
-      - name: Post Comment
-        run: python3 src/comment.py
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
