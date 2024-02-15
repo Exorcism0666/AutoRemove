@@ -653,11 +653,13 @@
   ],
   "Tyrrrz.DiscordChatExporter.CLI": [
     "2.42.6",
-    "2.42.7"
+    "2.42.7",
+    "2.42.8"
   ],
   "Tyrrrz.DiscordChatExporter.GUI": [
     "2.42.6",
-    "2.42.7"
+    "2.42.7",
+    "2.42.8"
   ],
   "Tyrrrz.LightBulb": [
     "2.4.7"
