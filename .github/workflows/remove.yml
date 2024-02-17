@@ -5,7 +5,7 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
@@ -13,44 +13,11 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - name: Setup Node.JS
-        uses: actions/setup-node@v4.0.2
-        with:
-          node-version: 20
-      - uses: pnpm/action-setup@v3.0.0
-        name: Install pnpm
-        with:
-          version: 8
-          run_install: false
-      - name: Get pnpm store directory
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-      - uses: actions/cache@v4.0.0
-        name: Setup pnpm cache
-        with:
-          path: ${{ env.STORE_PATH }}
-          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
-          restore-keys: |
-            ${{ runner.os }}-pnpm-store-
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: "temurin" # See 'Supported distributions' for available options
-          java-version: "17"
       - name: Install Dependencies
         run: |
           python3 -m pip install -r requirements.txt
-          sudo apt install msitools
           git clone https://github.com/microsoft/winget-pkgs
-          pnpm install
       - name: Run script
         run: python3 src/scanner.py ${{ secrets.TOKEN }}
-      - name: Post Issue
-        run: pnpm run issue
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
-      - name: Post Comment
-        run: pnpm run comment
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
