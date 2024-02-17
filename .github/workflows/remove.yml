@@ -19,3 +19,5 @@ jobs:
           git clone https://github.com/microsoft/winget-pkgs
       - name: Run script
         run: python3 src/scanner.py ${{ secrets.TOKEN }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
