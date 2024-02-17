@@ -17,15 +17,15 @@ headers = {
 ignore = ["Unity.Unity"]
 
 def Komac(path: str, debug: bool = False) -> pathlib.Path:
-    Komac = pathlib.Path(path)/"komac.jar"
+    Komac = pathlib.Path(path)/"komac.exe"
     if not debug:
         with open(Komac, "wb+") as f:
-            file = requests.get("https://gh.xfisxf.top/https://github.com/russellbanks/Komac/releases/download/v1.11.0/Komac-1.11.0-all.jar", verify=False)
+            file = requests.get("https://github.com/russellbanks/Komac/releases/download/nightly/KomacPortable-nightly-x64.exe", verify=False)
             f.write(file.content)
     return Komac
 komac = Komac(pathlib.Path(__file__).parents[0])
-def command_generator(token: str, id: str, version: str, reason: str, komac_path: pathlib.Path, java_path: pathlib.Path = pathlib.Path("java")) -> bool:
-    return f"{java_path} -jar {komac_path} remove --id {id} --version {version} --reason '{reason}' --submit --token {token}"
+def command_generator(token: str, id: str, version: str, reason: str, komac_path: pathlib.Path) -> bool:
+    return f"{komac_path} remove --id {id} --version {version} --reason '{reason}' --submit --token {token}"
 
 def scan(_yaml: dict, token: str):
     id = _yaml["PackageIdentifier"]
