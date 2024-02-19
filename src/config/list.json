@@ -8,7 +8,8 @@
     "v11.8.1",
     "v11.8.2",
     "v11.9.0",
-    "v11.10.0"
+    "v11.10.0",
+    "v11.10.1"
   ],
   "AdGuard.AdGuardHome": [
     "v0.107.43",
@@ -194,6 +195,9 @@
   ],
   "DuongDieuPhap.ImageGlass_Pckgr": [
     "9.0.10.201"
+  ],
+  "Eigenmiao.Rickrack": [
+    "v2.9.9"
   ],
   "ElectronCommunity.ElectronFiddle": [
     "v0.36.0"
@@ -783,6 +787,9 @@
   "dynobo.NormCap": [
     "v0.5.3",
     "v0.5.4"
+  ],
+  "electerm.electerm": [
+    "v1.38.11"
   ],
   "errata-ai.Vale": [
     "v3.0.3",
