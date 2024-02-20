@@ -414,7 +414,8 @@
   ],
   "MullvadVPN.MullvadBrowser": [
     "13.0.7",
-    "13.0.9"
+    "13.0.9",
+    "13.0.10"
   ],
   "MysteriumNetwork.Mysterium": [
     "10.16.0"
@@ -751,7 +752,8 @@
     "1695",
     "1696",
     "1697",
-    "1720"
+    "1720",
+    "1721"
   ],
   "alexx2000.DoubleCommander": [
     "v1.0.11"
