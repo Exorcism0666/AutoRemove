@@ -2887,6 +2887,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del Urls, Version, id
 
+# Add NLnetLabs.Unbound to Update List
+    id = "NLnetLabs.Unbound"
+    Version = re.search(r'\d+(\.\d+)+', requests.get("https://api.github.com/repos/NLnetLabs/unbound/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]).group()
+    Urls = [f"https://nlnetlabs.nl/downloads/unbound/unbound_setup_{Version}.exe"]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del Urls, Version, id
+
     # Updating
     if not debug:
         for each in Commands:
