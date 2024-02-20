@@ -2863,6 +2863,30 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
+# Add Waterfox.Waterfox to Update List
+    id = "Waterfox.Waterfox"
+    Version = requests.get("https://api.github.com/repos/WaterfoxCo/Waterfox/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = ["https://cdn1.waterfox.net/waterfox/releases/{}/WINNT_x86_64/Waterfox%20Setup%20{}.exe".format(Version)]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+# Add MiXXX.MiXXX to Update List
+    id = "MiXXX.MiXXX"
+    Version = requests.get("https://api.github.com/repos/mixxxdj/mixxx/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = ["https://downloads.mixxx.org/releases/{}/mixxx-{}-win64.msi".format(Version)]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
     # Updating
     if not debug:
         for each in Commands:
