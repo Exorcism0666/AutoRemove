@@ -611,6 +611,9 @@
   "SMPlayer.SMPlayer": [
     "v23.12.0"
   ],
+  "Safing.Portmaster": [
+    "v1.6.5"
+  ],
   "SagerNet.sing-box": [
     "v1.8.0",
     "v1.8.1",
@@ -731,7 +734,8 @@
     "0.55.0"
   ],
   "Windscribe.Windscribe": [
-    "v2.8.6"
+    "v2.8.6",
+    "v2.9.9"
   ],
   "XmirrorSecurity.OpenSCA-cli": [
     "v3.0.4"
@@ -781,7 +785,8 @@
   ],
   "creativeprojects.resticprofile": [
     "v0.24.0",
-    "v0.25.0"
+    "v0.25.0",
+    "v0.26.0"
   ],
   "defi.defi": [
     "v4.0.8",
