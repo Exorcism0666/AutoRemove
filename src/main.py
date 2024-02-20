@@ -2899,6 +2899,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del Urls, Version, id
 
+# Add commetchat.commet to Update List
+    id = "commetchat.commet"
+    Version = requests.get("https://api.github.com/repos/commetchat/commet/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [f"https://builds.commet.chat/builds/{Version}/commet-windows.zip"]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del Urls, Version, id
+
     # Updating
     if not debug:
         for each in Commands:
