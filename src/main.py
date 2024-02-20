@@ -2873,7 +2873,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         report_existed(id, Version)
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
+    del Urls, Version, id
 
 # Add MiXXX.MiXXX to Update List
     id = "MiXXX.MiXXX"
@@ -2885,7 +2885,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         report_existed(id, Version)
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
+    del Urls, Version, id
 
     # Updating
     if not debug:
