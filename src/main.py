@@ -2866,7 +2866,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
 # Add Waterfox.Waterfox to Update List
     id = "Waterfox.Waterfox"
     Version = requests.get("https://api.github.com/repos/WaterfoxCo/Waterfox/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = ["https://cdn1.waterfox.net/waterfox/releases/{}/WINNT_x86_64/Waterfox%20Setup%20{}.exe".format(Version)]
+    Urls = [f"https://cdn1.waterfox.net/waterfox/releases/{Version}/WINNT_x86_64/Waterfox%20Setup%20{Version}.exe"]
     if not version_verify(Version, id):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -2878,7 +2878,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
 # Add MiXXX.MiXXX to Update List
     id = "MiXXX.MiXXX"
     Version = requests.get("https://api.github.com/repos/mixxxdj/mixxx/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = ["https://downloads.mixxx.org/releases/{}/mixxx-{}-win64.msi".format(Version)]
+    Urls = [f"https://downloads.mixxx.org/releases/{Version}/mixxx-{Version}-win64.msi"]
     if not version_verify(Version, id):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
