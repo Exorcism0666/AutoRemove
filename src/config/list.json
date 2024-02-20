@@ -768,7 +768,8 @@
     "v3.2.1"
   ],
   "clouDr-f2e.rubick": [
-    "v4.2.1"
+    "v4.2.1",
+    "v4.2.2"
   ],
   "creativeprojects.resticprofile": [
     "v0.24.0",
