@@ -9,7 +9,7 @@ env:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
@@ -21,11 +21,6 @@ jobs:
           python-version: "3.11.0"
           cache: "pip"
           cache-dependency-path: "**/requirements.txt"
-      - name: Setup Java
-        uses: actions/setup-java@v4
-        with:
-          distribution: "temurin" # See 'Supported distributions' for available options
-          java-version: "17"
       - name: Setup Node.JS
         uses: actions/setup-node@v4
         with:
@@ -54,13 +49,13 @@ jobs:
         run: |
           python3 -m pip install -r requirements.txt
           pnpm install
-          sudo apt install msitools
       - name: Publish
         run: python3 src/main.py ${{ secrets.TOKEN }}
       - name: Format
         run: npm run format
       - name: Post on Always
         if: always()
+        shell: bash
         run: |
           if [[ -n $(git status -s) ]]; then
           git add .
