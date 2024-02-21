@@ -446,6 +446,9 @@
   "Nextcloud.NextcloudDesktop_Pckgr": [
     "v3.11.1"
   ],
+  "Notepad++.Notepad++": [
+    "v8.6.4"
+  ],
   "Obsidian.Obsidian": [
     "v1.5.3"
   ],
@@ -767,7 +770,8 @@
     "1696",
     "1697",
     "1720",
-    "1721"
+    "1721",
+    "1722"
   ],
   "alexx2000.DoubleCommander": [
     "v1.0.11"
