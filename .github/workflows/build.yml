@@ -15,12 +15,6 @@ jobs:
         uses: actions/checkout@v4.1.1
         with:
           token: ${{ secrets.COOLPLAYLIN_BOT_TOKEN }}
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.11.0"
-          cache: "pip"
-          cache-dependency-path: "**/requirements.txt"
       - name: Setup Node.JS
         uses: actions/setup-node@v4
         with:
