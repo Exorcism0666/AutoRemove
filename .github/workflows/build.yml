@@ -49,8 +49,10 @@ jobs:
         run: npm run format
       - name: Post on Always
         if: always()
-        shell: bash
+        shell: pwsh
         run: |
-          git add .
-          git commit -m "Update metadata"
-          git push origin --force
+          if (git status -s){
+            git add .
+            git commit -m "Update metadata"
+            git push origin --force
+          }
