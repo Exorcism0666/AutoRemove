@@ -217,7 +217,8 @@
     "9.0.10.201"
   ],
   "Eigenmiao.Rickrack": [
-    "v2.9.9"
+    "v2.9.9",
+    "v2.9.10"
   ],
   "ElectronCommunity.ElectronFiddle": [
     "v0.36.0"
