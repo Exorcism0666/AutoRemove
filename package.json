@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/coolplaylin/AutoPublish.git"
+    "url": "git+https://github.com/Exorcism0666/AutoPublish.git"
   },
-  "author": "CoolPlayLin",
+  "author": "Exorcism0666",
   "license": "GPL-3.0-or-later",
   "bugs": {
-    "url": "https://github.com/coolplaylin/AutoPublish/issues"
+    "url": "https://github.com/Exorcism0666/AutoPublish/issues"
   },
-  "homepage": "https://github.com/coolplaylin/AutoPublish#readme",
+  "homepage": "https://github.com/Exorcism0666/AutoPublish#readme",
   "devDependencies": {
     "@types/node": "^20.8.0",
     "prettier": "^3.0.3",
