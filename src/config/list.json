@@ -70,7 +70,8 @@
   "Aserto.DSLoad": [
     "v0.30.1",
     "v0.30.2",
-    "v0.30.3"
+    "v0.30.3",
+    "v0.30.4"
   ],
   "Aserto.Topaz": [
     "v0.30.26",
@@ -142,7 +143,8 @@
     "v1.6.1",
     "v1.7.0",
     "v1.7.1",
-    "v1.8.0"
+    "v1.8.0",
+    "v1.9.0"
   ],
   "Canonical.Multipass": [
     "v1.13.0",
@@ -182,6 +184,12 @@
     "v0.212.1",
     "v0.212.2"
   ],
+  "DaxStudio.DaxStudio": [
+    "v3.0.11"
+  ],
+  "Ditto.Ditto": [
+    "3.24.246.0"
+  ],
   "DoltHub.Dolt": [
     "v1.30.5",
     "v1.30.6",
@@ -216,6 +224,9 @@
   ],
   "EvanSu.Picocrypt": [
     "1.33"
+  ],
+  "FilenCloud.FilenSync": [
+    "v2.0.24"
   ],
   "Fly-io.flyctl": [
     "v0.1.136",
@@ -252,6 +263,9 @@
   ],
   "Genymobile.scrcpy": [
     "v2.3.1"
+  ],
+  "Gephi.Gephi": [
+    "v0.10.1"
   ],
   "Giorgiotani.Peazip": [
     "9.7.0",
@@ -426,8 +440,26 @@
   "Microsoft.Azure.StorageExplorer_Pckgr": [
     "v1.32.1"
   ],
+  "Microsoft.AzureCLI": [
+    "2.57.0"
+  ],
+  "Microsoft.Bicep": [
+    "v0.25.53"
+  ],
+  "Microsoft.BotFrameworkComposer": [
+    "v2.1.2"
+  ],
+  "Microsoft.BotFrameworkEmulator": [
+    "v4.14.1"
+  ],
   "Microsoft.PerfView": [
     "v3.1.8"
+  ],
+  "Microsoft.PowerToys": [
+    "v0.78.0"
+  ],
+  "Microsoft.WindowsTerminal": [
+    "v1.19.10302.0"
   ],
   "Mullvad.Browser": [
     "13.0.7"
@@ -440,6 +472,9 @@
   "MysteriumNetwork.Mysterium": [
     "10.16.0"
   ],
+  "NLnetLabs.Unbound": [
+    "1.19.1"
+  ],
   "Natron.Natron": [
     "v2.5.0"
   ],
@@ -447,7 +482,8 @@
     "1.25.0",
     "1.25.1",
     "1.25.2",
-    "1.25.3"
+    "1.25.3",
+    "1.25.4"
   ],
   "NextDNS.NextDNS.CLI": [
     "v1.41.0",
@@ -520,7 +556,8 @@
   "RocketChat.RocketChat": [
     "3.9.11",
     "3.9.12",
-    "3.9.13"
+    "3.9.13",
+    "3.9.14"
   ],
   "Ruben2776.PicView": [
     "2.2",
@@ -652,10 +689,14 @@
     "v1.8.1",
     "v1.8.2",
     "v1.8.4",
-    "v1.8.5"
+    "v1.8.5",
+    "v1.8.6"
   ],
   "SchildiChat.SchildiChat": [
     "v1.11.30-sc.2"
+  ],
+  "ShareX.ShareX": [
+    "v15.0.0"
   ],
   "SoftFever.OrcaSlicer": [
     "v1.9.0",
@@ -768,6 +809,9 @@
     "0.54.0",
     "0.55.0"
   ],
+  "WinMerge.WinMerge": [
+    "v2.16.38"
+  ],
   "Windscribe.Windscribe": [
     "v2.8.6",
     "v2.9.9"
@@ -820,6 +864,9 @@
   "clouDr-f2e.rubick": [
     "v4.2.1",
     "v4.2.2"
+  ],
+  "commetchat.commet": [
+    "v0.1.4"
   ],
   "creativeprojects.resticprofile": [
     "v0.24.0",
