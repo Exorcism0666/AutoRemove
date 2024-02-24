@@ -15,12 +15,6 @@ jobs:
         uses: actions/checkout@v4.1.1
         with:
           token: ${{ secrets.COOLPLAYLIN_BOT_TOKEN }}
-      - name: Setup Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: "3.12"
-          cache: "pip"
-          cache-dependency-path: "**/requirements.txt"
       - name: Setup Git Info
         run: |
           git config --global user.name "${{ env.NAME }}"
@@ -33,9 +27,12 @@ jobs:
           python3 src/main.py ${{ secrets.TOKEN }}
       - name: Update metadata
         if: always()
+        shell: pwsh
         run: |
+        if (git status -s){
           git config --global user.name github-actions[bot]
           git config --global user.email 41898282+github-actions[bot]@users.noreply.github.com
           git add .
           git commit -m "Update metadata"
           git push origin --force
+        }
