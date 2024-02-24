@@ -18,24 +18,29 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
-          python-version: 3.12
+          python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: "**/requirements.txt"
       - name: Setup Node.JS
         uses: actions/setup-node@v4.0.2
         with:
           node-version: 20
+      - uses: pnpm/action-setup@v3.0.0
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
       - name: Get pnpm store directory
         shell: bash
         run: |
           echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
-      - name: Setup pnpm cache
-        uses: actions/cache@v4
+      - uses: actions/cache@v4.0.0
+        name: Setup pnpm cache
         with:
           path: ${{ env.STORE_PATH }}
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-      - name: Install dependencies
-        run: pnpm install
       - name: Setup Git Info
         run: |
           git config --global user.name "${{ env.NAME }}"
@@ -43,9 +48,9 @@ jobs:
       - name: Install Dependencies
         run: |
           python3 -m pip install -r requirements.txt
+          pnpm install
       - name: Publish
-        run: |
-          python3 src/main.py ${{ secrets.TOKEN }}
+        run: python3 src/main.py ${{ secrets.TOKEN }}
       - name: Post Comment
         run: pnpm run comment
         env:
