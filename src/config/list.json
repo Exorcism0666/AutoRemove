@@ -163,6 +163,9 @@
     "2.8.0",
     "2.8.1"
   ],
+  "Cisco.ClamAV": [
+    "1.3.0"
+  ],
   "CrowTranslate.CrowTranslate": [
     "2.11.1"
   ],
