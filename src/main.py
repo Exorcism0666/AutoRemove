@@ -22,8 +22,9 @@ def komac(path: str, debug: bool = False) -> pathlib.Path:
     return Komac
 
 def command(komac: pathlib.Path, id: str, urls: str, version: str, token: str) -> str:
-    Commands = """{} update --identifier {} --urls {} --version {} --submit --token {} --KOMAC_CREATED_WITH |-
-    ## For moderators
+    Commands = """{} update --identifier {} --urls {} --version {} --submit --token {} --KOMAC_CREATED_WITH ||-
+    ## For Moderators:
+     
     This account is automated by Github Actions and the source code was created by CoolPlayLin. If you have any questions about any pull request, don't hesitate to ping Exorcism0666.
     >[!warning]
     >With the new version of Komac, numerous Pull Requests may contain bugs or unwanted elements. If such issues arise, please tag russellbanks so that these bugs can be addressed in future updates.
@@ -33,6 +34,7 @@ def command(komac: pathlib.Path, id: str, urls: str, version: str, token: str) -
 
     良い一日をお過ごしください！""".format(komac.__str__(), id, urls, version, token)
     return Commands
+
 
 def clean_string(string: str, keywords: dict[str, str]) -> str:
     for k in keywords:
