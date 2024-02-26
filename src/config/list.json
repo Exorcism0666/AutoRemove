@@ -55,7 +55,8 @@
     "0.4.6",
     "0.4.7",
     "0.4.8",
-    "0.4.9"
+    "0.4.9",
+    "0.5.0"
   ],
   "AppbyTroye.KoodoReader": [
     "v1.6.1",
@@ -85,7 +86,8 @@
   ],
   "AssetRipper.AssetRipper": [
     "1.0.6",
-    "1.0.7"
+    "1.0.7",
+    "1.0.8"
   ],
   "Audacity.Audacity": [
     "Audacity-3.4.2",
