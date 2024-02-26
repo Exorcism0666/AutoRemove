@@ -359,6 +359,9 @@
   "InkStitch.InkStitch": [
     "v3.0.1"
   ],
+  "JGraph.Draw": [
+    "v23.1.5"
+  ],
   "JanProchazka.dbgate": [
     "v5.2.7"
   ],
@@ -1126,7 +1129,8 @@
     "v1.172.0",
     "v1.173.0",
     "v1.174.0",
-    "v1.175.0"
+    "v1.175.0",
+    "v1.176.0"
   ],
   "y-chan.SHAREVOX": [
     "0.2.1"
