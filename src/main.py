@@ -16,12 +16,12 @@ def komac(path: str, debug: bool = False) -> pathlib.Path:
     Komac = pathlib.Path(path)/"komac.exe"
     if not debug:
         with open(Komac, "wb+") as f:
-            file = requests.get("https://github.com/russellbanks/Komac/releases/download/nightly/KomacPortable-nightly-x64.exe", verify=False)
+            file = requests.get("https://github.com/russellbanks/Komac/releases/download/v1.11.0/Komac-1.11.0-all.jar", verify=False)
             f.write(file.content)
     return Komac
 
 def command(komac: pathlib.Path, id: str, urls: str, version: str, token: str) -> str:
-    Commands = "{} update --identifier {} --urls {} --version {} --submit --token {}".format(komac.__str__(), id, urls, version, token)
+    Commands = "java -jar {} update --id {} --urls {} --version {} --submit --token {}".format(komac.__str__(), id, urls, version, token)
     return Commands
 
 def clean_string(string: str, keywords: dict[str, str]) -> str:
