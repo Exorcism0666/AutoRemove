@@ -282,7 +282,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 do_list(*each[1])
     
     # Cleanup the merged branch
-    os.system(f"{Komac} cleanup --only-merged --all --token {GH_TOKEN}")
+    os.system(f"java -jar {Komac} cleanup --only-merged --all --token {GH_TOKEN}")
 
     return Commands
 
