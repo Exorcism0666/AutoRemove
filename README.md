@@ -1,7 +1,7 @@
-# WinGetへの自動公開
+# Automatically publish to WinGet
 
-簡単にあなたのソフトウェアの公開をwingetに追加するためのプルリクエストを作成してください。
+Easily create a pull request to add your software publication to winget.
 
-# ライセンス
+# License
 
-AutoPublish はフリーソフトウェアです：あなたは自由に使用し、学習し、共有し、改良することができます。具体的には、あなたは[GNU Affero General Public License](http://www.gnu.org/licenses/gpl-3.0.en.html)に公開されている条件の下で、ライセンスのバージョン3、または（あなたの選択で）それ以降のバージョンで再配布および/または変更することができます。
+AutoPublish is a free software: you are free to use, learn, share, and improve it. Specifically, you may redistribute it under the terms published in the [GNU Affero General Public License](http://www.gnu.org/licenses/gpl-3.0.en.html), version 3 of the license, or (at your option) any later, You may redistribute and/or modify it under the terms published in [GNU Affero General Public License]().
