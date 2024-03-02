@@ -3207,4 +3207,4 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     return Commands
 
 if __name__ == "__main__":
-    print([each[0] for each in main()])
+    print("Executed Command: ", [each[0] for each in main()])
