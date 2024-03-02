@@ -274,6 +274,19 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
+    # Add sf-yuzifu.bcm_convertor to Update List
+    id = "sf-yuzifu.bcm_convertor"
+    JSON = requests.get("https://api.github.com/repos/sf-yuzifu/bcm_convertor/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/sf-yuzifu/bcm_convertor/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if ".exe" in each["browser_download_url"]]
+    Urls.append(Urls[0].replace("github", "gitee").replace("bcm_convertor.yzf", "%E7%BC%96%E7%A8%8B%E7%8C%AB%E6%A0%BC%E5%BC%8F%E5%B7%A5%E5%8E%82"))
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
 
     # Updating
     if not debug:
