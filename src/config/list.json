@@ -481,7 +481,8 @@
     "2.4.0"
   ],
   "Microsoft.Azure.StorageExplorer": [
-    "v1.32.1"
+    "v1.32.1",
+    "v1.33.0"
   ],
   "Microsoft.Azure.StorageExplorer_Pckgr": [
     "v1.32.1"
@@ -1171,7 +1172,8 @@
     "v6.71.04",
     "v6.71.05",
     "v6.71.06",
-    "v6.71.07"
+    "v6.71.07",
+    "v6.71.08"
   ],
   "tangshimin.MuJing": [
     "v2.2.13",
