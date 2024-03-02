@@ -285,7 +285,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version), GH_TOKEN), (id, Version, "write")))
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
     # Updating
