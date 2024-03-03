@@ -6,6 +6,7 @@ import os, sys
 urllib3.disable_warnings(InsecureRequestWarning)
 import json
 import bs4
+import time
 
 GH_TOKEN = sys.argv[1]
 
@@ -104,20 +105,6 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     #     Commands.append(command(Komac, id, list_to_str(Urls),str_pop(JSON['version'], 0), GH_TOKEN))
     # del JSON, URL, Urls, id
 
-    # 更新 Clash for Windows
-    # id = "Fndroid.ClashForWindows"
-    # JSON = requests.get("https://api.github.com/repos/Fndroid/clash_for_windows_pkg/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    # Version = requests.get("https://api.github.com/repos/Fndroid/clash_for_windows_pkg/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    # Urls = [each["browser_download_url"] for each in JSON if "exe" in each["browser_download_url"]]
-    # if not version_verify(Version, id):
-    #      report_existed(id, Version)
-    # elif do_list(id, Version, "verify"):
-    #     report_existed(id, Version)
-    # else:
-    #     do_list(id, Version, "write")
-    #     Commands.append(command(Komac, id, list_to_str(Urls), Version, GH_TOKEN))
-    # del JSON, Urls, Version, id
-
     # Add KuaiFan.DooTask to Update List
     id = "KuaiFan.DooTask"
     JSON = requests.get("https://api.github.com/repos/kuaifan/dootask/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -173,10 +160,10 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
 
     # Add DenoLand.Deno to Update List
     id = "DenoLand.Deno"
-    JSON = requests.get("https://api.github.com/repos/denoland/deno/releases", verify=False, headers=Headers[1]).json()[0]["assets"]
-    Version = requests.get("https://api.github.com/repos/denoland/deno/releases", verify=False, headers=Headers[1]).json()[0]["tag_name"]
+    JSON = requests.get("https://api.github.com/repos/denoland/deno/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/denoland/deno/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
     Urls = [each["browser_download_url"] for each in JSON if "msvc" in each["browser_download_url"]]
-    if not version_verify(str_pop(Version, 0), id) or Version == requests.get("https://api.github.com/repos/Molunerfinn/PicGo/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]:
+    if not version_verify(str_pop(Version, 0), id):
          report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -280,7 +267,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     Version = requests.get("https://api.github.com/repos/sf-yuzifu/bcm_convertor/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
     Urls = [each["browser_download_url"] for each in JSON if ".exe" in each["browser_download_url"]]
     Urls.append(Urls[0].replace("github", "gitee").replace("bcm_convertor.yzf", "%E7%BC%96%E7%A8%8B%E7%8C%AB%E6%A0%BC%E5%BC%8F%E5%B7%A5%E5%8E%82"))
-    if not version_verify(Version, id):
+    if not version_verify(str_pop(Version, 0), id):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -288,6 +275,35 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
+    # Check for missing versions
+    try:
+        for each in requests.get("https://api.github.com/repos/denoland/deno/releases", verify=False, headers=Headers[1]).json():
+            id = "DenoLand.Deno"
+            JSON = each["assets"]
+            Version = each["tag_name"]
+            Urls = [each["browser_download_url"] for each in JSON if "msvc" in each["browser_download_url"]]
+            if not version_verify(str_pop(Version, 0), id):
+                report_existed(id, Version)
+            elif do_list(id, Version, "verify"):
+                report_existed(id, Version)
+            else:
+                Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+            del JSON, Urls, Version, id
+            time.sleep(5)
+        for each in requests.get("https://api.github.com/repos/kuaifan/dootask/releases", verify=False, headers=Headers[1]).json():
+            id = "KuaiFan.DooTask"
+            JSON = each["assets"]
+            Version = each["tag_name"]
+            Urls = [each["browser_download_url"] for each in JSON if "exe" in each["browser_download_url"] and not "blockmap" in each["browser_download_url"]]
+            if not version_verify(str_pop(Version, 0), id):
+                report_existed(id, Version)
+            elif do_list(id, Version, "verify"):
+                report_existed(id, Version)
+            else:
+                Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+            del JSON, Urls, Version, id
+    except BaseException as e:
+        print("Got error while checking: ", e)
     # Updating
     if not debug:
         for each in Commands:
