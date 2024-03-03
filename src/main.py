@@ -289,7 +289,6 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
             else:
                 Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
             del JSON, Urls, Version, id
-            time.sleep(5)
         for each in requests.get("https://api.github.com/repos/kuaifan/dootask/releases", verify=False, headers=Headers[1]).json():
             id = "KuaiFan.DooTask"
             JSON = each["assets"]
