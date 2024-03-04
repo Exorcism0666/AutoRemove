@@ -506,7 +506,8 @@
     "v3.1.8"
   ],
   "Microsoft.PowerToys": [
-    "v0.78.0"
+    "v0.78.0",
+    "v0.79.0"
   ],
   "Microsoft.WindowsTerminal": [
     "v1.19.10302.0",
