@@ -2122,19 +2122,6 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-   # Add YuzuEmu.Yuzu.Mainline to Update List
-    id = "YuzuEmu.Yuzu.Mainline"
-    JSON = requests.get("https://api.github.com/repos/yuzu-emu/yuzu-mainline/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = re.search(r'\d+', requests.get("https://api.github.com/repos/yuzu-emu/yuzu-mainline/releases/latest", verify=False, headers=Headers[1]).json()["name"]).group()
-    Urls = [each["browser_download_url"] for each in JSON if ("zip" in each["browser_download_url"]) and not("debugsymbols" in each["browser_download_url"])]
-    if not version_verify(Version, id):
-        report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
-
    # Add StandardNotes.StandardNotes to Update List
     id = "StandardNotes.StandardNotes"
     JSON = requests.get("https://api.github.com/repos/standardnotes/app/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
