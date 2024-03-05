@@ -812,7 +812,8 @@
   ],
   "Syncthing.Syncthing": [
     "v1.27.2",
-    "v1.27.3"
+    "v1.27.3",
+    "v1.27.4"
   ],
   "TailwindLabs.TailwindCSS": [
     "v3.4.1"
@@ -834,7 +835,8 @@
     "v2.6.6",
     "v2.6.7",
     "v2.6.8",
-    "v2.6.9"
+    "v2.6.9",
+    "v2.6.10"
   ],
   "Transmission.Transmission": [
     "4.0.5"
