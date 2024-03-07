@@ -3200,7 +3200,33 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     id = "clsid2.mpc-hc"
     JSON = requests.get("https://api.github.com/repos/clsid2/mpc-hc/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/clsid2/mpc-hc/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith((".exe")) and not(".zip" in each["browser_download_url"])]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe") and not(".zip" in each["browser_download_url"])]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+# Add Rizin.Rizin to Update List
+    id = "Rizin.Rizin"
+    JSON = requests.get("https://api.github.com/repos/rizinorg/rizin/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/rizinorg/rizin/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
+    if not version_verify(str_pop(Version, 0), id):
+         report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+# Add Rizin.Cutter to Update List
+    id = "Rizin.Cutter"
+    JSON = requests.get("https://api.github.com/repos/rizinorg/cutter/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/rizinorg/cutter/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
+    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".zip")]
     if not version_verify(str_pop(Version, 0), id):
          report_existed(id, Version)
     elif do_list(id, Version, "verify"):
