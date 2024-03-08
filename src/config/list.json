@@ -170,6 +170,9 @@
     "v1.9.0",
     "v1.10.0"
   ],
+  "CPEditor.CPEditor": [
+    "6.11.2"
+  ],
   "Canonical.Multipass": [
     "v1.13.0",
     "v1.13.1"
@@ -278,7 +281,8 @@
     "v0.2.9",
     "v0.2.10",
     "v0.2.11",
-    "v0.2.12"
+    "v0.2.12",
+    "v0.2.13"
   ],
   "FreeCAD.FreeCAD": [
     "0.21.2"
@@ -472,6 +476,9 @@
     "v0.16.1",
     "v0.16.2"
   ],
+  "Lapce.Lapce": [
+    "v0.3.1"
+  ],
   "Lauriethefish.QuestPatcher": [
     "2.7.2",
     "2.7.3"
@@ -569,6 +576,9 @@
   "Notepad++.Notepad++": [
     "v8.6.4"
   ],
+  "ONLYOFFICE.DesktopEditors": [
+    "v8.0.1"
+  ],
   "Obsidian.Obsidian": [
     "v1.5.3"
   ],
@@ -643,7 +653,8 @@
   "Ruben2776.PicView": [
     "2.2",
     "2.2.1",
-    "2.2.2"
+    "2.2.2",
+    "2.2.3"
   ],
   "Rufus.Rufus": [
     "v4.4"
@@ -891,6 +902,9 @@
   "Tyrrrz.LightBulb": [
     "2.4.7"
   ],
+  "UPX.UPX": [
+    "v4.2.2"
+  ],
   "UniversalMediaServer.UniversalMediaServer": [
     "13.8.1"
   ],
@@ -1061,7 +1075,8 @@
   ],
   "foldynl.QLog": [
     "v0.31.0",
-    "v0.32.0"
+    "v0.32.0",
+    "v0.33.0"
   ],
   "gaphor.gaphor": [
     "2.23.0",
