@@ -210,6 +210,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del Urls, Version, id
 
+
     # Add Notion.Notion to Update List
     id = "Notion.Notion"
     Urls:str = requests.get("https://www.notion.so/desktop/windows/download", verify=False).url
@@ -301,6 +302,22 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
             else:
                 Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
             del JSON, Urls, Version, id
+        for each in requests.get("https://nodejs.org/dist/index.json").json():
+            if not each["lts"]:
+                continue
+            id = "OpenJS.NodeJS.LTS"
+            JSON = each["files"]
+            Version = each["version"]
+            _ = {"win-": f"node-v{Version}-", "-msi": ".msi"}
+            Urls = [f"https://nodejs.org/dist/{Version}/{clean_string(each, _)}" for each in JSON if "-msi" in each]
+            if not version_verify(Version, id):
+                report_existed(id, Version)
+            elif do_list(id, Version, "verify"):
+                report_existed(id, Version)
+            else:
+                Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+            del Urls, Version, id
+
     except BaseException as e:
         print("Got error while checking: ", e)
     # Updating
