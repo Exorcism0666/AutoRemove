@@ -162,7 +162,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     id = "DenoLand.Deno"
     JSON = requests.get("https://api.github.com/repos/denoland/deno/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/denoland/deno/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if "msvc" in each["browser_download_url"] and "denort" not in "msvc" in each["browser_download_url"]]
+    Urls = [each["browser_download_url"] for each in JSON if "msvc" in each["browser_download_url"] and not "denort" in each["browser_download_url"]]
     if not version_verify(str_pop(Version, 0), id):
          report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -281,7 +281,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
             id = "DenoLand.Deno"
             JSON = each["assets"]
             Version = each["tag_name"]
-            Urls = [each["browser_download_url"] for each in JSON if "msvc" in each["browser_download_url"] and "denort" not in "msvc" in each["browser_download_url"]]
+            Urls = [each["browser_download_url"] for each in JSON if "msvc" in each["browser_download_url"] and not "denort" in "msvc" in each["browser_download_url"]]
             if not version_verify(str_pop(Version, 0), id):
                 report_existed(id, Version)
             elif do_list(id, Version, "verify"):
