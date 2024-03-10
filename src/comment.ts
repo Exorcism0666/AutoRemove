@@ -6,7 +6,7 @@ const owner = "microsoft";
 const repo = "winget-pkgs";
 const login = "Exorcism0666";
 
-(async () => {
+const main = (async () => {
   const api = new Octokit({
     auth: env.GITHUB_TOKEN,
   });
@@ -72,4 +72,10 @@ const login = "Exorcism0666";
       }
     });
   });
-})();
+});
+
+try {
+  main()
+} catch (error) {
+  console.log(error)
+}
