@@ -413,7 +413,8 @@
     "v3.0.1"
   ],
   "JGraph.Draw": [
-    "v23.1.5"
+    "v23.1.5",
+    "v24.0.4"
   ],
   "JanProchazka.dbgate": [
     "v5.2.7"
