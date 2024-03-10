@@ -6,7 +6,7 @@ const owner = "microsoft";
 const repo = "winget-pkgs";
 const login = "coolplaylinbot";
 
-const main = (async () => {
+const main = async () => {
   const api = new Octokit({
     auth: env.GITHUB_TOKEN,
   });
@@ -88,10 +88,10 @@ const main = (async () => {
       }
     });
   });
-});
+};
 
 try {
-  main()
+  main();
 } catch (error) {
-  console.log(error)
+  console.log(error);
 }
