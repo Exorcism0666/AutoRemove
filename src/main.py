@@ -93,7 +93,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.67",
         "Authorization": f"Bearer {GH_TOKEN}"
     }]
-
+    '''
 # Add Peppy.Osu! to Update List
     id = "Peppy.Osu!"
     JSON = requests.get("https://api.github.com/repos/ppy/osu/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -106,7 +106,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
 # Add HandBrake.HandBrake to Update List
     id = "HandBrake.HandBrake"
     JSON = requests.get("https://api.github.com/repos/HandBrake/HandBrake/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -119,7 +119,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
 # Add SchildiChat.SchildiChat to Update List
     id = "SchildiChat.SchildiChat"
     JSON = requests.get("https://api.github.com/repos/SchildiChat/schildichat-desktop/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -132,7 +132,8 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
+    '''
 # Add cinnyapp.cinny-desktop to Update List
     id = "cinnyapp.cinny-desktop"
     JSON = requests.get("https://api.github.com/repos/cinnyapp/cinny-desktop/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -145,7 +146,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
 # Add Tyrrrz.DiscordChatExporter.CLI to Update List
     id = "Tyrrrz.DiscordChatExporter.CLI"
     JSON = requests.get("https://api.github.com/repos/Tyrrrz/DiscordChatExporter/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -3065,7 +3066,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
 # Add dbeaver.dbeaver to Update List
     id = "dbeaver.dbeaver"
     JSON = requests.get("https://api.github.com/repos/dbeaver/dbeaver/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -3078,7 +3079,8 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
+    '''
 # Add GitHub.cli to Update List
     id = "GitHub.cli"
     JSON = requests.get("https://api.github.com/repos/cli/cli/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -3091,51 +3093,12 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
 # Add UniversityOfAmsterdam.praat to Update List
     id = "UniversityOfAmsterdam.praat"
     JSON = requests.get("https://api.github.com/repos/praat/praat/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
     Version = requests.get("https://api.github.com/repos/praat/praat/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
     Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".zip") and not("xcodeproj" in each["browser_download_url"])]
-    if not version_verify(str_pop(Version, 0), id):
-         report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
-
-# Add UPX.UPX to Update List
-    id = "UPX.UPX"
-    JSON = requests.get("https://api.github.com/repos/upx/upx/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/repos/upx/upx/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".zip") and not("dos" in each["browser_download_url"])]
-    if not version_verify(str_pop(Version, 0), id):
-         report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
-
-# Add CPEditor.CPEditor to Update List
-    id = "CPEditor.CPEditor"
-    JSON = requests.get("https://api.github.com/repos/cpeditor/cpeditor/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/repos/cpeditor/cpeditor/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe") and not("LLVM" in each["browser_download_url"])]
-    if not version_verify(Version, id):
-        report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
-
-# Add Lapce.Lapce to Update List
-    id = "Lapce.Lapce"
-    JSON = requests.get("https://api.github.com/repos/lapce/lapce/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/repos/lapce/lapce/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".msi")]
     if not version_verify(str_pop(Version, 0), id):
          report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -3156,7 +3119,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
 # Add prefix-dev.pixi to Update List
     id = "prefix-dev.pixi"
     JSON = requests.get("https://api.github.com/repos/prefix-dev/pixi/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -3169,7 +3132,8 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
+    '''
 # Add ONLYOFFICE.DesktopEditors to Update List
     id = "ONLYOFFICE.DesktopEditors"
     JSON = requests.get("https://api.github.com/repos/ONLYOFFICE/DesktopEditors/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -3182,7 +3146,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
 # Add gerardog.gsudo to Update List
     id = "gerardog.gsudo"
     JSON = requests.get("https://api.github.com/repos/gerardog/gsudo/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -3195,7 +3159,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
 # Add clsid2.mpc-hc to Update List
     id = "clsid2.mpc-hc"
     JSON = requests.get("https://api.github.com/repos/clsid2/mpc-hc/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -3208,7 +3172,8 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
+    '''
 # Add Rizin.Rizin to Update List
     id = "Rizin.Rizin"
     JSON = requests.get("https://api.github.com/repos/rizinorg/rizin/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -3221,7 +3186,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
 # Add Rizin.Cutter to Update List
     id = "Rizin.Cutter"
     JSON = requests.get("https://api.github.com/repos/rizinorg/cutter/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -3234,7 +3199,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-'''
+    '''
 # Add TobyAllen.DocTo to Update List
     id = "TobyAllen.DocTo"
     JSON = requests.get("https://api.github.com/repos/tobya/DocTo/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -3247,8 +3212,8 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-'''
-'''
+    '''
+    '''
 # Add TheQucsTeam.Qucs-S to Update List
     id = "TheQucsTeam.Qucs-S"
     JSON = requests.get("https://api.github.com/repos/ra3xdh/qucs_s/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -3261,7 +3226,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-'''
+    '''
     # Updating
     if not debug:
         for each in Commands:
