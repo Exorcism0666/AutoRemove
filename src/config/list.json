@@ -63,7 +63,8 @@
     "0.4.8",
     "0.4.9",
     "0.5.0",
-    "0.5.1"
+    "0.5.1",
+    "0.5.2"
   ],
   "AppbyTroye.KoodoReader": [
     "v1.6.1",
@@ -572,7 +573,8 @@
   ],
   "NLnetLabs.Unbound": [
     "1.19.1",
-    "1.19.2"
+    "1.19.2",
+    "1.19.3"
   ],
   "Natron.Natron": [
     "v2.5.0"
@@ -656,7 +658,8 @@
     "v1.8.5"
   ],
   "RedHat.Podman-Desktop": [
-    "v1.7.1"
+    "v1.7.1",
+    "v1.8.0"
   ],
   "RedHat.Podman-Desktop_Pckgr": [
     "v1.7.1"
