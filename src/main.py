@@ -835,7 +835,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
    # Add xavidop.cxcli to Update List
     id = "xavidop.cxcli"
     JSON = requests.get("https://api.github.com/repos/xavidop/dialogflow-cx-cli/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -848,7 +848,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
    # Add Chocolatey.ChocolateyGUI to Update List
     id = "Chocolatey.ChocolateyGUI"
     JSON = requests.get("https://api.github.com/repos/chocolatey/ChocolateyGUI/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -887,7 +887,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
    # Add Ryujinx.Ryujinx to Update List
     id = "Ryujinx.Ryujinx"
     JSON = requests.get("https://api.github.com/repos/Ryujinx/release-channel-master/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -900,7 +900,8 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
+    '''
    # Add Ryujinx.Ryujinx.Ava to Update List
     id = "Ryujinx.Ryujinx.Ava"
     JSON = requests.get("https://api.github.com/repos/Ryujinx/release-channel-master/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -913,7 +914,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
    # Add TeamIDE.TeamIDE to Update List
     id = "TeamIDE.TeamIDE"
     JSON = requests.get("https://api.github.com/repos/team-ide/teamide/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -1369,19 +1370,6 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-   # # Add Nostalgia-09.AeroChat to Update List
-    # id = "Nostalgia-09.AeroChat"
-    # JSON = requests.get("https://api.github.com/repos/Nostalgia-09/AeroChat/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    # Version = requests.get("https://api.github.com/repos/Nostalgia-09/AeroChat/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    # Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
-    # if not version_verify(Version, id):
-        # report_existed(id, Version)
-    # elif do_list(id, Version, "verify"):
-        # report_existed(id, Version)
-    # else:
-        # Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
-    # del JSON, Urls, Version, id
-
    # Add oxen-io.lokinet to Update List
     id = "oxen-io.lokinet"
     JSON = requests.get("https://api.github.com/repos/oxen-io/lokinet/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -1537,7 +1525,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
    # Add GAM-Team.GotYourBack to Update List
     id = "GAM-Team.GotYourBack"
     JSON = requests.get("https://api.github.com/repos/GAM-team/got-your-back/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -1550,7 +1538,8 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
+    '''
    # Add taers232c.GAMADV-XTD3 to Update List
     id = "taers232c.GAMADV-XTD3"
     JSON = requests.get("https://api.github.com/repos/taers232c/GAMADV-XTD3/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -1563,7 +1552,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
    # Add Aserto.Topaz to Update List
     id = "Aserto.Topaz"
     JSON = requests.get("https://api.github.com/repos/aserto-dev/topaz/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -1576,7 +1565,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
    # Add UniversalMediaServer.UniversalMediaServer to Update List
     id = "UniversalMediaServer.UniversalMediaServer"
     JSON = requests.get("https://api.github.com/repos/UniversalMediaServer/UniversalMediaServer/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -1589,7 +1578,8 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
+    '''
    # Add Canonical.Multipass to Update List
     id = "Canonical.Multipass"
     JSON = requests.get("https://api.github.com/repos/canonical/multipass/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -1602,7 +1592,8 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
+    '''
    # Add AppFlowy.AppFlowy to Update List
     id = "AppFlowy.AppFlowy"
     JSON = requests.get("https://api.github.com/repos/AppFlowy-IO/AppFlowy/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -1615,7 +1606,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
    # Add errata-ai.Vale to Update List
     id = "errata-ai.Vale"
     JSON = requests.get("https://api.github.com/repos/errata-ai/vale/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -1628,7 +1619,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
    # Add Jubler.App to Update List
     id = "Jubler.App"
     JSON = requests.get("https://api.github.com/repos/teras/Jubler/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -1641,7 +1632,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
    # Add Task.Task to Update List
     id = "Task.Task"
     JSON = requests.get("https://api.github.com/repos/go-task/task/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -1654,7 +1645,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
    # Add martinrotter.RSSGuard to Update List
     id = "martinrotter.RSSGuard"
     JSON = requests.get("https://api.github.com/repos/martinrotter/rssguard/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -1667,7 +1658,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
    # Add Stoplight.Prism to Update List
     id = "Stoplight.Prism"
     JSON = requests.get("https://api.github.com/repos/stoplightio/prism/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
