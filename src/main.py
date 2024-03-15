@@ -185,7 +185,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
 # Add yt-dlp.yt-dlp to Update List
     id = "yt-dlp.yt-dlp"
     JSON = requests.get("https://api.github.com/repos/yt-dlp/yt-dlp/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -198,7 +198,8 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
+    '''
 # Add yt-dlp.yt-dlp.nightly to Update List
     id = "yt-dlp.yt-dlp.nightly"
     JSON = requests.get("https://api.github.com/repos/yt-dlp/yt-dlp-nightly-builds/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -211,7 +212,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
 # Add Gyan.FFmpeg to Update List
     id = "Gyan.FFmpeg"
     JSON = requests.get("https://api.github.com/repos/GyanD/codexffmpeg/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -849,19 +850,6 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
     '''
-   # Add Chocolatey.ChocolateyGUI to Update List
-    id = "Chocolatey.ChocolateyGUI"
-    JSON = requests.get("https://api.github.com/repos/chocolatey/ChocolateyGUI/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/repos/chocolatey/ChocolateyGUI/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".msi")]
-    if not version_verify(Version, id):
-        report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
-
    # Add Chocolatey.Chocolatey to Update List
     id = "Chocolatey.Chocolatey"
     JSON = requests.get("https://api.github.com/repos/chocolatey/choco/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -915,32 +903,6 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
     '''
-   # Add TeamIDE.TeamIDE to Update List
-    id = "TeamIDE.TeamIDE"
-    JSON = requests.get("https://api.github.com/repos/team-ide/teamide/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/repos/team-ide/teamide/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if ("exe" in each["browser_download_url"]) and not("blockmap" in each["browser_download_url"])]
-    if not version_verify(str_pop(Version, 0), id):
-         report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
-
-   # Add CrowTranslate.CrowTranslate to Update List
-    id = "CrowTranslate.CrowTranslate"
-    JSON = requests.get("https://api.github.com/repos/crow-translate/crow-translate/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/repos/crow-translate/crow-translate/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
-    if not version_verify(Version, id):
-        report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
-
    # Add kramo.Cartridges to Update List
     id = "kramo.Cartridges"
     JSON = requests.get("https://api.github.com/repos/kra-mo/cartridges/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -3007,19 +2969,6 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-# Add Alibaba.AlibabaCloudCLI to Update List
-    id = "Alibaba.AlibabaCloudCLI"
-    JSON = requests.get("https://api.github.com/repos/aliyun/aliyun-cli/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/repos/aliyun/aliyun-cli/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".zip")]
-    if not version_verify(str_pop(Version, 0), id):
-         report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
-
 # Add FilenCloud.FilenSync to Update List
     id = "FilenCloud.FilenSync"
     Version = requests.get("https://api.github.com/repos/FilenCloudDienste/filen-desktop/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
@@ -3138,18 +3087,6 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
     '''
-# Add gerardog.gsudo to Update List
-    id = "gerardog.gsudo"
-    JSON = requests.get("https://api.github.com/repos/gerardog/gsudo/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/repos/gerardog/gsudo/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith((".msi", ".zip")) and not("sha256" in each["browser_download_url"])]
-    if not version_verify(str_pop(Version, 0), id):
-         report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
     '''
 # Add clsid2.mpc-hc to Update List
     id = "clsid2.mpc-hc"
