@@ -43,6 +43,20 @@ const main = async () => {
       } catch (error) {
         console.log("No assignee need to be removed");
       }
+      const labels = (await api.rest.issues.listLabelsOnIssue({
+        repo: repo,
+        owner: owner,
+        issue_number: obj.number
+      })).data.map((label) => label.name);
+      if (labels.includes("No-Recent-Activity")) {
+       await api.rest.issues.createComment({
+          owner: owner,
+          repo: repo,
+          issue_number: obj.number,
+          body: `Don't close this Pull Request please :)\nCC @CoolPlayLin`,
+        });
+        console.log(`Prevent #${obj.issue_number} from being stale`);
+      }
       const comments = await api.rest.issues.listComments({
         repo: repo,
         owner: owner,
@@ -84,7 +98,7 @@ const main = async () => {
           issue_number: obj.number,
           body: content,
         });
-        console.log(`Create #${obj.number}`);
+        console.log(`Create tip for #${obj.number}`);
       }
     });
   });
