@@ -114,7 +114,8 @@
     "3.4.2"
   ],
   "AutoHotkey.AutoHotkey": [
-    "v2.0.11"
+    "v2.0.11",
+    "v1.1.37.02"
   ],
   "AutoHotkey.AutoHotkey_Pckgr": [
     "v2.0.11"
@@ -841,7 +842,8 @@
     "v1.8.5",
     "v1.8.6",
     "v1.8.7",
-    "v1.8.8"
+    "v1.8.8",
+    "v1.8.9"
   ],
   "SchildiChat.SchildiChat": [
     "v1.11.30-sc.2",
