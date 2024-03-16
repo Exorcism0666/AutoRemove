@@ -90,8 +90,6 @@ const main = async () => {
   });
 };
 
-try {
-  main();
-} catch (error) {
+main().catch((error) => {
   console.log(error);
-}
+});

@@ -310,12 +310,12 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
             Version = each["version"]
             _ = {"win-": f"node-{Version}-", "-msi": ".msi"}
             Urls = [f"https://nodejs.org/dist/{Version}/{clean_string(each, _)}" for each in JSON if "-msi" in each]
-            if not version_verify(Version, id):
-                report_existed(id, Version)
-            elif do_list(id, Version, "verify"):
-                report_existed(id, Version)
+            if not version_verify(str_pop(Version, 0), id):
+                report_existed(id, str_pop(Version, 0))
+            elif do_list(id, str_pop(Version, 0), "verify"):
+                report_existed(id, str_pop(Version, 0))
             else:
-                Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+                Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
             del Urls, Version, id
 
     except BaseException as e:
