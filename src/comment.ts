@@ -27,29 +27,15 @@ const main = async () => {
   }
   datas.forEach((data) => {
     data.forEach(async (obj) => {
-      try {
-        await api.rest.issues.removeAssignees({
+      const labels = (
+        await api.rest.issues.listLabelsOnIssue({
           repo: repo,
           owner: owner,
           issue_number: obj.number,
-          assignees: ["coolplaylinbot"],
-        });
-        await api.rest.issues.createComment({
-          owner: owner,
-          repo: repo,
-          issue_number: obj.number,
-          body: `Sorry, currently I can't reply you now, I'll call @CoolPlayLin instead.\n\n**Note: DO NOT ASSIGN TO THIS ACCOUNT AGAIN, ALL ASSIGNEES OF THIS ACCOUNT WILL BE REMOVED AUTOMATICALLY**`,
-        });
-      } catch (error) {
-        console.log("No assignee need to be removed");
-      }
-      const labels = (await api.rest.issues.listLabelsOnIssue({
-        repo: repo,
-        owner: owner,
-        issue_number: obj.number
-      })).data.map((label) => label.name);
+        })
+      ).data.map((label) => label.name);
       if (labels.includes("No-Recent-Activity")) {
-       await api.rest.issues.createComment({
+        await api.rest.issues.createComment({
           owner: owner,
           repo: repo,
           issue_number: obj.number,
