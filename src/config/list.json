@@ -1155,7 +1155,8 @@
     "v2.4.4"
   ],
   "gopass.gopass": [
-    "v1.15.11"
+    "v1.15.11",
+    "v1.15.12"
   ],
   "gopass.gopass-jsonapi": [
     "v1.15.11"
