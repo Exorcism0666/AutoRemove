@@ -168,7 +168,8 @@
   "BinanceTech.Binance": [
     "v1.49.0",
     "v1.50.1",
-    "v1.50.2"
+    "v1.50.2",
+    "v1.50.3"
   ],
   "Bisq.Bisq": [
     "v1.9.14"
@@ -272,7 +273,8 @@
     "v2.9.10"
   ],
   "ElectronCommunity.ElectronFiddle": [
-    "v0.36.0"
+    "v0.36.0",
+    "v0.36.2"
   ],
   "EvanSu.Picocrypt": [
     "1.33"
@@ -493,7 +495,8 @@
     "v3.28.3",
     "v3.29.0-rc1",
     "v3.29.0-rc2",
-    "v3.28.4"
+    "v3.28.4",
+    "v3.29.0"
   ],
   "Kitware.CMake_Pckgr": [
     "v3.28.3"
@@ -639,7 +642,8 @@
   ],
   "OnionShare.OnionShare": [
     "v2.6",
-    "v2.6.1"
+    "v2.6.1",
+    "v2.6.2"
   ],
   "OpenRocket.OpenRocket": [
     "23.09"
@@ -912,7 +916,8 @@
   "Streetwriters.Notesnook": [
     "v2.6.14",
     "v2.6.15",
-    "v2.6.16"
+    "v2.6.16",
+    "v2.6.17"
   ],
   "Stretchly.Stretchly": [
     "v1.15.1"
