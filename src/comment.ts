@@ -27,47 +27,10 @@ const main = async () => {
   }
   datas.forEach((data) => {
     data.forEach(async (obj) => {
-      const labels = (
-        await api.rest.issues.listLabelsOnIssue({
-          repo: repo,
-          owner: owner,
-          issue_number: obj.number,
-        })
-      ).data.map((label) => label.name);
-      if (labels.includes("No-Recent-Activity")) {
-        await api.rest.issues.createComment({
-          owner: owner,
-          repo: repo,
-          issue_number: obj.number,
-          body: `Don't close this Pull Request please :)\nCC @CoolPlayLin`,
-        });
-        console.log(`Prevent #${obj.issue_number} from being stale`);
-      }
       const comments = await api.rest.issues.listComments({
         repo: repo,
         owner: owner,
         issue_number: obj.number,
-      });
-      comments.data.forEach(async (comment) => {
-        if (comment.user.login !== "CoolPlayLin") {
-          return;
-        }
-        const { body } = comment;
-        if (body.match(/@[Cc]ool[Pp]lay[Ll]in[Bb]ot [Cc]lose/)) {
-          console.log(`Close #${obj.number}`);
-          await api.rest.issues.createComment({
-            owner: owner,
-            repo: repo,
-            issue_number: obj.number,
-            body: `I've received my owner's request to close this pr, I'll close it right now`,
-          });
-          await api.rest.pulls.update({
-            owner: owner,
-            repo: repo,
-            pull_number: obj.number,
-            state: "closed",
-          });
-        }
       });
       const ready = comments.data.filter((obj) => {
         if (
