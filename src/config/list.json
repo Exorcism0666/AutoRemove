@@ -1026,7 +1026,8 @@
   ],
   "Waterfox.Waterfox": [
     "G6.0.9",
-    "G6.0.10"
+    "G6.0.10",
+    "G6.0.11"
   ],
   "Wilfred.difftastic": [
     "0.54.0",
@@ -1051,7 +1052,8 @@
   ],
   "YS-L.csvlens": [
     "v0.6.0",
-    "v0.7.0"
+    "v0.7.0",
+    "v0.8.0"
   ],
   "YggdrasilNetwork.Yggdrasil": [
     "v0.5.4",
