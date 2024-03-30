@@ -107,6 +107,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
     '''
+    '''
 # Add HandBrake.HandBrake to Update List
     id = "HandBrake.HandBrake"
     JSON = requests.get("https://api.github.com/repos/HandBrake/HandBrake/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -119,6 +120,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
+    '''
     '''
 # Add SchildiChat.SchildiChat to Update List
     id = "SchildiChat.SchildiChat"
@@ -172,7 +174,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-
+    '''
 # Add Tyrrrz.LightBulb to Update List
     id = "Tyrrrz.LightBulb"
     JSON = requests.get("https://api.github.com/repos/Tyrrrz/LightBulb/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -185,6 +187,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
+    '''
     '''
 # Add yt-dlp.yt-dlp to Update List
     id = "yt-dlp.yt-dlp"
@@ -213,32 +216,6 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
     '''
-# Add Gyan.FFmpeg to Update List
-    id = "Gyan.FFmpeg"
-    JSON = requests.get("https://api.github.com/repos/GyanD/codexffmpeg/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/repos/GyanD/codexffmpeg/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith("full_build.zip")]
-    if not version_verify(Version, id):
-        report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
-
-# Add Gyan.FFmpeg.Shared to Update List
-    id = "Gyan.FFmpeg.Shared"
-    JSON = requests.get("https://api.github.com/repos/GyanD/codexffmpeg/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/repos/GyanD/codexffmpeg/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith("full_build-shared.zip")]
-    if not version_verify(Version, id):
-        report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
-
 # Add Gyan.FFmpeg.Essentials to Update List
     id = "Gyan.FFmpeg.Essentials"
     JSON = requests.get("https://api.github.com/repos/GyanD/codexffmpeg/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
@@ -328,19 +305,6 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         report_existed(id, Version)
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
-
-    # Add B3log.SiYuan to Update List
-    id = "B3log.SiYuan"
-    JSON = requests.get("https://api.github.com/repos/siyuan-note/siyuan/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/repos/siyuan-note/siyuan/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if each["browser_download_url"].endswith(".exe")]
-    if not version_verify(str_pop(Version, 0), id):
-         report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
     # Add DaCosySheeep.FactDownloader to Update List
@@ -836,20 +800,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
-    '''
-   # Add xavidop.cxcli to Update List
-    id = "xavidop.cxcli"
-    JSON = requests.get("https://api.github.com/repos/xavidop/dialogflow-cx-cli/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
-    Version = requests.get("https://api.github.com/repos/xavidop/dialogflow-cx-cli/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"]
-    Urls = [each["browser_download_url"] for each in JSON if ("zip" in each["browser_download_url"]) and not(("sbom" in each["browser_download_url"]) or ("armv7" in each["browser_download_url"])) and (("arm64" in each["browser_download_url"]) or ("x86_64" in each["browser_download_url"]) or ("i386" in each["browser_download_url"]))]
-    if not version_verify(str_pop(Version, 0), id):
-         report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
-    del JSON, Urls, Version, id
-    '''
+    
    # Add Chocolatey.Chocolatey to Update List
     id = "Chocolatey.Chocolatey"
     JSON = requests.get("https://api.github.com/repos/chocolatey/choco/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
