@@ -25,7 +25,9 @@ const main = async () => {
     datas.push(searchedContent);
   }
   console.log(
-    `${datas.length} ${datas.length === 0 ? "Pull Request" : "Pull Requests"} ${datas.length === 0 ? "is" : "are"} still opened`
+    `${datas.length} ${datas.length === 0 ? "Pull Request" : "Pull Requests"} ${
+      datas.length === 0 ? "is" : "are"
+    } still opened`,
   );
   for (let j = 0; j++; j < datas.length) {
     setTimeout(async () => {
