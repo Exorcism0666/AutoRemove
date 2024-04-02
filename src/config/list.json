@@ -328,7 +328,8 @@
     "v0.2.22",
     "v0.2.23",
     "v0.2.24",
-    "v0.2.25"
+    "v0.2.25",
+    "v0.2.26"
   ],
   "FreeCAD.FreeCAD": [
     "0.21.2"
@@ -651,7 +652,8 @@
     "v3.11.1"
   ],
   "Notepad++.Notepad++": [
-    "v8.6.4"
+    "v8.6.4",
+    "v8.6.5"
   ],
   "ONLYOFFICE.DesktopEditors": [
     "v8.0.1"
@@ -1325,7 +1327,8 @@
     "5.2.2"
   ],
   "soopercool101.BrawlCrate": [
-    "v0.41"
+    "v0.41",
+    "v0.42"
   ],
   "squalou.google-chat-linux": [
     "5.27.23-6",
