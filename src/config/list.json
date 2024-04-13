@@ -414,5 +414,7 @@
     "v18.20.2"
   ],
   "Oven-sh.Bun.Profile": ["1.1.3"],
-  "Oven-sh.Bun.BaselineProfile": ["1.1.3"]
+  "Oven-sh.Bun.BaselineProfile": ["1.1.3"],
+  "Oven-sh.Bun": ["1.1.3"],
+  "Oven-sh.Bun.Baseline": ["1.1.3"]
 }
