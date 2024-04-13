@@ -276,7 +276,61 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Commands.append((command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN), (id, Version, "write")))
     del JSON, Urls, Version, id
 
-    # Check for missing versions
+    # Add Oven-sh.Bun to Update List
+    id = "Oven-sh.Bun"
+    JSON = requests.get("https://api.github.com/repos/oven-sh/bun/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/oven-sh/bun/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"].replace("bun-v", "")
+    Urls = [each["browser_download_url"] for each in JSON if "windows" in each["browser_download_url"] and not "baseline" in each["browser_download_url"] and not "profile" in each["browser_download_url"]]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+    # Add Oven-sh.Bun.Baseline to Update List
+    id = "Oven-sh.Bun.Baseline"
+    JSON = requests.get("https://api.github.com/repos/oven-sh/bun/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/oven-sh/bun/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"].replace("bun-v", "")
+    Urls = [each["browser_download_url"] for each in JSON if "windows" in each["browser_download_url"] and "baseline" in each["browser_download_url"] and not "profile" in each["browser_download_url"]]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+    # Add Oven-sh.Bun.Profile to Update List
+    id = "Oven-sh.Bun.Profile"
+    JSON = requests.get("https://api.github.com/repos/oven-sh/bun/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/oven-sh/bun/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"].replace("bun-v", "")
+    Urls = [each["browser_download_url"] for each in JSON if "windows" in each["browser_download_url"] and not "baseline" in each["browser_download_url"] and "profile" in each["browser_download_url"]]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+    # Add Oven-sh.Bun.BaselineProfile to Update List
+    id = "Oven-sh.Bun.BaselineProfile"
+    JSON = requests.get("https://api.github.com/repos/oven-sh/bun/releases/latest", verify=False, headers=Headers[1]).json()["assets"]
+    Version = requests.get("https://api.github.com/repos/oven-sh/bun/releases/latest", verify=False, headers=Headers[1]).json()["tag_name"].replace("bun-v", "")
+    Urls = [each["browser_download_url"] for each in JSON if "windows" in each["browser_download_url"] and "baseline" in each["browser_download_url"] and "profile" in each["browser_download_url"]]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append((command(Komac, id, list_to_str(Urls), Version, GH_TOKEN), (id, Version, "write")))
+    del JSON, Urls, Version, id
+
+    
+
+    # # Check for missing versions
     try:
         for each in requests.get("https://api.github.com/repos/denoland/deno/releases", verify=False, headers=Headers[1]).json():
             id = "DenoLand.Deno"
