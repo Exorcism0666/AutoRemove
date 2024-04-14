@@ -211,7 +211,8 @@
     "v1.10.0",
     "v1.11.0",
     "v1.12.2",
-    "v1.12.3"
+    "v1.12.3",
+    "v1.13.0"
   ],
   "CPEditor.CPEditor": [
     "6.11.2"
@@ -399,7 +400,8 @@
   "GoXLR-on-Linux.GoXLR-Utility": [
     "v1.0.4",
     "v1.0.5",
-    "v1.0.6"
+    "v1.0.6",
+    "v1.1.1"
   ],
   "GodotEngine.GodotEngine": [
     "4.2.1"
@@ -491,7 +493,8 @@
   "JGraph.Draw": [
     "v23.1.5",
     "v24.0.4",
-    "v24.1.0"
+    "v24.1.0",
+    "v24.2.5"
   ],
   "JanProchazka.dbgate": [
     "v5.2.7"
@@ -747,7 +750,8 @@
   ],
   "RedHat.Podman-Desktop": [
     "v1.7.1",
-    "v1.8.0"
+    "v1.8.0",
+    "v1.9.1"
   ],
   "RedHat.Podman-Desktop_Pckgr": [
     "v1.7.1"
