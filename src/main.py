@@ -571,7 +571,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     Version = JSON["tag_name"].replace("bun-v", "")
     Urls = [
         each["browser_download_url"]
-        for each in JSON
+        for each in JSON["assets"]
         if "windows" in each["browser_download_url"]
         and "baseline" in each["browser_download_url"]
         and "profile" in each["browser_download_url"]
