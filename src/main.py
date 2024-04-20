@@ -616,7 +616,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     del JSON, Urls, Version, id
 
     # DOSBoxStaging.DOSBoxStaging
-    id = " DOSBoxStaging.DOSBoxStaging"
+    id = "DOSBoxStaging.DOSBoxStaging"
     JSON = requests.get(
         "https://api.github.com/repos/dosbox-staging/dosbox-staging/releases/latest",
         verify=False,
