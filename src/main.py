@@ -8,7 +8,7 @@ import bs4
 import time
 
 urllib3.disable_warnings(InsecureRequestWarning)
-GH_TOKEN = os.getenv("TOKEN") | ""
+GH_TOKEN = os.getenv("TOKEN")
 
 
 def report_existed(id: str, Version: str) -> None:
@@ -119,12 +119,21 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     Headers = [
         {
             "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.67",
-        },
-        {
-            "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.67",
-            "Authorization": f"Bearer {GH_TOKEN}",
-        },
+        }
     ]
+    if development:
+        Headers.append(
+            {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.67",
+            }
+        )
+    else:
+        Headers.append(
+            {
+                "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.67",
+                "Authorization": "Bearer " + GH_TOKEN,
+            }
+        )
 
     # KuaiFan.DooTask
     id = "KuaiFan.DooTask"
@@ -132,15 +141,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "https://api.github.com/repos/kuaifan/dootask/releases/latest",
         verify=False,
         headers=Headers[1],
-    ).json()["assets"]
-    Version = requests.get(
-        "https://api.github.com/repos/kuaifan/dootask/releases/latest",
-        verify=False,
-        headers=Headers[1],
-    ).json()["tag_name"]
+    ).json()
+    Version = JSON["tag_name"]
     Urls = [
         each["browser_download_url"]
-        for each in JSON
+        for each in JSON["assets"]
         if "exe" in each["browser_download_url"]
         and not "blockmap" in each["browser_download_url"]
     ]
@@ -163,15 +168,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "https://api.github.com/repos/listen1/listen1_desktop/releases/latest",
         verify=False,
         headers=Headers[1],
-    ).json()["assets"]
-    Version = requests.get(
-        "https://api.github.com/repos/listen1/listen1_desktop/releases/latest",
-        verify=False,
-        headers=Headers[1],
-    ).json()["tag_name"]
+    ).json()
+    Version = JSON["tag_name"]
     Urls = [
         each["browser_download_url"]
-        for each in JSON
+        for each in JSON["assets"]
         if ("exe" in each["browser_download_url"])
         and not ("blockmap" in each["browser_download_url"])
         and (
@@ -199,15 +200,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "https://api.github.com/repos/Molunerfinn/PicGo/releases/latest",
         verify=False,
         headers=Headers[1],
-    ).json()["assets"]
-    Version = requests.get(
-        "https://api.github.com/repos/Molunerfinn/PicGo/releases/latest",
-        verify=False,
-        headers=Headers[1],
-    ).json()["tag_name"]
+    ).json()
+    Version = JSON["tag_name"]
     Urls = [
         each["browser_download_url"]
-        for each in JSON
+        for each in JSON["assets"]
         if ("exe" in each["browser_download_url"])
         and not ("blockmap" in each["browser_download_url"])
         and (
@@ -234,15 +231,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "https://api.github.com/repos/Molunerfinn/PicGo/releases",
         verify=False,
         headers=Headers[1],
-    ).json()[0]["assets"]
-    Version = requests.get(
-        "https://api.github.com/repos/Molunerfinn/PicGo/releases",
-        verify=False,
-        headers=Headers[1],
-    ).json()[0]["tag_name"]
+    ).json()[0]
+    Version = JSON["tag_name"]
     Urls = [
         each["browser_download_url"]
-        for each in JSON
+        for each in JSON["assets"]
         if ("exe" in each["browser_download_url"])
         and not ("blockmap" in each["browser_download_url"])
         and (
@@ -278,15 +271,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "https://api.github.com/repos/denoland/deno/releases/latest",
         verify=False,
         headers=Headers[1],
-    ).json()["assets"]
-    Version = requests.get(
-        "https://api.github.com/repos/denoland/deno/releases/latest",
-        verify=False,
-        headers=Headers[1],
-    ).json()["tag_name"]
+    ).json()
+    Version = JSON["tag_name"]
     Urls = [
         each["browser_download_url"]
-        for each in JSON
+        for each in JSON["assets"]
         if "msvc" in each["browser_download_url"]
         and not "denort" in each["browser_download_url"]
     ]
@@ -333,15 +322,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "https://api.github.com/repos/Genymobile/scrcpy/releases/latest",
         verify=False,
         headers=Headers[1],
-    ).json()["assets"]
-    Version = requests.get(
-        "https://api.github.com/repos/Genymobile/scrcpy/releases/latest",
-        verify=False,
-        headers=Headers[1],
-    ).json()["tag_name"]
+    ).json()
+    Version = JSON["tag_name"]
     Urls = [
         each["browser_download_url"]
-        for each in JSON
+        for each in JSON["assets"]
         if "win" in each["browser_download_url"]
     ]
     if not version_verify(str_pop(Version, 0), id):
@@ -411,15 +396,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "https://api.github.com/repos/cloudflare/cloudflared/releases/latest",
         verify=False,
         headers=Headers[1],
-    ).json()["assets"]
-    Version = requests.get(
-        "https://api.github.com/repos/cloudflare/cloudflared/releases/latest",
-        verify=False,
-        headers=Headers[1],
-    ).json()["tag_name"]
+    ).json()
+    Version = JSON["tag_name"]
     Urls = [
         each["browser_download_url"]
-        for each in JSON
+        for each in JSON["assets"]
         if ".msi" in each["browser_download_url"]
     ]
     if not version_verify(Version, id):
@@ -435,51 +416,17 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         )
     del JSON, Urls, Version, id
 
-    # Microsoft.PowerToys
-    id = "Microsoft.PowerToys"
-    JSON = requests.get(
-        "https://api.github.com/repos/microsoft/powertoys/releases/latest",
-        verify=False,
-        headers=Headers[1],
-    ).json()["assets"]
-    Version = requests.get(
-        "https://api.github.com/repos/microsoft/powertoys/releases/latest",
-        verify=False,
-        headers=Headers[1],
-    ).json()["tag_name"]
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON
-        if ".exe" in each["browser_download_url"]
-    ]
-    if not version_verify(str_pop(Version, 0), id):
-        report_existed(id, Version)
-    elif do_list(id, Version, "verify"):
-        report_existed(id, Version)
-    else:
-        Commands.append(
-            (
-                command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN),
-                (id, Version, "write"),
-            )
-        )
-    del JSON, Urls, Version, id
-
     # xjasonlyu.tun2socks
     id = "xjasonlyu.tun2socks"
     JSON = requests.get(
         "https://api.github.com/repos/xjasonlyu/tun2socks/releases/latest",
         verify=False,
         headers=Headers[1],
-    ).json()["assets"]
-    Version = requests.get(
-        "https://api.github.com/repos/xjasonlyu/tun2socks/releases/latest",
-        verify=False,
-        headers=Headers[1],
-    ).json()["tag_name"]
+    ).json()
+    Version = JSON["tag_name"]
     Urls = [
         each["browser_download_url"]
-        for each in JSON
+        for each in JSON["assets"]
         if "windows" in each["browser_download_url"]
         and not "-v3" in each["browser_download_url"]
     ]
@@ -502,15 +449,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "https://api.github.com/repos/sf-yuzifu/bcm_convertor/releases/latest",
         verify=False,
         headers=Headers[1],
-    ).json()["assets"]
-    Version = requests.get(
-        "https://api.github.com/repos/sf-yuzifu/bcm_convertor/releases/latest",
-        verify=False,
-        headers=Headers[1],
-    ).json()["tag_name"]
+    ).json()
+    Version = JSON["tag_name"]
     Urls = [
         each["browser_download_url"]
-        for each in JSON
+        for each in JSON["assets"]
         if ".exe" in each["browser_download_url"]
     ]
     Urls.append(
@@ -540,19 +483,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "https://api.github.com/repos/oven-sh/bun/releases/latest",
         verify=False,
         headers=Headers[1],
-    ).json()["assets"]
-    Version = (
-        requests.get(
-            "https://api.github.com/repos/oven-sh/bun/releases/latest",
-            verify=False,
-            headers=Headers[1],
-        )
-        .json()["tag_name"]
-        .replace("bun-v", "")
-    )
+    ).json()
+    Version = JSON["tag_name"].replace("bun-v", "")
     Urls = [
         each["browser_download_url"]
-        for each in JSON
+        for each in JSON["assets"]
         if "windows" in each["browser_download_url"]
         and not "baseline" in each["browser_download_url"]
         and not "profile" in each["browser_download_url"]
@@ -576,19 +511,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "https://api.github.com/repos/oven-sh/bun/releases/latest",
         verify=False,
         headers=Headers[1],
-    ).json()["assets"]
-    Version = (
-        requests.get(
-            "https://api.github.com/repos/oven-sh/bun/releases/latest",
-            verify=False,
-            headers=Headers[1],
-        )
-        .json()["tag_name"]
-        .replace("bun-v", "")
-    )
+    ).json()
+    Version = JSON["tag_name"].replace("bun-v", "")
     Urls = [
         each["browser_download_url"]
-        for each in JSON
+        for each in JSON["assets"]
         if "windows" in each["browser_download_url"]
         and "baseline" in each["browser_download_url"]
         and not "profile" in each["browser_download_url"]
@@ -612,19 +539,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "https://api.github.com/repos/oven-sh/bun/releases/latest",
         verify=False,
         headers=Headers[1],
-    ).json()["assets"]
-    Version = (
-        requests.get(
-            "https://api.github.com/repos/oven-sh/bun/releases/latest",
-            verify=False,
-            headers=Headers[1],
-        )
-        .json()["tag_name"]
-        .replace("bun-v", "")
-    )
+    ).json()
+    Version = JSON["tag_name"].replace("bun-v", "")
     Urls = [
         each["browser_download_url"]
-        for each in JSON
+        for each in JSON["assets"]
         if "windows" in each["browser_download_url"]
         and not "baseline" in each["browser_download_url"]
         and "profile" in each["browser_download_url"]
@@ -648,22 +567,40 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "https://api.github.com/repos/oven-sh/bun/releases/latest",
         verify=False,
         headers=Headers[1],
-    ).json()["assets"]
-    Version = (
-        requests.get(
-            "https://api.github.com/repos/oven-sh/bun/releases/latest",
-            verify=False,
-            headers=Headers[1],
-        )
-        .json()["tag_name"]
-        .replace("bun-v", "")
-    )
+    ).json()
+    Version = JSON["tag_name"].replace("bun-v", "")
     Urls = [
         each["browser_download_url"]
         for each in JSON
         if "windows" in each["browser_download_url"]
         and "baseline" in each["browser_download_url"]
         and "profile" in each["browser_download_url"]
+    ]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append(
+            (
+                command(Komac, id, list_to_str(Urls), Version, GH_TOKEN),
+                (id, Version, "write"),
+            )
+        )
+    del JSON, Urls, Version, id
+
+    # SABnzbdTeam.SABnzbd
+    id = "SABnzbdTeam.SABnzbd"
+    JSON = requests.get(
+        "https://api.github.com/repos/sabnzbd/sabnzbd/releases/latest",
+        verify=False,
+        headers=Headers[1],
+    ).json()
+    Version = JSON["tag_name"]
+    Urls = [
+        each["browser_download_url"]
+        for each in JSON["assets"]
+        if ".exe" in each["browser_download_url"]
     ]
     if not version_verify(Version, id):
         report_existed(id, Version)
