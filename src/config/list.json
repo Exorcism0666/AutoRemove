@@ -136,7 +136,8 @@
   "AutoHotkey.AutoHotkey": [
     "v2.0.11",
     "v1.1.37.02",
-    "v2.0.12"
+    "v2.0.12",
+    "v2.0.13"
   ],
   "AutoHotkey.AutoHotkey_Pckgr": [
     "v2.0.11"
@@ -468,7 +469,8 @@
     "v0.123.8",
     "v0.124.0",
     "v0.124.1",
-    "v0.125.0"
+    "v0.125.0",
+    "v0.125.2"
   ],
   "Hugo.Hugo.Extended": [
     "v0.121.2",
@@ -484,7 +486,8 @@
     "v0.123.8",
     "v0.124.0",
     "v0.124.1",
-    "v0.125.0"
+    "v0.125.0",
+    "v0.125.2"
   ],
   "Hydrogen-Music.Hydrogen": [
     "1.2.3"
@@ -1091,7 +1094,8 @@
   "UniversityOfAmsterdam.praat": [
     "v6.4.06",
     "v6.4.07",
-    "v6.4.08"
+    "v6.4.08",
+    "v6.4.09"
   ],
   "Upscayl.Upscayl": [
     "v2.9.9",
@@ -1175,7 +1179,8 @@
   ],
   "alexx2000.DoubleCommander": [
     "v1.0.11",
-    "v1.1.12"
+    "v1.1.12",
+    "v1.1.13"
   ],
   "beekeeper-studio.beekeeper-studio": [
     "v4.1.13",
