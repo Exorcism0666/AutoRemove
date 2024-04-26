@@ -641,6 +641,31 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         )
     del JSON, Urls, Version, id
 
+    # Audacity.Audacity
+    id = "Audacity.Audacity"
+    JSON = requests.get(
+        "https://api.github.com/repos/audacity/audacity/releases/latest",
+        verify=False,
+        headers=Headers[1],
+    ).json()
+    Version = JSON["tag_name"].replace("Audacity-", "")
+    Urls = [
+        each["browser_download_url"]
+        for each in JSON["assets"]
+        if ".exe" in each["browser_download_url"]
+    ]
+    if not version_verify(Version, id):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append(
+            (
+                command(Komac, id, list_to_str(Urls), Version, GH_TOKEN),
+                (id, Version, "write"),
+            )
+        )
+
     # Check for missing versions
     if time.strftime("%d-%H") in ("1-12", "10-12", "20-12", "30-12"):
         try:
