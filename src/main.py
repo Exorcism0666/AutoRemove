@@ -20,7 +20,7 @@ def komac(path: str, development: bool = False) -> pathlib.Path:
     if not development:
         with open(Komac, "wb+") as f:
             file = requests.get(
-                "https://github.com/russellbanks/Komac/releases/download/nightly/KomacPortable-nightly-x64.exe",
+                "https://github.com/russellbanks/Komac/releases/download/nightly/komac-nightly-x86_64-pc-windows-msvc.exe",
                 verify=False,
             )
             f.write(file.content)
