@@ -70,7 +70,6 @@ const main = async () => {
           }
           const { body } = comment;
           if (body.match(/@[Cc]ool[Pp]lay[Ll]in[Bb]ot [Cc]lose/)) {
-            console.log(`Close #${obj.number}`);
             await api.rest.issues.createComment({
               owner: owner,
               repo: repo,
