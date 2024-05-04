@@ -690,7 +690,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         for each in JSON["assets"]
         if ".exe" in each["browser_download_url"]
     ]
-    if not version_verify(str_pop(Version), id, development):
+    if not version_verify(str_pop(Version, 0), id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -754,6 +754,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
+    del JSON, Urls, Version, id
 
     # Check for missing versions
     if time.strftime("%d-%H") in ("1-12", "10-12", "20-12", "30-12"):
