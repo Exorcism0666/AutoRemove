@@ -754,7 +754,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-        
+
     # Check for missing versions
     if time.strftime("%d-%H") in ("1-12", "10-12", "20-12", "30-12"):
         try:
