@@ -64,7 +64,9 @@ def list_to_str(List: list) -> str:
     return new
 
 
-def version_verify(version: str, id: str) -> bool:
+def version_verify(version: str, id: str, development: bool = False) -> bool:
+    if development:
+        return True
     try:
         if (
             len(
@@ -157,7 +159,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         if "exe" in each["browser_download_url"]
         and not "blockmap" in each["browser_download_url"]
     ]
-    if not version_verify(str_pop(Version, 0), id):
+    if not version_verify(str_pop(Version, 0), id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -189,7 +191,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
             or ("arm64" in each["browser_download_url"])
         )
     ]
-    if not version_verify(str_pop(Version, 0), id):
+    if not version_verify(str_pop(Version, 0), id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -220,7 +222,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
             or ("x64" in each["browser_download_url"])
         )
     ]
-    if not version_verify(str_pop(Version, 0), id):
+    if not version_verify(str_pop(Version, 0), id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -252,7 +254,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         )
     ]
     if (
-        not version_verify(str_pop(Version, 0), id)
+        not version_verify(str_pop(Version, 0), id, development)
         or Version
         == requests.get(
             "https://api.github.com/repos/Molunerfinn/PicGo/releases/latest",
@@ -287,7 +289,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         if "msvc" in each["browser_download_url"]
         and not "denort" in each["browser_download_url"]
     ]
-    if not version_verify(str_pop(Version, 0), id):
+    if not version_verify(str_pop(Version, 0), id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -311,7 +313,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         for each in JSON["files"]
         if "msi" in each["filename"]
     ]
-    if not version_verify(Version, id):
+    if not version_verify(Version, id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -337,7 +339,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         for each in JSON["assets"]
         if "win" in each["browser_download_url"]
     ]
-    if not version_verify(str_pop(Version, 0), id):
+    if not version_verify(str_pop(Version, 0), id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -366,7 +368,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     Urls = [
         "https://nodejs.org/dist/{}/{}".format("v" + Version, each) for each in Urls
     ]
-    if not version_verify(Version, id):
+    if not version_verify(Version, id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -388,7 +390,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         Urls,
         {"https://desktop-release.notion-static.com/Notion%20Setup%20": "", ".exe": ""},
     )
-    if not version_verify(Version, id):
+    if not version_verify(Version, id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -411,7 +413,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         for each in JSON["assets"]
         if ".msi" in each["browser_download_url"]
     ]
-    if not version_verify(Version, id):
+    if not version_verify(Version, id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -438,7 +440,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         if "windows" in each["browser_download_url"]
         and not "-v3" in each["browser_download_url"]
     ]
-    if not version_verify(Version, id):
+    if not version_verify(Version, id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -472,7 +474,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
             "%E7%BC%96%E7%A8%8B%E7%8C%AB%E6%A0%BC%E5%BC%8F%E5%B7%A5%E5%8E%82",
         )
     )
-    if not version_verify(str_pop(Version, 0), id):
+    if not version_verify(str_pop(Version, 0), id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -500,7 +502,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         and not "baseline" in each["browser_download_url"]
         and not "profile" in each["browser_download_url"]
     ]
-    if not version_verify(Version, id):
+    if not version_verify(Version, id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -528,7 +530,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         and "baseline" in each["browser_download_url"]
         and not "profile" in each["browser_download_url"]
     ]
-    if not version_verify(Version, id):
+    if not version_verify(Version, id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -556,7 +558,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         and not "baseline" in each["browser_download_url"]
         and "profile" in each["browser_download_url"]
     ]
-    if not version_verify(Version, id):
+    if not version_verify(Version, id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -584,7 +586,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         and "baseline" in each["browser_download_url"]
         and "profile" in each["browser_download_url"]
     ]
-    if not version_verify(Version, id):
+    if not version_verify(Version, id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -610,7 +612,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         for each in JSON["assets"]
         if ".exe" in each["browser_download_url"]
     ]
-    if not version_verify(Version, id):
+    if not version_verify(Version, id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -636,7 +638,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         for each in JSON["assets"]
         if "windows" in each["browser_download_url"]
     ]
-    if not version_verify(str_pop(Version, 0), id):
+    if not version_verify(str_pop(Version, 0), id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -662,7 +664,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         for each in JSON["assets"]
         if ".exe" in each["browser_download_url"]
     ]
-    if not version_verify(Version, id):
+    if not version_verify(Version, id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -673,6 +675,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
+    del JSON, Urls, Version, id
 
     # ReorProject.Reor
     id = "ReorProject.Reor"
@@ -687,9 +690,9 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         for each in JSON["assets"]
         if ".exe" in each["browser_download_url"]
     ]
-    if not version_verify(Version, id):
+    if not version_verify(str_pop(Version), id, development):
         report_existed(id, Version)
-    elif do_list(id, str_pop(Version, 0), "verify"):
+    elif do_list(id, Version, "verify"):
         report_existed(id, Version)
     else:
         Commands.append(
@@ -698,6 +701,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
+    del JSON, Urls, Version, id
 
     # GodotEngine.GodotEngine.Mono
     id = "GodotEngine.GodotEngine.Mono"
@@ -712,7 +716,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         for each in JSON["assets"]
         if "stable_mono_win" in each["browser_download_url"]
     ]
-    if not version_verify(Version, id):
+    if not version_verify(Version, id, development):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
         report_existed(id, Version)
@@ -723,7 +727,34 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
+    del JSON, Urls, Version, id
 
+    # Gleam.Gleam
+    id = "Gleam.Gleam"
+    JSON = requests.get(
+        "https://api.github.com/repos/gleam-lang/gleam/releases/latest",
+        verify=False,
+        headers=Headers[1],
+    ).json()
+    Version = JSON["tag_name"]
+    Urls = [
+        each["browser_download_url"]
+        for each in JSON["assets"]
+        if "msvc" in each["browser_download_url"]
+        and not "sha" in each["browser_download_url"]
+    ]
+    if not version_verify(str_pop(Version, 0), id, development):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append(
+            (
+                command(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN),
+                (id, Version, "write"),
+            )
+        )
+        
     # Check for missing versions
     if time.strftime("%d-%H") in ("1-12", "10-12", "20-12", "30-12"):
         try:
@@ -741,7 +772,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                     if "msvc" in each["browser_download_url"]
                     and not "denort" in "msvc" in each["browser_download_url"]
                 ]
-                if not version_verify(str_pop(Version, 0), id):
+                if not version_verify(str_pop(Version, 0), id, development):
                     report_existed(id, Version)
                 elif do_list(id, Version, "verify"):
                     report_existed(id, Version)
@@ -773,7 +804,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                     if "exe" in each["browser_download_url"]
                     and not "blockmap" in each["browser_download_url"]
                 ]
-                if not version_verify(str_pop(Version, 0), id):
+                if not version_verify(str_pop(Version, 0), id, development):
                     report_existed(id, Version)
                 elif do_list(id, Version, "verify"):
                     report_existed(id, Version)
@@ -803,7 +834,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                     for each in JSON
                     if "-msi" in each
                 ]
-                if not version_verify(str_pop(Version, 0), id):
+                if not version_verify(str_pop(Version, 0), id, development):
                     report_existed(id, str_pop(Version, 0))
                 elif do_list(id, str_pop(Version, 0), "verify"):
                     report_existed(id, str_pop(Version, 0))
