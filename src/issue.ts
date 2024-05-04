@@ -38,7 +38,7 @@ const main = async () => {
   console.log(
     `${total} ${total === 0 ? "Pull Request" : "Pull Requests"} ${
       total === 0 ? "is" : "are"
-    } still opened`
+    } still opened`,
   );
   for (let data of datas) {
     try {
