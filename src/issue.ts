@@ -43,7 +43,7 @@ const main = async () => {
   for (let data of datas) {
     try {
       data.forEach(async (obj) => {
-        await setTimeout(() => {}, 1000*5)
+        await setTimeout(() => {}, 1000 * 5);
         const labels = (
           await api.rest.issues.listLabelsOnIssue({
             repo: repo,
@@ -87,10 +87,10 @@ const main = async () => {
           }
         });
       });
-    } catch  {
+    } catch {
       console.log(`Request failed`);
     }
   }
 };
 
-main()
+main();
