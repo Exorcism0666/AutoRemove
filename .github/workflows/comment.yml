@@ -1,4 +1,4 @@
-name: Post Comment
+name: Post Comment & Close Stale Issue and PR
 on:
   workflow_dispatch:
   schedule: [{ cron: 0 0 * * * }]
@@ -12,7 +12,7 @@ jobs:
       - name: Setup Node.JS
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - uses: pnpm/action-setup@v3
         name: Install pnpm
         with:
@@ -31,13 +31,20 @@ jobs:
             ${{ runner.os }}-pnpm-store-
       - name: Install dependencies
         run: pnpm install
-      - name: Post Comment
+      - name: Post Comments & issues
         if: always()
-        run: pnpm run comment
+        run: |
+          pnpm run comment
+          pnpm run issue
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN }}
-      - name: Post issue
-        if: always()
-        run: pnpm run issue
-        env:
-          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close Stale Issues
+        uses: actions/stale@v9.0.0
+        with:
+          repo-token: ${{ secrets.COOLPLAYLIN_BOT_TOKEN }}
+          exempt-issue-labels: "WIP,NeverExpires,Blocking-issue"
+          exempt-pr-labels: "NeverExpires,Blocking-issue"
+          stale-issue-label: "stale"

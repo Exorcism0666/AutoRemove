@@ -2,6 +2,8 @@ name: Auto Publish
 on:
   workflow_dispatch:
   schedule: [{ cron: 0 * * * * }]
+  pull_request: 
+    types: [ready_for_review, opened, closed, synchronize]
 
 env:
   NAME: "CoolPlayLinBot"
@@ -9,6 +11,7 @@ env:
 
 jobs:
   publish:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: windows-latest
     steps:
       - name: Checkout
@@ -22,7 +25,7 @@ jobs:
       - name: Setup Node.JS
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
       - uses: pnpm/action-setup@v3
         name: Install pnpm
         with:
@@ -62,3 +65,18 @@ jobs:
             git commit -m "Update metadata"
             git push origin --force
           }
+  CI:
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.4
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11.0'
+      - name: Setup Env
+        run: |
+          python3 -m pip install -r requirements.txt
+      - name: CI
+        run: python3 src/main.py

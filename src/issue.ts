@@ -6,7 +6,10 @@ const repo = "winget-pkgs";
 const bot_login = "coolplaylinbot";
 const owner_login = "CoolPlayLin";
 
-async function getAllPullRequests(api: Octokit, owner: string, repo: string) {
+async function getAllPullRequests(token: string, owner: string, repo: string) {
+  const api = new Octokit({
+    auth: token,
+  })
   let results = [];
   let i = 0;
   while (true) {
@@ -25,16 +28,15 @@ async function getAllPullRequests(api: Octokit, owner: string, repo: string) {
 }
 
 const main = async () => {
-  const api = new Octokit({
-    auth: env.GITHUB_TOKEN,
-  });
-  const results = await getAllPullRequests(api, owner, repo);
-
+  const results = await getAllPullRequests(env.GITHUB_TOKEN, owner, repo);
   console.log(
-    `${results} ${results.length === 0 ? "Pull Request" : "Pull Requests"} ${
+    `${results.length} ${results.length === 0 ? "Pull Request" : "Pull Requests"} ${
       results.length === 0 ? "is" : "are"
     } still opened`
   );
+  const api = new Octokit({
+    auth: env.GITHUB_TOKEN,
+  });
   for (let r of results) {
     try {
       const labels = (
