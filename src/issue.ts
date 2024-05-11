@@ -9,7 +9,7 @@ const owner_login = "CoolPlayLin";
 async function getAllPullRequests(token: string, owner: string, repo: string) {
   const api = new Octokit({
     auth: token,
-  })
+  });
   let results = [];
   let i = 0;
   while (true) {
@@ -32,7 +32,7 @@ const main = async () => {
   console.log(
     `${results.length} ${results.length === 0 ? "Pull Request" : "Pull Requests"} ${
       results.length === 0 ? "is" : "are"
-    } still opened`
+    } still opened`,
   );
   const api = new Octokit({
     auth: env.GITHUB_TOKEN,
