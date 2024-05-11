@@ -5,7 +5,7 @@ on:
 
 jobs:
   publish:
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.4
@@ -41,11 +41,12 @@ jobs:
       - name: Install Dependencies
         run: |
           python3 -m pip install -r requirements.txt
-          sudo apt install msitools
           git clone https://github.com/microsoft/winget-pkgs
           pnpm install
       - name: Run script
-        run: python3 src/scanner.py ${{ secrets.TOKEN }}
+        run: python3 src/scanner.py
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
       - name: Post Issue
         run: pnpm run issue
         env:

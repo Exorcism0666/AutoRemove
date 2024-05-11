@@ -1,6 +1,6 @@
 import requests
 import tqdm
-import os, sys
+import os
 import pathlib
 import yaml
 import threading
@@ -11,7 +11,7 @@ import urllib3
 from urllib3.exceptions import InsecureRequestWarning
 
 urllib3.disable_warnings(InsecureRequestWarning)
-token = sys.argv[1]
+token = os.environ.get("TOKEN")
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 Edg/117.0.2045.47"
 }
@@ -19,11 +19,11 @@ ignore = ["Unity.Unity"]
 
 
 def Komac(path: str, debug: bool = False) -> pathlib.Path:
-    Komac = pathlib.Path(path) / "komac.jar"
+    Komac = pathlib.Path(path) / "komac.exe"
     if not debug:
         with open(Komac, "wb+") as f:
             file = requests.get(
-                "https://gh.xfisxf.top/https://github.com/russellbanks/Komac/releases/download/v1.10.1/Komac-1.10.1-all.jar",
+                "https://github.com/russellbanks/Komac/releases/download/nightly/komac-nightly-x86_64-pc-windows-msvc.exe",
                 verify=False,
             )
             f.write(file.content)
@@ -38,10 +38,9 @@ def command_generator(
     id: str,
     version: str,
     reason: str,
-    komac_path: pathlib.Path,
-    java_path: pathlib.Path = pathlib.Path("java"),
+    komac_path: pathlib.Path
 ) -> bool:
-    return f"{java_path} -jar {komac_path} remove --id {id} --version {version} --reason '{reason}' --submit --token {token}"
+    return f"{komac_path} remove --identifier {id} --version {version} --reason '{reason}' --submit --token {token}"
 
 
 def scan(_yaml: dict, token: str):
