@@ -43,6 +43,7 @@ const main = async () => {
   for (let data of datas) {
     try {
       data.forEach(async (obj) => {
+        await setTimeout(() => {}, 1000*5)
         const labels = (
           await api.rest.issues.listLabelsOnIssue({
             repo: repo,
@@ -74,7 +75,7 @@ const main = async () => {
               owner: owner,
               repo: repo,
               issue_number: obj.number,
-              body: `The request from my owner require me to close this Pull Request\n\nThis Pull Request will always be closed if the following comment still exist\n> CoolPlayLin \n>${body}`,
+              body: `The request from my owner requires to close this Pull Request\n\nThis Pull Request will always be closed if the following comment still exists\n>${body}`,
             });
             await api.rest.pulls.update({
               owner: owner,
@@ -86,12 +87,10 @@ const main = async () => {
           }
         });
       });
-    } catch (error) {
+    } catch  {
       console.log(`Request failed`);
     }
   }
 };
 
-main().catch((error) => {
-  console.log(error);
-});
+main()
