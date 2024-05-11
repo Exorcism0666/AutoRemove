@@ -7,8 +7,7 @@ const bot_login = "coolplaylinbot";
 const owner_login = "CoolPlayLin";
 
 async function getAllPullRequests(api: Octokit, owner: string, repo: string) {
-  let datas = [];
-  let total = 0;
+  let results = [];
   let i = 0;
   while (true) {
     i += 1;
@@ -20,73 +19,67 @@ async function getAllPullRequests(api: Octokit, owner: string, repo: string) {
       })
     ).data.items;
     if (searchedContent.length == 0) break;
-    total += searchedContent.length;
-    datas.push(searchedContent);
+    results.push(...searchedContent);
   }
-  return {
-    datas: datas,
-    total: total,
-  };
+  return results;
 }
 
 const main = async () => {
   const api = new Octokit({
     auth: env.GITHUB_TOKEN,
   });
-  const { total, datas } = await getAllPullRequests(api, owner, repo);
+  const results = await getAllPullRequests(api, owner, repo);
 
   console.log(
-    `${total} ${total === 0 ? "Pull Request" : "Pull Requests"} ${
-      total === 0 ? "is" : "are"
-    } still opened`,
+    `${results} ${results.length === 0 ? "Pull Request" : "Pull Requests"} ${
+      results.length === 0 ? "is" : "are"
+    } still opened`
   );
-  for (let data of datas) {
+  for (let r of results) {
     try {
-      data.forEach(async (obj) => {
-        await setTimeout(() => {}, 1000 * 5);
-        const labels = (
-          await api.rest.issues.listLabelsOnIssue({
-            repo: repo,
-            owner: owner,
-            issue_number: obj.number,
-          })
-        ).data.map((label) => label.name);
-        if (labels.includes("No-Recent-Activity")) {
+      const labels = (
+        await api.rest.issues.listLabelsOnIssue({
+          repo: repo,
+          owner: owner,
+          issue_number: r.number,
+        })
+      ).data.map((label) => label.name);
+      if (labels.includes("No-Recent-Activity")) {
+        await api.rest.issues.createComment({
+          owner: owner,
+          repo: repo,
+          issue_number: r.number,
+          body: `Don't close this Pull Request please :)\nCC @CoolPlayLin`,
+        });
+        console.log(`Prevent #${r.issue_number} from being stale`);
+      }
+      const comments = await api.rest.issues.listComments({
+        repo: repo,
+        owner: owner,
+        issue_number: r.number,
+      });
+      comments.data.forEach(async (comment) => {
+        if (comment.user.login !== owner_login) {
+          return;
+        }
+        const { body } = comment;
+        if (body.match(/@[Cc]ool[Pp]lay[Ll]in[Bb]ot [Cc]lose/)) {
           await api.rest.issues.createComment({
             owner: owner,
             repo: repo,
-            issue_number: obj.number,
-            body: `Don't close this Pull Request please :)\nCC @CoolPlayLin`,
+            issue_number: r.number,
+            body: `The request from my owner requires to close this Pull Request\n\nThis Pull Request will always be closed if the following comment still exists\n>${body}`,
           });
-          console.log(`Prevent #${obj.issue_number} from being stale`);
+          await api.rest.pulls.update({
+            owner: owner,
+            repo: repo,
+            pull_number: r.number,
+            state: "closed",
+          });
+          console.log(`Closes #${r.number}`);
         }
-        const comments = await api.rest.issues.listComments({
-          repo: repo,
-          owner: owner,
-          issue_number: obj.number,
-        });
-        comments.data.forEach(async (comment) => {
-          if (comment.user.login !== owner_login) {
-            return;
-          }
-          const { body } = comment;
-          if (body.match(/@[Cc]ool[Pp]lay[Ll]in[Bb]ot [Cc]lose/)) {
-            await api.rest.issues.createComment({
-              owner: owner,
-              repo: repo,
-              issue_number: obj.number,
-              body: `The request from my owner requires to close this Pull Request\n\nThis Pull Request will always be closed if the following comment still exists\n>${body}`,
-            });
-            await api.rest.pulls.update({
-              owner: owner,
-              repo: repo,
-              pull_number: obj.number,
-              state: "closed",
-            });
-            console.log(`Closes #${obj.number}`);
-          }
-        });
       });
+      await setTimeout(() => {}, 1000 * 5);
     } catch {
       console.log(`Request failed`);
     }
