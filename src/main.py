@@ -7,9 +7,33 @@ import json
 import bs4
 import time
 
+
+def matchWithKeyWords(
+    value: list[str],
+    requiredKeywords: list[str] = [],
+    necessaryKeywords: list[str] = [],
+    excludedKeywords: list[str] = [],
+) -> list[str]:
+    result = value
+    if excludedKeywords:
+        for keyword in excludedKeywords:
+            result = [v for v in result if not keyword in v]
+    if requiredKeywords:
+        for keyword in requiredKeywords:
+            result = [v for v in result if keyword in v]
+    if necessaryKeywords:
+        includingResult = {
+            k: v
+            for k, v in [(v, any([k in v for k in necessaryKeywords])) for v in result]
+        }
+        result = [v for v in result if includingResult[v]]
+    return result
+
+
 urllib3.disable_warnings(InsecureRequestWarning)
-GH_TOKEN =  os.environ.get("TOKEN")
+GH_TOKEN = os.environ.get("TOKEN")
 DEVELOP_MODE = not bool(GH_TOKEN)
+
 
 def report_existed(id: str, Version: str) -> None:
     print(f"{id}: {Version} has already existed, skip publishing")
@@ -27,7 +51,9 @@ def prepare_komac(path: str, DEVELOP_MODE: bool = False) -> pathlib.Path:
     return Komac
 
 
-def command_generator(komac: pathlib.Path, id: str, urls: str, version: str, token: str) -> str:
+def command_generator(
+    komac: pathlib.Path, id: str, urls: str, version: str, token: str
+) -> str:
     createdWithUrl = r"https://github.com/CoolPlayLin/AutoPublish"
     return "{} update -i {} --urls {} --version {} --created-with AutoPublish --created-with-url {} --submit --token {}".format(
         komac.__str__(), id, urls, version, createdWithUrl, token
@@ -105,6 +131,8 @@ def do_list(id: str, version: str, mode: str) -> bool | None:
             with open(path, "w+", encoding="utf-8") as w:
                 w.write(json.dumps(JSON))
         elif mode == "verify":
+            if DEVELOP_MODE:
+                return False
             if version in JSON[id]:
                 return True
             else:
@@ -122,11 +150,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         }
     ]
     if DEVELOP_MODE:
-        if os.getenv("GITHUB_TOKEN"):
+        if os.environ.get("GITHUB_TOKEN"):
             Headers.append(
                 {
                     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36 Edg/114.0.1823.67",
-                    "Authorization": "Bearer " + os.getenv("GITHUB_TOKEN"),
+                    "Authorization": "Bearer " + os.environ.get("GITHUB_TOKEN"),
                 }
             )
         else:
@@ -151,12 +179,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"]
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if "exe" in each["browser_download_url"]
-        and not "blockmap" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=[".exe"],
+        excludedKeywords=["blockmap"],
+    )
     if not version_verify(str_pop(Version, 0), id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -164,7 +191,9 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append(
             (
-                command_generator(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN),
+                command_generator(
+                    Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN
+                ),
                 (id, Version, "write"),
             )
         )
@@ -178,17 +207,12 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"]
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if ("exe" in each["browser_download_url"])
-        and not ("blockmap" in each["browser_download_url"])
-        and (
-            ("ia32" in each["browser_download_url"])
-            or ("x64" in each["browser_download_url"])
-            or ("arm64" in each["browser_download_url"])
-        )
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=[".exe"],
+        excludedKeywords=["blockmap"],
+        necessaryKeywords=["ia32", "x64", "arm64"],
+    )
     if not version_verify(str_pop(Version, 0), id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -196,7 +220,9 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append(
             (
-                command_generator(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN),
+                command_generator(
+                    Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN
+                ),
                 (id, Version, "write"),
             )
         )
@@ -210,16 +236,12 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"]
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if ("exe" in each["browser_download_url"])
-        and not ("blockmap" in each["browser_download_url"])
-        and (
-            ("ia32" in each["browser_download_url"])
-            or ("x64" in each["browser_download_url"])
-        )
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=[".exe"],
+        excludedKeywords=["blockmap"],
+        necessaryKeywords=["ia32", "x64"],
+    )
     if not version_verify(str_pop(Version, 0), id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -227,7 +249,9 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append(
             (
-                command_generator(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN),
+                command_generator(
+                    Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN
+                ),
                 (id, Version, "write"),
             )
         )
@@ -241,16 +265,12 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()[0]
     Version = JSON["tag_name"]
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if ("exe" in each["browser_download_url"])
-        and not ("blockmap" in each["browser_download_url"])
-        and (
-            ("ia32" in each["browser_download_url"])
-            or ("x64" in each["browser_download_url"])
-        )
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=[".exe"],
+        excludedKeywords=["blockmap"],
+        necessaryKeywords=["ia32", "x64"],
+    )
     if (
         not version_verify(str_pop(Version, 0), id, DEVELOP_MODE)
         or Version
@@ -267,7 +287,9 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
 
         Commands.append(
             (
-                command_generator(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN),
+                command_generator(
+                    Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN
+                ),
                 (id, Version, "write"),
             )
         )
@@ -281,12 +303,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"]
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if "msvc" in each["browser_download_url"]
-        and not "denort" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=["msvc"],
+        excludedKeywords=["denort"],
+    )
     if not version_verify(str_pop(Version, 0), id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -294,7 +315,9 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append(
             (
-                command_generator(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN),
+                command_generator(
+                    Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN
+                ),
                 (id, Version, "write"),
             )
         )
@@ -306,11 +329,10 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         "https://go.dev/dl/?mode=json", verify=False, headers=Headers[0]
     ).json()[0]
     Version = JSON["version"].replace("go", "")
-    Urls = [
-        "https://go.dev/dl/" + each["filename"]
-        for each in JSON["files"]
-        if "msi" in each["filename"]
-    ]
+    Urls = matchWithKeyWords(
+        ["https://go.dev/dl/" + each["filename"] for each in JSON["files"]],
+        requiredKeywords=["msi"],
+    )
     if not version_verify(Version, id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -332,11 +354,10 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"]
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if "win" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=["win"],
+    )
     if not version_verify(str_pop(Version, 0), id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -344,7 +365,9 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append(
             (
-                command_generator(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN),
+                command_generator(
+                    Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN
+                ),
                 (id, Version, "write"),
             )
         )
@@ -394,7 +417,10 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         report_existed(id, Version)
     else:
         Commands.append(
-            (command_generator(Komac, id, Urls, Version, GH_TOKEN), (id, Version, "write"))
+            (
+                command_generator(Komac, id, Urls, Version, GH_TOKEN),
+                (id, Version, "write"),
+            )
         )
     del Urls, Version, id
 
@@ -406,11 +432,10 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"]
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if ".msi" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=[".msi"],
+    )
     if not version_verify(Version, id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -432,12 +457,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"]
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if "windows" in each["browser_download_url"]
-        and not "-v3" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=["windows"],
+        excludedKeywords=["-v3"],
+    )
     if not version_verify(Version, id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -459,11 +483,10 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"]
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if ".exe" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=[".exe"],
+    )
     Urls.append(
         Urls[0]
         .replace("github", "gitee")
@@ -479,7 +502,9 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append(
             (
-                command_generator(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN),
+                command_generator(
+                    Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN
+                ),
                 (id, Version, "write"),
             )
         )
@@ -493,13 +518,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"].replace("bun-v", "")
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if "windows" in each["browser_download_url"]
-        and not "baseline" in each["browser_download_url"]
-        and not "profile" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=["windows"],
+        excludedKeywords=["baseline", "profile"],
+    )
     if not version_verify(Version, id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -521,13 +544,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"].replace("bun-v", "")
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if "windows" in each["browser_download_url"]
-        and "baseline" in each["browser_download_url"]
-        and not "profile" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=["windows", "baseline"],
+        excludedKeywords=["profile"],
+    )
     if not version_verify(Version, id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -549,13 +570,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"].replace("bun-v", "")
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if "windows" in each["browser_download_url"]
-        and not "baseline" in each["browser_download_url"]
-        and "profile" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=["windows", "profile"],
+        excludedKeywords=["baseline"],
+    )
     if not version_verify(Version, id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -577,13 +596,10 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"].replace("bun-v", "")
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if "windows" in each["browser_download_url"]
-        and "baseline" in each["browser_download_url"]
-        and "profile" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=["windows", "baseline", "profile"],
+    )
     if not version_verify(Version, id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -605,11 +621,10 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"]
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if ".exe" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=[".exe"],
+    )
     if not version_verify(Version, id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -631,11 +646,10 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"]
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if "windows" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=["windows"],
+    )
     if not version_verify(str_pop(Version, 0), id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -643,7 +657,9 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append(
             (
-                command_generator(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN),
+                command_generator(
+                    Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN
+                ),
                 (id, Version, "write"),
             )
         )
@@ -657,11 +673,10 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"].replace("Audacity-", "")
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if ".exe" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=[".exe"],
+    )
     if not version_verify(Version, id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -683,11 +698,10 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"]
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if ".exe" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=[".exe"],
+    )
     if not version_verify(str_pop(Version, 0), id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -695,7 +709,9 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append(
             (
-                command_generator(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN),
+                command_generator(
+                    Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN
+                ),
                 (id, Version, "write"),
             )
         )
@@ -709,11 +725,10 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[0],
     ).json()
     Version = JSON["tag_name"].replace("-stable", "")
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if "stable_mono_win" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=["stable_mono_win"],
+    )
     if not version_verify(Version, id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -735,12 +750,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         headers=Headers[1],
     ).json()
     Version = JSON["tag_name"]
-    Urls = [
-        each["browser_download_url"]
-        for each in JSON["assets"]
-        if "msvc" in each["browser_download_url"]
-        and not "sha" in each["browser_download_url"]
-    ]
+    Urls = matchWithKeyWords(
+        [each["browser_download_url"] for each in JSON["assets"]],
+        requiredKeywords=["msvc"],
+        excludedKeywords=["sha"],
+    )
     if not version_verify(str_pop(Version, 0), id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
@@ -748,7 +762,9 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     else:
         Commands.append(
             (
-                command_generator(Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN),
+                command_generator(
+                    Komac, id, list_to_str(Urls), str_pop(Version, 0), GH_TOKEN
+                ),
                 (id, Version, "write"),
             )
         )
@@ -765,12 +781,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 id = "DenoLand.Deno"
                 JSON = each["assets"]
                 Version = each["tag_name"]
-                Urls = [
-                    each["browser_download_url"]
-                    for each in JSON
-                    if "msvc" in each["browser_download_url"]
-                    and not "denort" in "msvc" in each["browser_download_url"]
-                ]
+                Urls = matchWithKeyWords(
+                    [each["browser_download_url"] for each in JSON],
+                    requiredKeywords=["msvc"],
+                    excludedKeywords=["denort"],
+                )
                 if not version_verify(str_pop(Version, 0), id, DEVELOP_MODE):
                     report_existed(id, Version)
                 elif do_list(id, Version, "verify"):
@@ -797,12 +812,11 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 id = "KuaiFan.DooTask"
                 JSON = each["assets"]
                 Version = each["tag_name"]
-                Urls = [
-                    each["browser_download_url"]
-                    for each in JSON
-                    if "exe" in each["browser_download_url"]
-                    and not "blockmap" in each["browser_download_url"]
-                ]
+                Urls = matchWithKeyWords(
+                    [each["browser_download_url"] for each in JSON],
+                    requiredKeywords=[".exe"],
+                    excludedKeywords=["blockmap"],
+                )
                 if not version_verify(str_pop(Version, 0), id, DEVELOP_MODE):
                     report_existed(id, Version)
                 elif do_list(id, Version, "verify"):
