@@ -53,7 +53,7 @@ const main = async () => {
           issue_number: r.number,
           body: `Don't close this Pull Request please :)\nCC @CoolPlayLin`,
         });
-        console.log(`Prevent #${r.issue_number} from being stale`);
+        console.log(`Prevent #${r.number} from being stale`);
       }
       const comments = await api.rest.issues.listComments({
         repo: repo,
