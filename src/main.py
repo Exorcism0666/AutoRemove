@@ -13,6 +13,7 @@ def matchWithKeyWords(
     requiredKeywords: list[str] = [],
     necessaryKeywords: list[str] = [],
     excludedKeywords: list[str] = [],
+    prefix: str | None = None,
 ) -> list[str]:
     result = value
     if excludedKeywords:
@@ -27,6 +28,8 @@ def matchWithKeyWords(
             for k, v in [(v, any([k in v for k in necessaryKeywords])) for v in result]
         }
         result = [v for v in result if includingResult[v]]
+    if prefix:
+        result = [prefix + r for r in result]
     return result
 
 
@@ -55,7 +58,7 @@ def command_generator(
     komac: pathlib.Path, id: str, urls: str, version: str, token: str
 ) -> str:
     createdWithUrl = r"https://github.com/CoolPlayLin/AutoPublish"
-    return "{} update -i {} --urls {} --version {} --created-with AutoPublish --created-with-url {} --submit --token {}".format(
+    return "{} update --identifier {} --urls {} --version {} --created-with AutoPublish --created-with-url {} --submit --token {}".format(
         komac.__str__(), id, urls, version, createdWithUrl, token
     )
 
@@ -119,21 +122,21 @@ def do_list(id: str, version: str, mode: str) -> bool | None:
     path = pathlib.Path(__file__).parents[0] / "config" / "list.json"
     with open(path, "r", encoding="utf-8") as f:
         try:
-            JSON: dict[str, list[str]] = json.loads(f.read())
+            res: dict[str, list[str]] = json.loads(f.read())
         except BaseException:
-            JSON: dict[str, list[str]] = {}
-        if id not in JSON:
-            JSON[id] = []
+            res: dict[str, list[str]] = {}
+        if id not in res:
+            res[id] = []
 
         if mode == "write":
-            if version not in JSON[id]:
-                JSON[id].append(version)
+            if version not in res[id]:
+                res[id].append(version)
             with open(path, "w+", encoding="utf-8") as w:
-                w.write(json.dumps(JSON))
+                w.write(json.dumps(res))
         elif mode == "verify":
             if DEVELOP_MODE:
                 return False
-            if version in JSON[id]:
+            if version in res[id]:
                 return True
             else:
                 return False
@@ -173,14 +176,14 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
 
     # KuaiFan.DooTask
     id = "KuaiFan.DooTask"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/kuaifan/dootask/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"]
+    Version = res["tag_name"]
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=[".exe"],
         excludedKeywords=["blockmap"],
     )
@@ -197,18 +200,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # listen1.listen1
     id = "listen1.listen1"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/listen1/listen1_desktop/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"]
+    Version = res["tag_name"]
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=[".exe"],
         excludedKeywords=["blockmap"],
         necessaryKeywords=["ia32", "x64", "arm64"],
@@ -226,18 +229,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # PicGo.PicGo
     id = "PicGo.PicGo"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/Molunerfinn/PicGo/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"]
+    Version = res["tag_name"]
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=[".exe"],
         excludedKeywords=["blockmap"],
         necessaryKeywords=["ia32", "x64"],
@@ -255,18 +258,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # PicGo.PicGo.Beta
     id = "PicGo.PicGo.Beta"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/Molunerfinn/PicGo/releases",
         verify=False,
         headers=Headers[1],
     ).json()[0]
-    Version = JSON["tag_name"]
+    Version = res["tag_name"]
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=[".exe"],
         excludedKeywords=["blockmap"],
         necessaryKeywords=["ia32", "x64"],
@@ -293,18 +296,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # DenoLand.Deno
     id = "DenoLand.Deno"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/denoland/deno/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"]
+    Version = res["tag_name"]
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=["msvc"],
         excludedKeywords=["denort"],
     )
@@ -321,16 +324,16 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # Golang.Go
     id = "GoLang.Go"
-    JSON = requests.get(
+    res = requests.get(
         "https://go.dev/dl/?mode=json", verify=False, headers=Headers[0]
     ).json()[0]
-    Version = JSON["version"].replace("go", "")
+    Version = res["version"].replace("go", "")
     Urls = matchWithKeyWords(
-        ["https://go.dev/dl/" + each["filename"] for each in JSON["files"]],
+        ["https://go.dev/dl/" + each["filename"] for each in res["files"]],
         requiredKeywords=["msi"],
     )
     if not version_verify(Version, id, DEVELOP_MODE):
@@ -344,18 +347,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # Genymobile.scrcpy
     id = "Genymobile.scrcpy"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/Genymobile/scrcpy/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"]
+    Version = res["tag_name"]
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=["win"],
     )
     if not version_verify(str_pop(Version, 0), id, DEVELOP_MODE):
@@ -371,7 +374,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # OpenJS.NodeJS
     id = "OpenJS.NodeJS"
@@ -426,14 +429,14 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
 
     # Cloudflare.cloudflared
     id = "Cloudflare.cloudflared"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/cloudflare/cloudflared/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"]
+    Version = res["tag_name"]
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=[".msi"],
     )
     if not version_verify(Version, id, DEVELOP_MODE):
@@ -447,18 +450,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # xjasonlyu.tun2socks
     id = "xjasonlyu.tun2socks"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/xjasonlyu/tun2socks/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"]
+    Version = res["tag_name"]
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=["windows"],
         excludedKeywords=["-v3"],
     )
@@ -473,18 +476,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # sf-yuzifu.bcm_convertor
     id = "sf-yuzifu.bcm_convertor"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/sf-yuzifu/bcm_convertor/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"]
+    Version = res["tag_name"]
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=[".exe"],
     )
     Urls.append(
@@ -508,18 +511,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # Oven-sh.Bun
     id = "Oven-sh.Bun"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/oven-sh/bun/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"].replace("bun-v", "")
+    Version = res["tag_name"].replace("bun-v", "")
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=["windows"],
         excludedKeywords=["baseline", "profile"],
     )
@@ -534,18 +537,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # Oven-sh.Bun.Baseline
     id = "Oven-sh.Bun.Baseline"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/oven-sh/bun/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"].replace("bun-v", "")
+    Version = res["tag_name"].replace("bun-v", "")
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=["windows", "baseline"],
         excludedKeywords=["profile"],
     )
@@ -560,18 +563,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # Oven-sh.Bun.Profile
     id = "Oven-sh.Bun.Profile"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/oven-sh/bun/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"].replace("bun-v", "")
+    Version = res["tag_name"].replace("bun-v", "")
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=["windows", "profile"],
         excludedKeywords=["baseline"],
     )
@@ -586,18 +589,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # Oven-sh.Bun.BaselineProfile
     id = "Oven-sh.Bun.BaselineProfile"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/oven-sh/bun/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"].replace("bun-v", "")
+    Version = res["tag_name"].replace("bun-v", "")
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=["windows", "baseline", "profile"],
     )
     if not version_verify(Version, id, DEVELOP_MODE):
@@ -611,18 +614,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # SABnzbdTeam.SABnzbd
     id = "SABnzbdTeam.SABnzbd"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/sabnzbd/sabnzbd/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"]
+    Version = res["tag_name"]
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=[".exe"],
     )
     if not version_verify(Version, id, DEVELOP_MODE):
@@ -636,18 +639,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # DOSBoxStaging.DOSBoxStaging
     id = "DOSBoxStaging.DOSBoxStaging"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/dosbox-staging/dosbox-staging/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"]
+    Version = res["tag_name"]
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=["windows"],
     )
     if not version_verify(str_pop(Version, 0), id, DEVELOP_MODE):
@@ -663,18 +666,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # Audacity.Audacity
     id = "Audacity.Audacity"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/audacity/audacity/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"].replace("Audacity-", "")
+    Version = res["tag_name"].replace("Audacity-", "")
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=[".exe"],
     )
     if not version_verify(Version, id, DEVELOP_MODE):
@@ -688,18 +691,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # ReorProject.Reor
     id = "ReorProject.Reor"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/reorproject/reor/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"]
+    Version = res["tag_name"]
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=[".exe"],
     )
     if not version_verify(str_pop(Version, 0), id, DEVELOP_MODE):
@@ -715,18 +718,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # GodotEngine.GodotEngine.Mono
     id = "GodotEngine.GodotEngine.Mono"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/godotengine/godot/releases/latest",
         verify=False,
         headers=Headers[0],
     ).json()
-    Version = JSON["tag_name"].replace("-stable", "")
+    Version = res["tag_name"].replace("-stable", "")
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=["stable_mono_win"],
     )
     if not version_verify(Version, id, DEVELOP_MODE):
@@ -740,18 +743,18 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
 
     # Gleam.Gleam
     id = "Gleam.Gleam"
-    JSON = requests.get(
+    res = requests.get(
         "https://api.github.com/repos/gleam-lang/gleam/releases/latest",
         verify=False,
         headers=Headers[1],
     ).json()
-    Version = JSON["tag_name"]
+    Version = res["tag_name"]
     Urls = matchWithKeyWords(
-        [each["browser_download_url"] for each in JSON["assets"]],
+        [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=["msvc"],
         excludedKeywords=["sha"],
     )
@@ -768,7 +771,39 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    del JSON, Urls, Version, id
+    del res, Urls, Version, id
+
+    # 7zip.7zip
+    id = "7zip.7zip"
+    res = bs4.BeautifulSoup(
+        requests.get(
+            "https://7-zip.org/",
+            verify=False,
+            headers=Headers[0],
+        ).text,
+        "html.parser",
+    )
+    Version = [
+        each
+        for each in res.find_all("a")
+        if "https://sourceforge.net/p/" in each["href"]
+    ][0].text.replace("7-Zip ", "")
+    Urls = matchWithKeyWords(
+        [each["href"] for each in res.find_all("a", href=True)],
+        requiredKeywords=[".exe", Version.replace(".", "")],
+        prefix="https://7-zip.org/",
+    )
+    if not version_verify(Version, id, DEVELOP_MODE):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append(
+            (
+                command_generator(Komac, id, list_to_str(Urls), Version, GH_TOKEN),
+                (id, Version, "write"),
+            )
+        )
 
     # Check for missing versions
     if time.strftime("%d-%H") in ("1-12", "10-12", "20-12", "30-12"):
@@ -779,10 +814,10 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 headers=Headers[1],
             ).json():
                 id = "DenoLand.Deno"
-                JSON = each["assets"]
+                res = each["assets"]
                 Version = each["tag_name"]
                 Urls = matchWithKeyWords(
-                    [each["browser_download_url"] for each in JSON],
+                    [each["browser_download_url"] for each in res],
                     requiredKeywords=["msvc"],
                     excludedKeywords=["denort"],
                 )
@@ -803,17 +838,17 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                             (id, Version, "write"),
                         )
                     )
-                del JSON, Urls, Version, id
+                del res, Urls, Version, id
             for each in requests.get(
                 "https://api.github.com/repos/kuaifan/dootask/releases",
                 verify=False,
                 headers=Headers[1],
             ).json():
                 id = "KuaiFan.DooTask"
-                JSON = each["assets"]
+                res = each["assets"]
                 Version = each["tag_name"]
                 Urls = matchWithKeyWords(
-                    [each["browser_download_url"] for each in JSON],
+                    [each["browser_download_url"] for each in res],
                     requiredKeywords=[".exe"],
                     excludedKeywords=["blockmap"],
                 )
@@ -834,17 +869,17 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                             (id, Version, "write"),
                         )
                     )
-                del JSON, Urls, Version, id
+                del res, Urls, Version, id
             for each in requests.get("https://nodejs.org/dist/index.json").json():
                 if not each["lts"]:
                     continue
                 id = "OpenJS.NodeJS.LTS"
-                JSON = each["files"]
+                res = each["files"]
                 Version = each["version"]
                 _ = {"win-": f"node-{Version}-", "-msi": ".msi"}
                 Urls = [
                     f"https://nodejs.org/dist/{Version}/{clean_string(each, _)}"
-                    for each in JSON
+                    for each in res
                     if "-msi" in each
                 ]
                 if not version_verify(str_pop(Version, 0), id, DEVELOP_MODE):
