@@ -9,7 +9,7 @@ import time
 
 
 def commandLogger(executedCommand: str, returnedCode: int):
-    executedCommandList = json.load(
+    executedCommandList = json.loads(
         open(
             pathlib.Path(__file__).parents[0] / "config" / "command.json",
             "r",
