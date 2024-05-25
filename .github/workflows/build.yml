@@ -6,7 +6,7 @@ on:
     types: [ready_for_review, opened, closed, synchronize]
 
 env:
-  NAME: "CoolPlayLinBot"
+  NAME: "coolplaylinbot"
   EMAIL: "130831920+coolplaylinbot@users.noreply.github.com"
 
 jobs:
@@ -14,10 +14,14 @@ jobs:
     if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
     runs-on: windows-latest
     steps:
+      - name: Setup Git Info
+        run: |
+          git config --global user.name "${{ env.NAME }}"
+          git config --global user.email "${{ env.EMAIL }}"
       - name: Checkout
         uses: actions/checkout@v4.1.6
         with:
-          token: ${{ secrets.COOLPLAYLIN_BOT_TOKEN }}
+          token: ${{ secrets.TOKEN }}
       - name: Setup Python
         uses: actions/setup-python@v5
         with:
@@ -42,10 +46,6 @@ jobs:
           key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
           restore-keys: |
             ${{ runner.os }}-pnpm-store-
-      - name: Setup Git Info
-        run: |
-          git config --global user.name "${{ env.NAME }}"
-          git config --global user.email "${{ env.EMAIL }}"
       - name: Install Dependencies
         run: |
           python3 -m pip install -r requirements.txt
