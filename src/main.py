@@ -15,7 +15,7 @@ def commandLogger(executedCommand: str, returnedCode: int):
     executedCommandList.append(
         {executedCommand: executedCommand, returnedCode: returnedCode}
     )
-    with open(pathlib.Path(__file__).parents[0] / "config" / "command.json", "w") as f:
+    with open(pathlib.Path(__file__).parents[0] / "config" / "command.json", "w", encoding="utf-8") as f:
         f.write(json.dumps(executedCommandList))
 
 
