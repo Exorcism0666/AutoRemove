@@ -952,7 +952,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     if not DEVELOP_MODE:
         for each in Commands:
             returnedCode = os.system(each[0])
-            commandLogger(each[0], returnedCode)
+            commandLogger(each[0].replace(GH_TOKEN, "***"), returnedCode)
             if returnedCode == 0:
                 do_list(*each[1])
         os.system(f"{Komac} cleanup --only-merged --all --token {GH_TOKEN}")
