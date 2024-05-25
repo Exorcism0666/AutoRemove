@@ -8,6 +8,17 @@ import bs4
 import time
 
 
+def commandLogger(executedCommand: str, returnedCode: int):
+    executedCommandList = json.load(
+        open(pathlib.Path(__file__).parents[0] / "config" / "command.json", "r", encoding="utf-8").read()
+    )
+    executedCommandList.append(
+        {executedCommand: executedCommand, returnedCode: returnedCode}
+    )
+    with open(pathlib.Path(__file__).parents[0] / "config" / "command.json", "w") as f:
+        f.write(json.dumps(executedCommandList))
+
+
 def matchWithKeyWords(
     value: list[str],
     requiredKeywords: list[str] = [],
@@ -910,7 +921,9 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     # Updating
     if not DEVELOP_MODE:
         for each in Commands:
-            if os.system(each[0]) == 0:
+            returnedCode = os.system(each[0])
+            commandLogger(each, returnedCode)
+            if returnedCode == 0:
                 do_list(*each[1])
         os.system(f"{Komac} cleanup --only-merged --all --token {GH_TOKEN}")
 

@@ -61,7 +61,7 @@ jobs:
         shell: pwsh
         run: |
           if (git status -s){
-            git add .
+            git add .\src\config\*
             git commit -m "Update metadata"
             git push origin --force
           }
