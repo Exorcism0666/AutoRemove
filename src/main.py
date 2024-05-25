@@ -17,7 +17,7 @@ def commandLogger(executedCommand: str, returnedCode: int):
         ).read()
     )
     executedCommandList.append(
-        {executedCommand: executedCommand, returnedCode: f"{returnedCode}"}
+        {executedCommand: executedCommand, returnedCode: returnedCode}
     )
     with open(
         pathlib.Path(__file__).parents[0] / "config" / "command.json",
@@ -952,7 +952,7 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
     if not DEVELOP_MODE:
         for each in Commands:
             returnedCode = os.system(each[0])
-            commandLogger(each, returnedCode)
+            commandLogger(each[0], returnedCode)
             if returnedCode == 0:
                 do_list(*each[1])
         os.system(f"{Komac} cleanup --only-merged --all --token {GH_TOKEN}")
