@@ -488,5 +488,6 @@
   "GodotEngine.GodotEngine.Mono": ["4.2.2"],
   "ReorProject.Reor": ["v0.2.8", "v0.2.9"],
   "NASM.NASM": ["2.16.03"],
-  "7zip.7zip": ["24.06"]
+  "7zip.7zip": ["24.06"],
+  "Gleam.Gleam": ["v1.2.0"]
 }
