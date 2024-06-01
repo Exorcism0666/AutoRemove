@@ -44,7 +44,7 @@ jobs:
       - name: Close Stale Issues
         uses: actions/stale@v9.0.0
         with:
-          repo-token: ${{ secrets.COOLPLAYLIN_BOT_TOKEN }}
+          repo-token: ${{ secrets.TOKEN }}
           exempt-issue-labels: "WIP,NeverExpires,Blocking-issue"
           exempt-pr-labels: "NeverExpires,Blocking-issue"
           stale-issue-label: "stale"
