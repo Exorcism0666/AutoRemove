@@ -81,7 +81,7 @@ def command_generator(
     komac: pathlib.Path, id: str, urls: str, version: str, token: str
 ) -> str:
     createdWithUrl = r"https://github.com/CoolPlayLin/AutoPublish"
-    return "{} update --identifier {} --urls {} --version {} --created-with AutoPublish --created-with-url {} --submit --token {}".format(
+    return "{} update {} --urls {} --version {} --created-with AutoPublish --created-with-url {} --submit --token {}".format(
         komac.__str__(), id, urls, version, createdWithUrl, token
     )
 
