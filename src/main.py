@@ -67,7 +67,7 @@ def report_existed(id: str, Version: str) -> None:
 
 def prepare_komac(path: str, DEVELOP_MODE: bool = False) -> pathlib.Path:
     Komac = pathlib.Path(path) / "komac.exe"
-    if not DEVELOP_MODE:
+    if not DEVELOP_MODE or os.environ.get("PULL_REQUEST_CI"):
         with open(Komac, "wb+") as f:
             file = requests.get(
                 "https://github.com/russellbanks/Komac/releases/download/nightly/komac-nightly-x86_64-pc-windows-msvc.exe",
@@ -81,9 +81,10 @@ def command_generator(
     komac: pathlib.Path, id: str, urls: str, version: str, token: str
 ) -> str:
     createdWithUrl = r"https://github.com/CoolPlayLin/AutoPublish"
-    return "{} update {} --urls {} --version {} --created-with AutoPublish --created-with-url {} --submit --token {}".format(
-        komac.__str__(), id, urls, version, createdWithUrl, token
+    command = "{} update {} --urls {} --version {} --created-with AutoPublish --created-with-url {} {} --token {}".format(
+        komac.__str__(), id, urls, version, createdWithUrl, "--submit" if not DEVELOP_MODE else "--dry-run", token if not DEVELOP_MODE else os.environ.get("GITHUB_TOKEN")
     )
+    return command
 
 
 def clean_string(string: str, keywords: dict[str, str]) -> str:
@@ -953,13 +954,13 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
             "It's not a good time to check missing versions now, skipping version checking..."
         )
     # Updating
-    if not DEVELOP_MODE:
-        for each in Commands:
-            returnedCode = os.system(each[0])
+    for each in Commands:
+        returnedCode = os.system(each[0])
+        if not DEVELOP_MODE:
             commandLogger(each[0].replace(GH_TOKEN, "***"), returnedCode)
-            if returnedCode == 0:
-                do_list(*each[1])
-        os.system(f"{Komac} cleanup --only-merged --all --token {GH_TOKEN}")
+        if returnedCode == 0:
+            do_list(*each[1])
+    os.system(f"{Komac} cleanup --only-merged --all --token {GH_TOKEN}")
 
     return Commands
 

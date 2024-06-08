@@ -67,7 +67,7 @@ jobs:
           }
   CI:
     if: github.event_name == 'pull_request'
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.6
@@ -80,3 +80,6 @@ jobs:
           python3 -m pip install -r requirements.txt
       - name: CI
         run: python3 src/main.py
+        env:
+          PULL_REQUEST_CI: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
