@@ -82,7 +82,13 @@ def command_generator(
 ) -> str:
     createdWithUrl = r"https://github.com/CoolPlayLin/AutoPublish"
     command = "{} update {} --urls {} --version {} --created-with AutoPublish --created-with-url {} {} --token {}".format(
-        komac.__str__(), id, urls, version, createdWithUrl, "--submit" if not DEVELOP_MODE else "--dry-run", token if not DEVELOP_MODE else os.environ.get("GITHUB_TOKEN")
+        komac.__str__(),
+        id,
+        urls,
+        version,
+        createdWithUrl,
+        "--submit" if not DEVELOP_MODE else "--dry-run",
+        token if not DEVELOP_MODE else os.environ.get("GITHUB_TOKEN"),
     )
     return command
 
@@ -839,6 +845,23 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
         f"https://www.nasm.us/pub/nasm/releasebuilds/{Version}/win64/nasm-{Version}-installer-x64.exe",
         f"https://www.nasm.us/pub/nasm/releasebuilds/{Version}/win32/nasm-{Version}-installer-x86.exe",
     ]
+    if not version_verify(Version, id, DEVELOP_MODE):
+        report_existed(id, Version)
+    elif do_list(id, Version, "verify"):
+        report_existed(id, Version)
+    else:
+        Commands.append(
+            (
+                command_generator(Komac, id, list_to_str(Urls), Version, GH_TOKEN),
+                (id, Version, "write"),
+            )
+        )
+
+    # UPUPOO.UPUPOO
+    id = "UPUPOO.UPUPOO"
+    res = requests.get("https://website.upupoo.com/official/qr_code/official").json()
+    Version = res["data"]["version_no"]
+    Urls = [res["data"]["url"]]
     if not version_verify(Version, id, DEVELOP_MODE):
         report_existed(id, Version)
     elif do_list(id, Version, "verify"):
