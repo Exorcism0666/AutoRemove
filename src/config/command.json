@@ -273,5 +273,435 @@
     "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update UPUPOO.UPUPOO --urls https://uft.upupoo.com/install_resource/3.2.6.0/upupoo-installer.exe --version 3.2.6.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
     "returnedCode": 1,
     "time": "2024-06-10 11:12:05"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update UPUPOO.UPUPOO --urls https://uft.upupoo.com/install_resource/3.2.6.0/upupoo-installer.exe --version 3.2.6.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 1,
+    "time": "2024-06-10 12:25:56"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v20.12.0/node-v20.12.0-x64.msi https://nodejs.org/dist/v20.12.0/node-v20.12.0-x86.msi --version 20.12.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:00"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v12.19.1/node-v12.19.1-x64.msi https://nodejs.org/dist/v12.19.1/node-v12.19.1-x86.msi --version 12.19.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:03"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v12.18.3/node-v12.18.3-x64.msi https://nodejs.org/dist/v12.18.3/node-v12.18.3-x86.msi --version 12.18.3 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:06"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v12.18.2/node-v12.18.2-x64.msi https://nodejs.org/dist/v12.18.2/node-v12.18.2-x86.msi --version 12.18.2 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:09"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v12.18.1/node-v12.18.1-x64.msi https://nodejs.org/dist/v12.18.1/node-v12.18.1-x86.msi --version 12.18.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:10"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v12.18.0/node-v12.18.0-x64.msi https://nodejs.org/dist/v12.18.0/node-v12.18.0-x86.msi --version 12.18.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:11"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v12.17.0/node-v12.17.0-x64.msi https://nodejs.org/dist/v12.17.0/node-v12.17.0-x86.msi --version 12.17.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:13"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v12.16.3/node-v12.16.3-x64.msi https://nodejs.org/dist/v12.16.3/node-v12.16.3-x86.msi --version 12.16.3 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:15"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v12.16.2/node-v12.16.2-x64.msi https://nodejs.org/dist/v12.16.2/node-v12.16.2-x86.msi --version 12.16.2 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:16"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v12.16.1/node-v12.16.1-x64.msi https://nodejs.org/dist/v12.16.1/node-v12.16.1-x86.msi --version 12.16.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:17"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v12.16.0/node-v12.16.0-x64.msi https://nodejs.org/dist/v12.16.0/node-v12.16.0-x86.msi --version 12.16.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:19"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v12.15.0/node-v12.15.0-x64.msi https://nodejs.org/dist/v12.15.0/node-v12.15.0-x86.msi --version 12.15.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:20"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v12.14.1/node-v12.14.1-x64.msi https://nodejs.org/dist/v12.14.1/node-v12.14.1-x86.msi --version 12.14.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:21"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v12.14.0/node-v12.14.0-x64.msi https://nodejs.org/dist/v12.14.0/node-v12.14.0-x86.msi --version 12.14.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:22"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v12.13.1/node-v12.13.1-x64.msi https://nodejs.org/dist/v12.13.1/node-v12.13.1-x86.msi --version 12.13.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:23"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v12.13.0/node-v12.13.0-x64.msi https://nodejs.org/dist/v12.13.0/node-v12.13.0-x86.msi --version 12.13.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:25"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.23.1/node-v10.23.1-x64.msi https://nodejs.org/dist/v10.23.1/node-v10.23.1-x86.msi --version 10.23.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:26"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.23.0/node-v10.23.0-x64.msi https://nodejs.org/dist/v10.23.0/node-v10.23.0-x86.msi --version 10.23.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:28"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.22.1/node-v10.22.1-x64.msi https://nodejs.org/dist/v10.22.1/node-v10.22.1-x86.msi --version 10.22.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:29"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.22.0/node-v10.22.0-x64.msi https://nodejs.org/dist/v10.22.0/node-v10.22.0-x86.msi --version 10.22.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:31"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.21.0/node-v10.21.0-x64.msi https://nodejs.org/dist/v10.21.0/node-v10.21.0-x86.msi --version 10.21.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:32"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.20.1/node-v10.20.1-x64.msi https://nodejs.org/dist/v10.20.1/node-v10.20.1-x86.msi --version 10.20.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:33"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.20.0/node-v10.20.0-x64.msi https://nodejs.org/dist/v10.20.0/node-v10.20.0-x86.msi --version 10.20.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:34"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.19.0/node-v10.19.0-x64.msi https://nodejs.org/dist/v10.19.0/node-v10.19.0-x86.msi --version 10.19.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:36"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.18.1/node-v10.18.1-x64.msi https://nodejs.org/dist/v10.18.1/node-v10.18.1-x86.msi --version 10.18.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:37"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.18.0/node-v10.18.0-x64.msi https://nodejs.org/dist/v10.18.0/node-v10.18.0-x86.msi --version 10.18.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:38"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.17.0/node-v10.17.0-x64.msi https://nodejs.org/dist/v10.17.0/node-v10.17.0-x86.msi --version 10.17.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:40"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.16.3/node-v10.16.3-x64.msi https://nodejs.org/dist/v10.16.3/node-v10.16.3-x86.msi --version 10.16.3 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:41"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.16.2/node-v10.16.2-x64.msi https://nodejs.org/dist/v10.16.2/node-v10.16.2-x86.msi --version 10.16.2 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:42"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.15.2/node-v10.15.2-x64.msi https://nodejs.org/dist/v10.15.2/node-v10.15.2-x86.msi --version 10.15.2 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:44"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.15.1/node-v10.15.1-x64.msi https://nodejs.org/dist/v10.15.1/node-v10.15.1-x86.msi --version 10.15.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:45"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.15.0/node-v10.15.0-x64.msi https://nodejs.org/dist/v10.15.0/node-v10.15.0-x86.msi --version 10.15.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:46"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.14.2/node-v10.14.2-x64.msi https://nodejs.org/dist/v10.14.2/node-v10.14.2-x86.msi --version 10.14.2 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:47"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.14.1/node-v10.14.1-x64.msi https://nodejs.org/dist/v10.14.1/node-v10.14.1-x86.msi --version 10.14.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:49"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.14.0/node-v10.14.0-x64.msi https://nodejs.org/dist/v10.14.0/node-v10.14.0-x86.msi --version 10.14.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:50"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v10.13.0/node-v10.13.0-x64.msi https://nodejs.org/dist/v10.13.0/node-v10.13.0-x86.msi --version 10.13.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:51"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.17.0/node-v8.17.0-x64.msi https://nodejs.org/dist/v8.17.0/node-v8.17.0-x86.msi --version 8.17.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:52"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.16.2/node-v8.16.2-x64.msi https://nodejs.org/dist/v8.16.2/node-v8.16.2-x86.msi --version 8.16.2 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:54"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.16.1/node-v8.16.1-x64.msi https://nodejs.org/dist/v8.16.1/node-v8.16.1-x86.msi --version 8.16.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:55"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.16.0/node-v8.16.0-x64.msi https://nodejs.org/dist/v8.16.0/node-v8.16.0-x86.msi --version 8.16.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:56"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.15.1/node-v8.15.1-x64.msi https://nodejs.org/dist/v8.15.1/node-v8.15.1-x86.msi --version 8.15.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:58"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.15.0/node-v8.15.0-x64.msi https://nodejs.org/dist/v8.15.0/node-v8.15.0-x86.msi --version 8.15.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:26:59"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.14.1/node-v8.14.1-x64.msi https://nodejs.org/dist/v8.14.1/node-v8.14.1-x86.msi --version 8.14.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:01"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.14.0/node-v8.14.0-x64.msi https://nodejs.org/dist/v8.14.0/node-v8.14.0-x86.msi --version 8.14.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:02"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.13.0/node-v8.13.0-x64.msi https://nodejs.org/dist/v8.13.0/node-v8.13.0-x86.msi --version 8.13.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:03"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.12.0/node-v8.12.0-x64.msi https://nodejs.org/dist/v8.12.0/node-v8.12.0-x86.msi --version 8.12.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:05"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.11.4/node-v8.11.4-x64.msi https://nodejs.org/dist/v8.11.4/node-v8.11.4-x86.msi --version 8.11.4 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:06"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.11.1/node-v8.11.1-x64.msi https://nodejs.org/dist/v8.11.1/node-v8.11.1-x86.msi --version 8.11.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:07"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.10.0/node-v8.10.0-x64.msi https://nodejs.org/dist/v8.10.0/node-v8.10.0-x86.msi --version 8.10.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:09"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.9.4/node-v8.9.4-x64.msi https://nodejs.org/dist/v8.9.4/node-v8.9.4-x86.msi --version 8.9.4 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:10"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.9.3/node-v8.9.3-x64.msi https://nodejs.org/dist/v8.9.3/node-v8.9.3-x86.msi --version 8.9.3 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:11"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.9.2/node-v8.9.2-x64.msi https://nodejs.org/dist/v8.9.2/node-v8.9.2-x86.msi --version 8.9.2 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:13"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.9.1/node-v8.9.1-x64.msi https://nodejs.org/dist/v8.9.1/node-v8.9.1-x86.msi --version 8.9.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:15"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v8.9.0/node-v8.9.0-x64.msi https://nodejs.org/dist/v8.9.0/node-v8.9.0-x86.msi --version 8.9.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:16"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.17.1/node-v6.17.1-x64.msi https://nodejs.org/dist/v6.17.1/node-v6.17.1-x86.msi --version 6.17.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:17"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.17.0/node-v6.17.0-x64.msi https://nodejs.org/dist/v6.17.0/node-v6.17.0-x86.msi --version 6.17.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:18"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.16.0/node-v6.16.0-x64.msi https://nodejs.org/dist/v6.16.0/node-v6.16.0-x86.msi --version 6.16.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:20"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.15.1/node-v6.15.1-x64.msi https://nodejs.org/dist/v6.15.1/node-v6.15.1-x86.msi --version 6.15.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:21"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.15.0/node-v6.15.0-x64.msi https://nodejs.org/dist/v6.15.0/node-v6.15.0-x86.msi --version 6.15.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:22"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.14.4/node-v6.14.4-x64.msi https://nodejs.org/dist/v6.14.4/node-v6.14.4-x86.msi --version 6.14.4 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:23"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.14.3/node-v6.14.3-x64.msi https://nodejs.org/dist/v6.14.3/node-v6.14.3-x86.msi --version 6.14.3 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:24"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.14.2/node-v6.14.2-x64.msi https://nodejs.org/dist/v6.14.2/node-v6.14.2-x86.msi --version 6.14.2 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:26"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.14.1/node-v6.14.1-x64.msi https://nodejs.org/dist/v6.14.1/node-v6.14.1-x86.msi --version 6.14.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:27"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.14.0/node-v6.14.0-x64.msi https://nodejs.org/dist/v6.14.0/node-v6.14.0-x86.msi --version 6.14.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:28"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.13.1/node-v6.13.1-x64.msi https://nodejs.org/dist/v6.13.1/node-v6.13.1-x86.msi --version 6.13.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:29"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.13.0/node-v6.13.0-x64.msi https://nodejs.org/dist/v6.13.0/node-v6.13.0-x86.msi --version 6.13.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:31"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.12.1/node-v6.12.1-x64.msi https://nodejs.org/dist/v6.12.1/node-v6.12.1-x86.msi --version 6.12.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:32"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.10.3/node-v6.10.3-x64.msi https://nodejs.org/dist/v6.10.3/node-v6.10.3-x86.msi --version 6.10.3 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:34"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.10.2/node-v6.10.2-x64.msi https://nodejs.org/dist/v6.10.2/node-v6.10.2-x86.msi --version 6.10.2 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:35"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.10.1/node-v6.10.1-x64.msi https://nodejs.org/dist/v6.10.1/node-v6.10.1-x86.msi --version 6.10.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:36"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.10.0/node-v6.10.0-x64.msi https://nodejs.org/dist/v6.10.0/node-v6.10.0-x86.msi --version 6.10.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:37"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.9.5/node-v6.9.5-x64.msi https://nodejs.org/dist/v6.9.5/node-v6.9.5-x86.msi --version 6.9.5 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:39"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.9.4/node-v6.9.4-x64.msi https://nodejs.org/dist/v6.9.4/node-v6.9.4-x86.msi --version 6.9.4 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:40"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.9.3/node-v6.9.3-x64.msi https://nodejs.org/dist/v6.9.3/node-v6.9.3-x86.msi --version 6.9.3 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:41"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.9.2/node-v6.9.2-x64.msi https://nodejs.org/dist/v6.9.2/node-v6.9.2-x86.msi --version 6.9.2 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:43"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.9.1/node-v6.9.1-x64.msi https://nodejs.org/dist/v6.9.1/node-v6.9.1-x86.msi --version 6.9.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:44"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v6.9.0/node-v6.9.0-x64.msi https://nodejs.org/dist/v6.9.0/node-v6.9.0-x86.msi --version 6.9.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:45"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v4.9.1/node-v4.9.1-x64.msi https://nodejs.org/dist/v4.9.1/node-v4.9.1-x86.msi --version 4.9.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:47"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v4.9.0/node-v4.9.0-x64.msi https://nodejs.org/dist/v4.9.0/node-v4.9.0-x86.msi --version 4.9.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:49"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v4.8.5/node-v4.8.5-x64.msi https://nodejs.org/dist/v4.8.5/node-v4.8.5-x86.msi --version 4.8.5 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:50"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v4.8.4/node-v4.8.4-x64.msi https://nodejs.org/dist/v4.8.4/node-v4.8.4-x86.msi --version 4.8.4 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:51"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v4.8.3/node-v4.8.3-x64.msi https://nodejs.org/dist/v4.8.3/node-v4.8.3-x86.msi --version 4.8.3 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:53"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v4.8.2/node-v4.8.2-x64.msi https://nodejs.org/dist/v4.8.2/node-v4.8.2-x86.msi --version 4.8.2 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:54"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v4.8.1/node-v4.8.1-x64.msi https://nodejs.org/dist/v4.8.1/node-v4.8.1-x86.msi --version 4.8.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:55"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update OpenJS.NodeJS.LTS --urls https://nodejs.org/dist/v4.8.0/node-v4.8.0-x64.msi https://nodejs.org/dist/v4.8.0/node-v4.8.0-x86.msi --version 4.8.0 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-06-10 12:27:58"
   }
 ]
