@@ -1,0 +1,30 @@
+{
+  "name": "autopublish",
+  "version": "1.0.0",
+  "description": "Auto Publish Software to WinGet",
+  "main": "index.js",
+  "scripts": {
+    "comment": "tsx src/comment.ts",
+    "format": "prettier --write src",
+    "issue": "tsx src/issue.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Exorcism0666/AutoPublish.git"
+  },
+  "author": "Exorcism0666",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Exorcism0666/AutoPublish/issues"
+  },
+  "homepage": "https://github.com/Exorcism0666/AutoPublish#readme",
+  "devDependencies": {
+    "@types/node": "^20.8.0",
+    "prettier": "^3.0.3",
+    "tsx": "^3.13.0"
+  },
+  "dependencies": {
+    "@colors/colors": "^1.6.0",
+    "@octokit/rest": "^20.0.2"
+  }
+}
