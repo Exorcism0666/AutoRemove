@@ -1,0 +1,85 @@
+name: Auto Publish
+on:
+  workflow_dispatch:
+  schedule: [{ cron: 0 * * * * }]
+  pull_request: 
+    types: [ready_for_review, opened, closed, synchronize]
+
+env:
+  NAME: "coolplaylinbot"
+  EMAIL: "130831920+coolplaylinbot@users.noreply.github.com"
+
+jobs:
+  publish:
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: windows-latest
+    steps:
+      - name: Setup Git Info
+        run: |
+          git config --global user.name "${{ env.NAME }}"
+          git config --global user.email "${{ env.EMAIL }}"
+      - name: Checkout
+        uses: actions/checkout@v4.1.6
+        with:
+          token: ${{ secrets.TOKEN }}
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+      - name: Setup Node.JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 9
+          run_install: false
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - name: Install Dependencies
+        run: |
+          python3 -m pip install -r requirements.txt
+          pnpm install
+      - name: Publish
+        run: python3 src/main.py
+        env:
+          TOKEN: ${{ secrets.TOKEN }}
+      - name: Format
+        run: npm run format
+      - name: Post on Always
+        if: always()
+        shell: pwsh
+        run: |
+          if (git status -s){
+            git add .\src\config\*
+            git commit -m "Update metadata"
+            git push origin --force
+          }
+  CI:
+    if: github.event_name == 'pull_request'
+    runs-on: windows-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.6
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11.0'
+      - name: Setup Env
+        run: |
+          python3 -m pip install -r requirements.txt
+      - name: CI
+        run: python3 src/main.py
+        env:
+          PULL_REQUEST_CI: true
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

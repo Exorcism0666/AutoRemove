@@ -1,0 +1,50 @@
+name: Post Comment & Close Stale Issue and PR
+on:
+  workflow_dispatch:
+  schedule: [{ cron: 0 0 * * * }]
+
+jobs:
+  post:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.6
+      - name: Setup Node.JS
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - uses: pnpm/action-setup@v4
+        name: Install pnpm
+        with:
+          version: 9
+          run_install: false
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+      - uses: actions/cache@v4
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+      - name: Install dependencies
+        run: pnpm install
+      - name: Post Comments & issues
+        if: always()
+        run: |
+          pnpm run comment
+          pnpm run issue
+        env:
+          GITHUB_TOKEN: ${{ secrets.TOKEN }}
+  stale:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Close Stale Issues
+        uses: actions/stale@v9.0.0
+        with:
+          repo-token: ${{ secrets.TOKEN }}
+          exempt-issue-labels: "WIP,NeverExpires,Blocking-issue"
+          exempt-pr-labels: "NeverExpires,Blocking-issue"
+          stale-issue-label: "stale"
