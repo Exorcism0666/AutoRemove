@@ -535,5 +535,6 @@
   "NASM.NASM": ["2.16.03"],
   "7zip.7zip": ["24.06", "24.07"],
   "Gleam.Gleam": ["v1.2.0", "v1.2.1"],
-  "Audacity.Audacity": ["3.5.1"]
+  "Audacity.Audacity": ["3.5.1"],
+  "DuckStudio.FufuTools": ["1.3.3"]
 }
