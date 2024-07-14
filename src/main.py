@@ -16,7 +16,13 @@ def commandLogger(executedCommand: str, returnedCode: int):
             encoding="utf-8",
         ).read()
     )
-    if any([each["executedCommand"] == executedCommand and each["returnedCode"] == returnedCode for each in executedCommandList]):
+    if any(
+        [
+            each["executedCommand"] == executedCommand
+            and each["returnedCode"] == returnedCode
+            for each in executedCommandList
+        ]
+    ):
         return
     else:
         executedCommandList.append(
@@ -876,11 +882,15 @@ def main() -> list[tuple[str, tuple[str, str, str]]]:
                 (id, Version, "write"),
             )
         )
-    
+
     # DuckStudio.FufuTools
     id = "DuckStudio.FufuTools"
-    res = requests.get("https://api.github.com/repos/DuckDuckStudio/Fufu_Tools/releases/latest", verify=False, headers=Headers[1]).json()
-    Version = clean_string(res["tag_name"], {"芙芙工具箱": ""," ": "", "v": ""})
+    res = requests.get(
+        "https://api.github.com/repos/DuckDuckStudio/Fufu_Tools/releases/latest",
+        verify=False,
+        headers=Headers[1],
+    ).json()
+    Version = clean_string(res["tag_name"], {"芙芙工具箱": "", " ": "", "v": ""})
     Urls = matchWithKeyWords(
         [each["browser_download_url"] for each in res["assets"]],
         requiredKeywords=[".exe"],
