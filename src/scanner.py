@@ -15,7 +15,8 @@ token = os.environ.get("TOKEN")
 headers = {
     "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/117.0.0.0 Safari/537.36 Edg/117.0.2045.47"
 }
-ignore = ["Unity.Unity"]
+IGNORED_PACKAGE = ["Unity.Unity"]
+EXCLUDED_CODE = [429]
 
 
 def Komac(path: str, debug: bool = False) -> pathlib.Path:
@@ -34,11 +35,7 @@ komac = Komac(pathlib.Path(__file__).parents[0])
 
 
 def command_generator(
-    token: str,
-    id: str,
-    version: str,
-    reason: str,
-    komac_path: pathlib.Path
+    token: str, id: str, version: str, reason: str, komac_path: pathlib.Path
 ) -> bool:
     return f"{komac_path} remove --identifier {id} --version {version} --reason '{reason}' --submit --token {token}"
 
@@ -48,7 +45,7 @@ def scan(_yaml: dict, token: str):
     version = _yaml["PackageVersion"]
     url_list: list[dict] = _yaml["Installers"]
     error: int = 0
-    if [each for each in ignore if each in id]:
+    if [each for each in IGNORED_PACKAGE if each in id]:
         print(f"Skipping {id}(version {version}), it's too big!")
         gc.collect()
         return None
@@ -58,7 +55,7 @@ def scan(_yaml: dict, token: str):
             code = requests.get(
                 each["InstallerUrl"], headers=headers, verify=False
             ).status_code
-            if code >= 400:
+            if code >= 400 and not code in EXCLUDED_CODE:
                 error += 1
         else:
             if error == len(url_list):
