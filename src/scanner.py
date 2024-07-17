@@ -63,7 +63,7 @@ def scan(_yaml: dict, token: str):
                     token,
                     id,
                     version,
-                    f"[Automated] It returns code over 400 in all urls",
+                    f"[Automated]SIt returns code over 400 in all urls",
                     komac,
                 )
                 threading.Thread(
@@ -97,13 +97,13 @@ def scanner(path: pathlib.Path, token: str):
                     )
     for each in list_thread:
         each.start()
-        for i in tqdm.tqdm(5, desc="Waiting for finish"):
+        for i in tqdm.tqdm(range(5), desc="Waiting for finish"):
             if each.is_alive():
                 time.sleep(1)
             else:
                 break
         else:
-            print("This scanning time has timeout, stop waiting......")
+            print("This scanning time is up, stop waiting......")
 
 
 def main():
