@@ -37,7 +37,7 @@ komac = Komac(pathlib.Path(__file__).parents[0])
 def command_generator(
     token: str, id: str, version: str, reason: str, komac_path: pathlib.Path
 ) -> bool:
-    return f"{komac_path} remove --identifier {id} --version {version} --reason '{reason}' --submit --token {token}"
+    return f"{komac_path} remove --reason '{reason}' --submit --token {token} --version {version} {id}"
 
 
 def scan(_yaml: dict, token: str):
@@ -133,7 +133,7 @@ def main():
         target = [folder / pathlib.Path(t) for t in list(set(_target))]
 
     for t in target:
-        print(f"starting check in {target} folders")
+        print(f"Starting check in {target} folders")
         scanner(t, token)
 
 
@@ -146,5 +146,5 @@ if __name__ == "__main__":
             break
         time.sleep(1)
     else:
-        print("scanning time is up, safely exiting......")
+        print("Scanning time is up, safely exiting......")
     exit(0)
