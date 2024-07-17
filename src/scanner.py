@@ -63,7 +63,7 @@ def scan(_yaml: dict, token: str):
                     token,
                     id,
                     version,
-                    f"[Automated]SIt returns code over 400 in all urls",
+                    f"[Automated]It returns code over 400 in all urls",
                     komac,
                 )
                 threading.Thread(
