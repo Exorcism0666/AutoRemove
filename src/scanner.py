@@ -142,7 +142,9 @@ if __name__ == "__main__":
     runner.start()
     for each in range(1, 5 * 60 * 60 + 50 * 60):
         if not runner.is_alive():
+            print("All scanning tasks have completed, exiting......")
             break
         time.sleep(1)
-    print("scanning timeout, safely exiting......")
+    else:
+        print("scanning time is up, safely exiting......")
     exit(0)
