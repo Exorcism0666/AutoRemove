@@ -24,7 +24,7 @@ def Komac(path: str, debug: bool = False) -> pathlib.Path:
     if not debug:
         with open(Komac, "wb+") as f:
             file = requests.get(
-                "https://github.com/russellbanks/Komac/releases/download/nightly/komac-nightly-x86_64-pc-windows-msvc.exe",
+                "https://github.com/russellbanks/Komac/releases/download/v2.3.0/komac-2.3.0-x86_64-pc-windows-msvc.exe",
                 verify=False,
             )
             f.write(file.content)
@@ -37,7 +37,7 @@ komac = Komac(pathlib.Path(__file__).parents[0])
 def command_generator(
     token: str, id: str, version: str, reason: str, komac_path: pathlib.Path
 ) -> bool:
-    return f"{komac_path} remove --reason '{reason}' --submit --token {token} --version {version} {id}"
+    return f"{komac_path} remove --identifier {id} --version {version} --reason '{reason}' --submit --token {token}"
 
 
 def scan(_yaml: dict, token: str):
