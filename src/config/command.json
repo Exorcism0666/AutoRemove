@@ -803,5 +803,10 @@
     "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update Notion.Notion --urls https://desktop-release.notion-static.com/Notion%20Setup%203.12.1.exe --version 3.12.1 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
     "returnedCode": 0,
     "time": "2024-08-09 19:11:41"
+  },
+  {
+    "executedCommand": "D:\\a\\AutoPublish\\AutoPublish\\src\\komac.exe update 7zip.7zip --urls https://7-zip.org/a/7z2408-x64.exe https://7-zip.org/a/7z2408.exe https://7-zip.org/a/7z2408-arm64.exe --version 24.08 --created-with AutoPublish --created-with-url https://github.com/CoolPlayLin/AutoPublish --submit --token ***",
+    "returnedCode": 0,
+    "time": "2024-08-12 12:25:42"
   }
 ]
