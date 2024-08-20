@@ -590,7 +590,12 @@
     "1.1.24"
   ],
   "SABnzbdTeam.SABnzbd": ["4.2.3", "4.3.0", "4.3.1", "4.3.2"],
-  "DOSBoxStaging.DOSBoxStaging": ["v0.81.0", "v0.81.1", "v0.81.2"],
+  "DOSBoxStaging.DOSBoxStaging": [
+    "v0.81.0",
+    "v0.81.1",
+    "v0.81.2",
+    "v0.82.0-rc1"
+  ],
   "GodotEngine.GodotEngine.Mono": ["4.2.2", "4.3"],
   "ReorProject.Reor": [
     "v0.2.8",
